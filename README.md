@@ -3,7 +3,7 @@
 An interactive map presentation of the **Children's Education Development Programme**
 run by the **Ilankai Saivism Association**, Sooran Perumanar Education Board, across Sri Lanka.
 
-**Live site:** https://priyadharsun.github.io/isa-education-map/
+**Live site:** https://priyadharsun.github.io/isa-education-grp/
 
 ## What it shows
 
