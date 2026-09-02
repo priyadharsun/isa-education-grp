@@ -253,6 +253,38 @@
     text-transform:uppercase;color:var(--gold);margin-top:3px}
   .smgrid2{grid-template-columns:repeat(2,1fr);gap:8px 16px}
   .smmonth.subj{background:var(--gold);color:#3B1F06}
+  .smtop.nophoto{grid-template-columns:1fr 560px}
+  .rtwrap{background:var(--paper-2);border:2px solid var(--maroon);border-radius:14px;overflow:hidden;
+    box-shadow:0 12px 32px rgba(90,50,10,.2), inset 0 0 0 2px var(--gold-pale)}
+  .rthead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+    padding:9px 15px 8px;background:var(--maroon);color:var(--paper-2)}
+  .rthead .t{font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+  .rthead .c{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--gold-lt)}
+  table.rt{width:100%;border-collapse:collapse;font-size:13px}
+  table.rt th,table.rt td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line)}
+  table.rt th{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--gold);background:var(--paper-3)}
+  table.rt td.num,table.rt th.num{text-align:right;font-variant-numeric:tabular-nums;
+    font-family:"IBM Plex Mono",monospace;width:62px}
+  table.rt td.i{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3);width:30px}
+  table.rt .nm{display:block;font-weight:700;line-height:1.35}
+  table.rt .nmta{display:block;font-size:11.5px;color:var(--maroon-lt);line-height:1.45;font-weight:600}
+  table.rt .ctr{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--paper-2);background:var(--gold);border-radius:3px;
+    padding:1px 5px;margin-left:6px;vertical-align:1px}
+  table.rt tr.hostrow{background:#FFF7E2}
+  table.rt tr.tot td{border-bottom:none;border-top:2px solid var(--maroon);font-weight:700;
+    background:var(--paper-3);color:var(--maroon)}
+  table.rt tr.tot td.num{font-size:15px}
+  @media (max-width:1250px){ .smtop.nophoto{grid-template-columns:1fr} }
+  @media (max-height:1000px){
+    .smtop.nophoto{grid-template-columns:1fr 510px}
+    table.rt{font-size:12.2px} table.rt th,table.rt td{padding:7px 10px}
+  }
+  @media (max-height:940px){
+    table.rt{font-size:11.6px} table.rt th,table.rt td{padding:5.5px 9px}
+    table.rt .nmta{font-size:10.5px}
+  }
   .stgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px;text-align:left}
   .stcard{background:var(--paper-2);border:2px solid var(--gold-lt);border-left:6px solid var(--maroon);
     border-radius:12px;padding:14px 17px;box-shadow:0 8px 20px rgba(90,50,10,.12)}
@@ -703,6 +735,8 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
                sem:"nuwaraeliya",photoKey:"__seminar3__",bbox:FULL});
   FRAMES.push({key:"seminar4",label:"Theerankandal · Mullaitivu",type:"seminar",
                sem:"theerankandal",photoKey:"__seminar4__",bbox:FULL});
+  FRAMES.push({key:"seminar5",label:"Hanguranketha · Maths plan",type:"seminar",
+               sem:"hanguranketha",photoKey:null,bbox:FULL});
   FRAMES.push({key:"challenges",label:"Challenges",type:"challenges",bbox:FULL});
   FRAMES.push({key:"giving",label:"Giving Circle",type:"giving",bbox:FULL});
   const CLOSING_BB={x0:-190,y0:-55,x1:W+265,y1:H+30};
@@ -985,6 +1019,88 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
           <div class="stat"><span class="n">${ARD.length}</span><span class="l">Districts</span></div>
           <div class="stat"><span class="n" style="font-size:1.3rem">Sundays</span><span class="l">When classes are held</span></div>
         </div>`;
+    }else if(type==="seminar" && frame && frame.sem==="hanguranketha"){
+      ocard.innerHTML=`<div class="eyebrow">Nuwara Eliya District &middot; Hanguranketha Education Zone</div>
+        <h1>Two mathematics teachers for 144 O/L students</h1>
+        <div class="smsub ta">க.பொ.த (சா/த) மாணவர்களின் கணிதப் பாட அடைவு மட்டத்தினை உயர்த்துவதற்கான விசேட வேலைத்திட்டம்</div>
+        <div class="smtop nophoto">
+          <div>
+            <p class="smlead">The same problem again, in the <b>Hanguranketha education zone</b> of
+               Nuwara Eliya: <b>three Tamil schools with no mathematics teacher</b> between them, and
+               <b>144 students</b> in Grades&nbsp;10 and&nbsp;11 who have to sit the O/L mathematics
+               paper regardless. The association has drawn up a <b>special work plan to raise their
+               mathematics achievement</b>, run from a single centre so that all three schools' students
+               can be taught together.</p>
+            <div class="smhost">
+              <div class="smhost-l">Centre where classes are held</div>
+              <div class="smhost-n">Vigneswara Tamil Maha Vidyalayam</div>
+              <div class="smhost-t ta">மமா/ஹங்/விக்னேஸ்வரா தமிழ் மகா வித்தியாலயம்</div>
+              <div class="smmonths" style="margin-top:11px">
+                <span class="smmonth">Central Province</span>
+                <span class="smmonth">Hanguranketha zone</span>
+              </div>
+            </div>
+          </div>
+          <div class="rtwrap">
+            <div class="rthead">
+              <span class="t">Schools and students</span>
+              <span class="c">3 schools &middot; 144 students</span>
+            </div>
+            <table class="rt">
+              <thead><tr><th></th><th>School</th><th class="num">Gr 10</th><th class="num">Gr 11</th><th class="num">Total</th></tr></thead>
+              <tbody>
+            <tr>
+              <td class="i">01</td>
+              <td><span class="nm">Rookwood No. 01 Tamil Vidyalayam</span><span class="nmta ta">மமா/ஹங்/ருக்வூட் இல 01 தமிழ் வித்தியாலயம்</span></td>
+              <td class="num">7</td><td class="num">14</td><td class="num">21</td>
+            </tr>
+            <tr class="hostrow">
+              <td class="i">02</td>
+              <td><span class="nm">Vigneswara Tamil Maha Vidyalayam <span class="ctr">Centre</span></span><span class="nmta ta">மமா/ஹங்/விக்னேஸ்வரா தமிழ் மகா வித்தியாலயம்</span></td>
+              <td class="num">33</td><td class="num">24</td><td class="num">57</td>
+            </tr>
+            <tr>
+              <td class="i">03</td>
+              <td><span class="nm">Mulloya Tamil Maha Vidyalayam</span><span class="nmta ta">மமா/ஹங்/முல்லோயா தமிழ் மகா வித்தியாலயம்</span></td>
+              <td class="num">34</td><td class="num">42</td><td class="num">76</td>
+            </tr>
+                <tr class="tot"><td></td><td>All three schools</td>
+                  <td class="num">64</td><td class="num">80</td><td class="num">144</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="stgrid">
+          <div class="stcard warn">
+            <div class="stl">The gap</div>
+            <h3>No mathematics teacher at any of the three</h3>
+            <p>All three schools are without a mathematics teacher, so the students closest to the
+               examination &mdash; <b>80 in Grade&nbsp;11 and 64 in Grade&nbsp;10</b> &mdash; are the
+               ones carrying the cost. Mathematics is a compulsory paper, so there is no way for a
+               student to route around the shortage; <b>every one of the 144 sits it.</b></p>
+          </div>
+          <div class="stcard">
+            <div class="stl">What the association has done</div>
+            <h3>Two teachers, teaching in rotation every week</h3>
+            <p>The association has arranged <b>two qualified mathematics teachers</b> who will
+               <b>take the classes every week in rotation</b>, so the teaching runs without a break
+               even though neither teacher is on any school's staff.</p>
+            <div class="stnums">
+              <div class="stnum"><b>2</b><span>teachers arranged</span></div>
+              <div class="stnum"><b>Weekly</b><span>classes, in rotation</span></div>
+              <div class="stnum"><b>10&ndash;11</b><span>grades covered</span></div>
+            </div>
+          </div>
+          <div class="stcard good">
+            <div class="stl">Why one centre</div>
+            <h3>Three schools taught as one class</h3>
+            <p>Rookwood No.&nbsp;01 has only <b>21 O/L students</b> &mdash; too few to justify a teacher
+               of its own. Pooling all three at <b>Vigneswara Tamil Maha Vidyalayam</b> turns three
+               unviable classes into <b>one class worth teaching well</b>.</p>
+          </div>
+        </div>
+        <div class="smfoot">Same principle as Theerankandal, at a larger scale &mdash;
+          <b>where the state cannot place a teacher, the association places one</b>, and pays for it.</div>`;
     }else if(type==="seminar" && frame && frame.sem==="theerankandal"){
       ocard.innerHTML=`<div class="eyebrow">Mullaitivu District &middot; Thunukkai Education Zone</div>
         <h1>A mathematics teacher for Theerankandal</h1>
