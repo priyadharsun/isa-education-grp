@@ -253,6 +253,8 @@
     text-transform:uppercase;color:var(--gold);margin-top:3px}
   .smgrid2{grid-template-columns:repeat(2,1fr);gap:8px 16px}
   .smmonth.subj{background:var(--gold);color:#3B1F06}
+  .smprog{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:7px}
+  .smproglbl{font-size:12.5px;font-weight:700;color:var(--ink);min-width:132px}
   .smcode{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:700;
     letter-spacing:.06em;color:var(--gold);background:var(--paper-3);border:1px solid var(--gold-lt);
     border-radius:4px;padding:1px 5px;margin-right:6px;vertical-align:2px}
@@ -299,6 +301,7 @@
     .smsch .n{width:17px;height:17px;font-size:9.5px}
     .smgrid{gap:4px 9px;margin-top:7px} .smfoot{font-size:10.5px;margin-top:8px;padding-top:7px}
     .smmonths{margin-top:9px} .smmonth{font-size:10px;padding:4px 9px}
+    .smprog{gap:5px;margin-top:5px} .smproglbl{font-size:11px;min-width:112px}
     .curhead{margin-top:11px;font-size:11px}
   }
   @media (max-width:1250px){
@@ -666,7 +669,7 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
                sem:"kalutara",photoKey:"__seminar__",bbox:FULL});
   FRAMES.push({key:"seminar2",label:"Scholarship · Colombo",type:"seminar",
                sem:"colombo",photoKey:"__seminar2__",bbox:FULL});
-  FRAMES.push({key:"seminar3",label:"O/L classes · Nuwara Eliya",type:"seminar",
+  FRAMES.push({key:"seminar3",label:"O/L + Scholarship · Nuwara Eliya",type:"seminar",
                sem:"nuwaraeliya",photoKey:"__seminar3__",bbox:FULL});
   FRAMES.push({key:"challenges",label:"Challenges",type:"challenges",bbox:FULL});
   FRAMES.push({key:"giving",label:"Giving Circle",type:"giving",bbox:FULL});
@@ -951,9 +954,9 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
           <div class="stat"><span class="n" style="font-size:1.3rem">Sundays</span><span class="l">When classes are held</span></div>
         </div>`;
     }else if(type==="seminar" && frame && frame.sem==="nuwaraeliya"){
-      ocard.innerHTML=`<div class="eyebrow">Nuwara Eliya District &middot; G.C.E. Ordinary Level</div>
-        <h1>Subject classes for the O/L year on the Dunsinane hill</h1>
-        <div class="smsub ta">க.பொ.த. சாதாரண தர மாணவர்களுக்கான பாடவாரியான சிறப்பு வகுப்புகள்</div>
+      ocard.innerHTML=`<div class="eyebrow">Nuwara Eliya District &middot; O/L and Grade 5 Scholarship</div>
+        <h1>O/L subject classes and scholarship seminars on the Dunsinane hill</h1>
+        <div class="smsub ta">க.பொ.த. சாதாரண தர சிறப்பு வகுப்புகள் &amp; புலமைப்பரிசில் கருத்தரங்குகள்</div>
         <div class="smtop">
           <div>
             <p class="smlead">Through <b>July and August</b>, <b>subject-by-subject special classes</b>
@@ -961,20 +964,28 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
                which stands on the <b>Dunsinane estate hill at Pundaluoya</b>, inside the
                <b>Kothmale education zone</b> of the Nuwara Eliya district. Students from
                <b>three neighbouring Tamil schools</b> were brought in to sit the classes alongside
-               the college's own O/L candidates.</p>
+               the college's own O/L candidates. <b>Grade&nbsp;5 Scholarship seminars were also held
+               at the same school</b>, so one hillside campus served both the youngest candidates
+               and the O/L year.</p>
             <div class="smhost">
               <div class="smhost-l">Where it was held</div>
               <div class="smhost-n">Sivananda Hindu College &mdash; Dunsinane, Pundaluoya</div>
               <div class="smhost-t ta">ம/மா/கொ/ சிவானந்தா இந்துக் கல்லூரி</div>
-              <div class="smhost-l" style="margin-top:10px">Subjects taught</div>
-              <div class="smmonths" style="margin-top:6px">
+              <div class="smhost-l" style="margin-top:11px">What ran here</div>
+              <div class="smprog">
+                <span class="smproglbl">O/L subject classes</span>
                 <span class="smmonth subj">English</span>
                 <span class="smmonth subj">History</span>
                 <span class="smmonth subj">Tamil</span>
               </div>
+              <div class="smprog">
+                <span class="smproglbl">Grade&nbsp;5 Scholarship</span>
+                <span class="smmonth subj">Seminars</span>
+              </div>
             </div>
             <div class="smmonths"><span class="smmonth">July</span><span class="smmonth">August</span>
-              <span class="smmonth">4 schools</span><span class="smmonth">Kothmale zone</span></div>
+              <span class="smmonth">4 schools</span><span class="smmonth">2 programmes</span>
+              <span class="smmonth">Kothmale zone</span></div>
           </div>
           <div class="smshow" id="smShow">
             <div class="ph-head">
@@ -995,8 +1006,9 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
           <div class="smsch"><span class="n">03</span><div><em><span class="smcode">ம/மா/கொ/</span><span class="ta">டன்சினன் தமிழ் மகா வித்தியாலயம் (இல-2)</span></em><span class="tr">Dunsinane Tamil Maha Vidyalayam No. 2</span></div></div>
           <div class="smsch"><span class="n">04</span><div><em><span class="smcode">ம/மா/கொ/</span><span class="ta">டன்சினன் தமிழ் மகா வித்தியாலயம் (இல-3)</span></em><span class="tr">Dunsinane Tamil Maha Vidyalayam No. 3</span></div></div>
         </div>
-        <div class="smfoot">O/L year, not Grade&nbsp;5 &mdash; <b>the same idea carried up the school</b>:
-          pool the candidates from nearby estate schools so a specialist can teach each subject properly.</div>`;
+        <div class="smfoot">Grade&nbsp;5 and O/L under one roof &mdash; <b>the same idea carried right
+          up the school</b>: pool the candidates from nearby estate schools so a specialist can teach
+          each subject properly.</div>`;
     }else if(type==="seminar" && frame && frame.sem==="colombo"){
       ocard.innerHTML=`<div class="eyebrow">Colombo &middot; Grade 5 Scholarship</div>
         <h1>English language workshop and scholarship seminars in Colombo</h1>
