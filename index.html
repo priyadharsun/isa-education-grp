@@ -167,6 +167,20 @@
   .chcard p{font-size:14.5px;line-height:1.55;color:var(--ink-2);margin:8px 0 0}
   .chcard p b{color:var(--maroon-lt);font-weight:700}
   @media (max-width:1100px){ .chgrid{grid-template-columns:1fr} }
+  .gvlead{font-size:1.12rem;line-height:1.6;color:var(--ink-2);margin:18px auto 0;max-width:64ch}
+  .gvgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;text-align:left}
+  .gvcard{background:var(--paper-2);border:2px solid var(--gold-lt);border-radius:12px;padding:20px 22px;
+    box-shadow:0 8px 22px rgba(90,50,10,.13);display:flex;gap:15px;align-items:flex-start}
+  .gvmark{width:38px;height:38px;flex:none;border-radius:50%;background:var(--maroon);color:var(--gold-lt);
+    display:flex;align-items:center;justify-content:center;font-family:"Fraunces",serif;font-size:1.15rem;
+    font-weight:600;margin-top:2px}
+  .gvcard h3{font-size:1.24rem;font-weight:600;line-height:1.22}
+  .gvcard .gvmeta{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--gold);margin-top:6px}
+  .gvcard .gvurl{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-3);
+    margin-top:5px;letter-spacing:0}
+  .gvfoot{margin-top:26px;font-size:1.02rem;color:var(--maroon-lt);font-weight:600}
+  @media (max-width:1100px){ .gvgrid{grid-template-columns:1fr} }
   .keyrow{display:flex;gap:26px;flex-wrap:wrap;margin-top:26px;justify-content:center}
   .key{display:flex;align-items:center;gap:9px;font-size:15px;color:var(--ink);font-weight:600}
 
@@ -441,6 +455,7 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
       bbox:{x0:cx-w/2,y0:cy-h/2,x1:cx+w/2,y1:cy+h/2}});
   });
   FRAMES.push({key:"challenges",label:"Challenges",type:"challenges",bbox:FULL});
+  FRAMES.push({key:"giving",label:"Giving Circle",type:"giving",bbox:FULL});
   const CLOSING_BB={x0:-190,y0:-55,x1:W+265,y1:H+30};
   FRAMES.push({key:"closing",label:"Next",type:"closing",bbox:CLOSING_BB});
 
@@ -500,9 +515,9 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
     else if(f.type==="closing"){ renderClosing(); panel.classList.remove("hidden"); phLoad(null); }
     else { panel.classList.add("hidden"); phLoad(null); }
 
-    if(f.type==="title"||f.type==="challenges"){
+    if(f.type==="title"||f.type==="challenges"||f.type==="giving"){
       renderOverlay(f.type);
-      overlay.classList.toggle("wide",f.type==="challenges");
+      overlay.classList.toggle("wide",f.type==="challenges"||f.type==="giving");
       overlay.classList.remove("hidden");
     }
     else overlay.classList.add("hidden");
@@ -646,6 +661,43 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
                <b>Funding, not willingness, sets the pace of expansion.</b></p>
           </div>
         </div>`;
+    }else if(type==="giving"){
+      ocard.innerHTML=`<div class="eyebrow">With gratitude</div>
+        <h1>Our Monthly Giving Circle</h1>
+        <p class="gvlead">These supporters give <b>every month</b>. Standing support is what turns a
+           plan into classes that actually run — teachers paid, papers printed, week after week.</p>
+        <div class="gvgrid">
+          <div class="gvcard">
+            <div class="gvmark">&#10041;</div>
+            <div>
+              <h3>Manitha Neyam Trust</h3>
+              <div class="gvmeta">Charitable trust</div>
+              <div class="gvurl">manithaneyam.org</div>
+            </div>
+          </div>
+          <div class="gvcard">
+            <div class="gvmark">&#10041;</div>
+            <div>
+              <h3>Nithyakalyani Jewellery</h3>
+              <div class="gvmeta">Wellawatta</div>
+            </div>
+          </div>
+          <div class="gvcard">
+            <div class="gvmark">&#10041;</div>
+            <div>
+              <h3>Neelakandan &amp; Neelakandan</h3>
+              <div class="gvmeta">Law firm</div>
+            </div>
+          </div>
+          <div class="gvcard">
+            <div class="gvmark">&#10041;</div>
+            <div>
+              <h3>Panadura Murugan Temple</h3>
+              <div class="gvmeta">Panadura</div>
+            </div>
+          </div>
+        </div>
+        <div class="gvfoot">Every additional monthly giver moves a waiting school off the list.</div>`;
     }else{
       const missing=GEO.districts.filter(d=>!d.total).length;
       ocard.innerHTML=`<div class="eyebrow">What comes next</div>
