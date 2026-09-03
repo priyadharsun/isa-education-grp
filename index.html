@@ -253,6 +253,57 @@
     text-transform:uppercase;color:var(--gold);margin-top:3px}
   .smgrid2{grid-template-columns:repeat(2,1fr);gap:8px 16px}
   .smmonth.subj{background:var(--gold);color:#3B1F06}
+  /* ---------- 2026 scholarship results ---------- */
+  .rshero{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:15px;text-align:left}
+  .rsh{background:var(--paper-2);border:2px solid var(--gold-lt);border-radius:11px;padding:11px 15px;
+    box-shadow:0 8px 20px rgba(90,50,10,.12)}
+  .rsh.big{border-color:var(--maroon);background:#FFF7E2}
+  .rsh .n{font-family:"Fraunces",serif;font-size:2.05rem;font-weight:600;color:var(--maroon);
+    line-height:1;font-variant-numeric:tabular-nums}
+  .rsh .n em{font-style:normal;font-size:.5em;color:var(--ink-3);margin-left:4px}
+  .rsh .l{font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--gold);margin-top:6px}
+  .rsh .s{font-size:11px;color:var(--ink-2);margin-top:3px;line-height:1.4}
+  .rstable{margin-top:13px;background:var(--paper-2);border:2px solid var(--maroon);border-radius:14px;
+    overflow:hidden;box-shadow:0 12px 32px rgba(90,50,10,.18), inset 0 0 0 2px var(--gold-pale)}
+  table.rs{width:100%;border-collapse:collapse;font-size:12.5px}
+  table.rs th,table.rs td{padding:5px 11px;border-bottom:1px solid var(--line);text-align:left;
+    vertical-align:middle}
+  table.rs th{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--gold);background:var(--paper-3);white-space:nowrap}
+  table.rs td.n,table.rs th.n{text-align:right;font-family:"IBM Plex Mono",monospace;
+    font-variant-numeric:tabular-nums;white-space:nowrap}
+  table.rs tr:last-child td{border-bottom:none}
+  table.rs .snm{display:block;font-weight:700;font-size:12.5px;line-height:1.3;color:var(--ink)}
+  table.rs .sen{display:block;font-size:10.5px;color:var(--ink-3);line-height:1.3;margin-top:1px}
+  table.rs .dist{font-size:10.5px;font-weight:700;letter-spacing:.05em;color:var(--maroon-lt);
+    text-transform:uppercase;white-space:nowrap}
+  table.rs .dim{color:var(--ink-3)}
+  .rsbarcell{width:190px;padding-right:6px !important}
+  .rsrow{display:flex;align-items:center;gap:9px}
+  .rstrack{flex:1;height:12px;background:var(--paper-4);border-radius:4px;overflow:hidden;
+    box-shadow:inset 0 0 0 1px var(--gold-pale)}
+  .rstrack i{display:block;height:100%;background:#9B2334;border-radius:4px}
+  .rspct{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;color:var(--maroon);
+    width:46px;text-align:right;font-variant-numeric:tabular-nums}
+  table.rs tr.totrow td{border-top:2px solid var(--maroon);border-bottom:none;background:var(--paper-3);
+    font-weight:700;color:var(--maroon)}
+  table.rs tr.totrow .rstrack i{background:var(--maroon)}
+  table.rs tr.totrow .rspct{font-size:13.5px}
+  @media (max-width:1250px){ .rshero{grid-template-columns:repeat(3,1fr)} }
+  @media (max-height:1000px){
+    .rshero{gap:9px;margin-top:11px} .rsh{padding:8px 12px} .rsh .n{font-size:1.7rem}
+    .rsh .s{font-size:10.2px} .rstable{margin-top:10px}
+    table.rs{font-size:11.8px} table.rs th,table.rs td{padding:3.5px 10px}
+    table.rs .snm{font-size:11.8px} table.rs .sen{font-size:10px}
+  }
+  @media (max-height:940px){
+    .rsh .n{font-size:1.45rem} .rsh .l{font-size:9.5px} .rsh .s{display:none}
+    table.rs{font-size:11.2px} table.rs th,table.rs td{padding:2.5px 9px}
+    table.rs .snm{font-size:11.2px} table.rs .sen{font-size:9.5px}
+    .rstrack{height:10px} .rsbarcell{width:160px}
+  }
+
   /* ---------- monthly cost estimate ---------- */
   /* two-series categorical palette, validated against the #FFFBEE card surface:
      lightness band PASS · chroma PASS · CVD ΔE 20.4 PASS · normal ΔE 24.4 PASS · contrast PASS */
@@ -806,6 +857,8 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
                sem:"theerankandal",photoKey:"__seminar4__",bbox:FULL});
   FRAMES.push({key:"seminar5",label:"Hanguranketha · Maths plan",type:"seminar",
                sem:"hanguranketha",photoKey:null,bbox:FULL});
+  FRAMES.push({key:"results",label:"2026 Scholarship results",type:"seminar",
+               sem:"results",photoKey:null,bbox:FULL});
   FRAMES.push({key:"cost",label:"What it costs",type:"seminar",
                sem:"cost",photoKey:null,bbox:FULL});
   FRAMES.push({key:"challenges",label:"Challenges",type:"challenges",bbox:FULL});
@@ -1090,6 +1143,154 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
           <div class="stat"><span class="n">${ARD.length}</span><span class="l">Districts</span></div>
           <div class="stat"><span class="n" style="font-size:1.3rem">Sundays</span><span class="l">When classes are held</span></div>
         </div>`;
+    }else if(type==="seminar" && frame && frame.sem==="results"){
+      ocard.innerHTML=`<div class="eyebrow">2026 Grade 5 Scholarship &middot; What the programme produced</div>
+        <h1>145 of 194 children scored 70 or more</h1>
+        <div class="smsub ta">தரம் 5 புலமைப் பரிசில் பரீட்சை 2026 &mdash; பெறுபேறுகள்</div>
+        <div class="rshero">
+          <div class="rsh"><div class="n">11</div><div class="l">Schools reporting</div>
+            <div class="s">Across five districts.</div></div>
+          <div class="rsh"><div class="n">194</div><div class="l">Children sat the exam</div>
+            <div class="s">All taught on the programme.</div></div>
+          <div class="rsh big"><div class="n">145<em>74.7%</em></div><div class="l">Scored 70 or more</div>
+            <div class="s">Three children in four.</div></div>
+          <div class="rsh"><div class="n">18</div><div class="l">Passed the cut-off</div>
+            <div class="s">Where the cut-off was reported.</div></div>
+          <div class="rsh"><div class="n">157</div><div class="l">Highest mark</div>
+            <div class="s">Getaheththa Tamil Vidyalaya.</div></div>
+        </div>
+        <div class="rstable">
+          <table class="rs">
+            <thead><tr>
+              <th>School</th><th>District</th><th class="n">Sat</th><th class="n">70+</th>
+              <th>Share scoring 70+</th><th class="n">100+</th><th class="n">Cut-off</th><th class="n">Best</th>
+            </tr></thead>
+            <tbody>
+            <tr>
+              <td><span class="snm ta">தங்ககலை இல 03 தமிழ் வித்தியாலயம்</span><span class="sen">Thangakalai No. 03 Tamil Vidyalayam</span></td>
+              <td><span class="dist">Nuwara Eliya</span></td>
+              <td class="n">6</td>
+              <td class="n">6</td>
+              <td class="rsbarcell"><div class="rsrow">
+                <div class="rstrack" title="Thangakalai No. 03 Tamil Vidyalayam: 6 of 6 scored 70 or more (100.0%)"><i style="width:100.0%"></i></div>
+                <span class="rspct">100.0%</span></div></td>
+              <td class="n">4</td><td class="n">1</td><td class="n"><span class="dim">&mdash;</span></td>
+            </tr>
+            <tr>
+              <td><span class="snm ta">விளாந்தொட்டம் அ.த.க. பாடசாலை</span><span class="sen">Vilanthoddam G.T.M. School</span></td>
+              <td><span class="dist">Batticaloa</span></td>
+              <td class="n">2</td>
+              <td class="n">2</td>
+              <td class="rsbarcell"><div class="rsrow">
+                <div class="rstrack" title="Vilanthoddam G.T.M. School: 2 of 2 scored 70 or more (100.0%)"><i style="width:100.0%"></i></div>
+                <span class="rspct">100.0%</span></div></td>
+              <td class="n"><span class="dim">&mdash;</span></td><td class="n">0</td><td class="n"><span class="dim">&mdash;</span></td>
+            </tr>
+            <tr>
+              <td><span class="snm ta">முள்ளியவளை தமிழ் வித்தியாலயம்</span><span class="sen">Mullaiyavalai Tamil Vidyalayam</span></td>
+              <td><span class="dist">Mullaitivu</span></td>
+              <td class="n">11</td>
+              <td class="n">10</td>
+              <td class="rsbarcell"><div class="rsrow">
+                <div class="rstrack" title="Mullaiyavalai Tamil Vidyalayam: 10 of 11 scored 70 or more (90.9%)"><i style="width:90.9%"></i></div>
+                <span class="rspct">90.9%</span></div></td>
+              <td class="n">8</td><td class="n">2</td><td class="n">152</td>
+            </tr>
+            <tr>
+              <td><span class="snm ta">கெடஹெத்த தமிழ் வித்தியாலயம்</span><span class="sen">Getaheththa Tamil Vidyalaya</span></td>
+              <td><span class="dist">Ratnapura</span></td>
+              <td class="n">11</td>
+              <td class="n">10</td>
+              <td class="rsbarcell"><div class="rsrow">
+                <div class="rstrack" title="Getaheththa Tamil Vidyalaya: 10 of 11 scored 70 or more (90.9%)"><i style="width:90.9%"></i></div>
+                <span class="rspct">90.9%</span></div></td>
+              <td class="n">5</td><td class="n"><span class="dim">&mdash;</span></td><td class="n">157</td>
+            </tr>
+            <tr>
+              <td><span class="snm ta">மகிழூர் சரஸ்வதி மகா வித்தியாலயம்</span><span class="sen">Magilur Saraswathy Maha Vidyalayam</span></td>
+              <td><span class="dist">Batticaloa</span></td>
+              <td class="n">44</td>
+              <td class="n">39</td>
+              <td class="rsbarcell"><div class="rsrow">
+                <div class="rstrack" title="Magilur Saraswathy Maha Vidyalayam: 39 of 44 scored 70 or more (88.6%)"><i style="width:88.6%"></i></div>
+                <span class="rspct">88.6%</span></div></td>
+              <td class="n"><span class="dim">&mdash;</span></td><td class="n">5</td><td class="n">140</td>
+            </tr>
+            <tr>
+              <td><span class="snm ta">மகிழூர்முனை சக்தி வித்தியாலயம்</span><span class="sen">Mahiloormunai Shakthi Vidyalayam</span></td>
+              <td><span class="dist">Batticaloa</span></td>
+              <td class="n">15</td>
+              <td class="n">13</td>
+              <td class="rsbarcell"><div class="rsrow">
+                <div class="rstrack" title="Mahiloormunai Shakthi Vidyalayam: 13 of 15 scored 70 or more (86.7%)"><i style="width:86.7%"></i></div>
+                <span class="rspct">86.7%</span></div></td>
+              <td class="n"><span class="dim">&mdash;</span></td><td class="n">1</td><td class="n"><span class="dim">&mdash;</span></td>
+            </tr>
+            <tr>
+              <td><span class="snm ta">புதுமுன்மாரிச்சோலை சக்தி வித்தியாலயம்</span><span class="sen">Puthumunmarichcholai Shakthi Vidyalayam</span></td>
+              <td><span class="dist">Batticaloa</span></td>
+              <td class="n">7</td>
+              <td class="n">6</td>
+              <td class="rsbarcell"><div class="rsrow">
+                <div class="rstrack" title="Puthumunmarichcholai Shakthi Vidyalayam: 6 of 7 scored 70 or more (85.7%)"><i style="width:85.7%"></i></div>
+                <span class="rspct">85.7%</span></div></td>
+              <td class="n"><span class="dim">&mdash;</span></td><td class="n">0</td><td class="n"><span class="dim">&mdash;</span></td>
+            </tr>
+            <tr>
+              <td><span class="snm ta">கண்ணகிபுரம் விநாயகர் வித்தியாலயம்</span><span class="sen">Kannakipuram Vinayagar Vidyalayam</span></td>
+              <td><span class="dist">Batticaloa</span></td>
+              <td class="n">28</td>
+              <td class="n">19</td>
+              <td class="rsbarcell"><div class="rsrow">
+                <div class="rstrack" title="Kannakipuram Vinayagar Vidyalayam: 19 of 28 scored 70 or more (67.9%)"><i style="width:67.9%"></i></div>
+                <span class="rspct">67.9%</span></div></td>
+              <td class="n"><span class="dim">&mdash;</span></td><td class="n">4</td><td class="n"><span class="dim">&mdash;</span></td>
+            </tr>
+            <tr>
+              <td><span class="snm ta">மில்லகந்த தமிழ் மகா வித்தியாலயம்</span><span class="sen">Millagantha Tamil Maha Vidyalayam</span></td>
+              <td><span class="dist">&mdash;</span></td>
+              <td class="n">31</td>
+              <td class="n">18</td>
+              <td class="rsbarcell"><div class="rsrow">
+                <div class="rstrack" title="Millagantha Tamil Maha Vidyalayam: 18 of 31 scored 70 or more (58.1%)"><i style="width:58.1%"></i></div>
+                <span class="rspct">58.1%</span></div></td>
+              <td class="n">7</td><td class="n">4</td><td class="n">138</td>
+            </tr>
+            <tr>
+              <td><span class="snm ta">கீகியனகந்த தமிழ் வித்தியாலயம்</span><span class="sen">Keekiyanakanda Tamil Vidyalayam</span></td>
+              <td><span class="dist">Kalutara</span></td>
+              <td class="n">31</td>
+              <td class="n">18</td>
+              <td class="rsbarcell"><div class="rsrow">
+                <div class="rstrack" title="Keekiyanakanda Tamil Vidyalayam: 18 of 31 scored 70 or more (58.1%)"><i style="width:58.1%"></i></div>
+                <span class="rspct">58.1%</span></div></td>
+              <td class="n">9</td><td class="n">1</td><td class="n">138</td>
+            </tr>
+            <tr>
+              <td><span class="snm ta">மண்டூர் 38 அகத்தியர் வித்தியாலயம்</span><span class="sen">Mandur 38 Agathiyar Vidyalayam</span></td>
+              <td><span class="dist">Batticaloa</span></td>
+              <td class="n">8</td>
+              <td class="n">4</td>
+              <td class="rsbarcell"><div class="rsrow">
+                <div class="rstrack" title="Mandur 38 Agathiyar Vidyalayam: 4 of 8 scored 70 or more (50.0%)"><i style="width:50.0%"></i></div>
+                <span class="rspct">50.0%</span></div></td>
+              <td class="n"><span class="dim">&mdash;</span></td><td class="n"><span class="dim">&mdash;</span></td><td class="n"><span class="dim">&mdash;</span></td>
+            </tr>
+              <tr class="totrow">
+                <td>All eleven schools</td><td></td>
+                <td class="n">194</td><td class="n">145</td>
+                <td class="rsbarcell"><div class="rsrow">
+                  <div class="rstrack" title="145 of 194 children scored 70 or more (74.7%)"><i style="width:74.7%"></i></div>
+                  <span class="rspct">74.7%</span></div></td>
+                <td class="n">33</td><td class="n">18</td><td class="n">157</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="smfoot">Share scoring 70+ is <b>children scoring 70 or more &divide; children who sat</b>,
+          and matches each school's own reported figure. A dash means the school did not report that
+          column, so the <b>100+ total covers five schools and the cut-off total nine</b> &mdash; both are
+          floors, not ceilings. Small schools swing hardest: two children at Vilanthoddam make 100%.</div>`;
     }else if(type==="seminar" && frame && frame.sem==="cost"){
       ocard.innerHTML=`<div class="eyebrow">What it costs to run &middot; Rough monthly estimate</div>
         <h1>A month of Saturday classes, school by school</h1>
