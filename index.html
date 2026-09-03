@@ -253,6 +253,75 @@
     text-transform:uppercase;color:var(--gold);margin-top:3px}
   .smgrid2{grid-template-columns:repeat(2,1fr);gap:8px 16px}
   .smmonth.subj{background:var(--gold);color:#3B1F06}
+  /* ---------- monthly cost estimate ---------- */
+  /* two-series categorical palette, validated against the #FFFBEE card surface:
+     lightness band PASS · chroma PASS · CVD ΔE 20.4 PASS · normal ΔE 24.4 PASS · contrast PASS */
+  .ce-wage{--c:#9B2334} .ce-pap{--c:#B8861B}
+  .cebar-wage{background:#9B2334} .cebar-pap{background:#B8861B}
+  .ceassume{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px;text-align:left}
+  .cea{background:var(--paper-2);border:1px solid var(--gold-lt);border-left:5px solid var(--maroon);
+    border-radius:10px;padding:10px 14px}
+  .cea .l{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gold)}
+  .cea .v{font-family:"Fraunces",serif;font-size:1.3rem;font-weight:600;color:var(--maroon);
+    line-height:1.15;margin-top:4px;font-variant-numeric:tabular-nums}
+  .cea .d{font-size:11.5px;color:var(--ink-2);line-height:1.45;margin-top:3px}
+  .cetable{margin-top:14px;background:var(--paper-2);border:2px solid var(--maroon);border-radius:14px;
+    overflow:hidden;box-shadow:0 12px 32px rgba(90,50,10,.18), inset 0 0 0 2px var(--gold-pale)}
+  .cehead{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    padding:9px 16px 8px;background:var(--maroon);color:var(--paper-2)}
+  .cehead .t{font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+  .celegbar{display:flex;align-items:center;gap:22px;flex-wrap:wrap;padding:8px 16px;
+    background:var(--paper-2);border-bottom:1px solid var(--line)}
+  .celegbar span{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--ink)}
+  .celegbar i{width:14px;height:14px;border-radius:3px;display:block;
+    box-shadow:0 0 0 1px rgba(43,26,14,.18)}
+  .celegbar .ceunit{margin-left:auto;font-size:11px;font-weight:600;color:var(--ink-3);letter-spacing:.04em}
+  table.ce{width:100%;border-collapse:collapse;font-size:13.5px}
+  table.ce th,table.ce td{padding:8px 12px;border-bottom:1px solid var(--line);text-align:left;
+    vertical-align:middle}
+  table.ce th{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--gold);background:var(--paper-3);white-space:nowrap}
+  table.ce td.n,table.ce th.n{text-align:right;font-family:"IBM Plex Mono",monospace;
+    font-variant-numeric:tabular-nums;white-space:nowrap}
+  table.ce .sz{font-weight:700;color:var(--ink)}
+  table.ce .tot{font-weight:700;color:var(--maroon);font-size:14.5px}
+  table.ce .per{font-weight:700}
+  table.ce tr.plateau td{background:#F7EACB}
+  table.ce tr.plateau td:first-child{box-shadow:inset 4px 0 0 var(--gold-lt)}
+  table.ce tr:last-child td{border-bottom:none}
+  .cebarcell{width:270px;padding-right:18px !important}
+  .cetrack{height:15px;background:var(--paper-3);border-radius:4px;overflow:hidden;display:flex;
+    box-shadow:inset 0 0 0 1px var(--gold-pale)}
+  .cetrack i{display:block;height:100%;border-radius:4px}
+  .cetrack i+i{margin-left:2px}
+  .cecall{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;text-align:left}
+  .cecard{background:var(--paper-2);border:2px solid var(--gold-lt);border-left:6px solid var(--maroon);
+    border-radius:12px;padding:13px 17px;box-shadow:0 8px 20px rgba(90,50,10,.12)}
+  .cecard .l{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  .cecard h3{font-size:1.06rem;font-weight:600;line-height:1.24;margin-top:4px}
+  .cecard p{font-size:12.5px;line-height:1.55;color:var(--ink-2);margin:6px 0 0}
+  .cecard p b{color:var(--maroon-lt);font-weight:700}
+  .cedrop{display:flex;align-items:baseline;gap:9px;margin-top:7px;font-family:"Fraunces",serif;
+    font-variant-numeric:tabular-nums}
+  .cedrop .a{font-size:1.25rem;color:var(--ink-3);font-weight:600}
+  .cedrop .ar{font-size:1rem;color:var(--gold);font-weight:700;font-family:"Source Sans 3",sans-serif}
+  .cedrop .b{font-size:1.85rem;color:var(--maroon);font-weight:600}
+  .cedrop small{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-3);font-family:"Source Sans 3",sans-serif;display:block}
+  @media (max-width:1250px){ .ceassume{grid-template-columns:repeat(2,1fr)} .cecall{grid-template-columns:1fr} }
+  @media (max-height:1000px){
+    .celegbar{padding:6px 14px} .ceassume{gap:9px;margin-top:12px} .cea{padding:8px 12px} .cea .v{font-size:1.15rem} .cea .d{font-size:10.8px}
+    table.ce{font-size:12.5px} table.ce th,table.ce td{padding:6px 11px}
+    .cetable{margin-top:11px} .cecall{margin-top:11px;gap:11px} .cecard{padding:10px 14px}
+    .cecard h3{font-size:.98rem} .cecard p{font-size:11.8px}
+    .cebarcell{width:230px} .cedrop .b{font-size:1.6rem}
+  }
+  @media (max-height:940px){
+    .ceassume{margin-top:9px} .cea .v{font-size:1.05rem} .cea .d{font-size:10.2px;line-height:1.35}
+    table.ce{font-size:11.8px} table.ce th,table.ce td{padding:4.5px 10px}
+    .cetrack{height:13px} .cebarcell{width:196px}
+    .cecard p{font-size:11.2px;line-height:1.45} .cedrop .b{font-size:1.4rem}
+  }
   .smtop.nophoto{grid-template-columns:1fr 560px}
   .rtwrap{background:var(--paper-2);border:2px solid var(--maroon);border-radius:14px;overflow:hidden;
     box-shadow:0 12px 32px rgba(90,50,10,.2), inset 0 0 0 2px var(--gold-pale)}
@@ -737,6 +806,8 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
                sem:"theerankandal",photoKey:"__seminar4__",bbox:FULL});
   FRAMES.push({key:"seminar5",label:"Hanguranketha · Maths plan",type:"seminar",
                sem:"hanguranketha",photoKey:null,bbox:FULL});
+  FRAMES.push({key:"cost",label:"What it costs",type:"seminar",
+               sem:"cost",photoKey:null,bbox:FULL});
   FRAMES.push({key:"challenges",label:"Challenges",type:"challenges",bbox:FULL});
   FRAMES.push({key:"giving",label:"Giving Circle",type:"giving",bbox:FULL});
   const CLOSING_BB={x0:-190,y0:-55,x1:W+265,y1:H+30};
@@ -1019,6 +1090,141 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
           <div class="stat"><span class="n">${ARD.length}</span><span class="l">Districts</span></div>
           <div class="stat"><span class="n" style="font-size:1.3rem">Sundays</span><span class="l">When classes are held</span></div>
         </div>`;
+    }else if(type==="seminar" && frame && frame.sem==="cost"){
+      ocard.innerHTML=`<div class="eyebrow">What it costs to run &middot; Rough monthly estimate</div>
+        <h1>A month of Saturday classes, school by school</h1>
+        <div class="smsub ta">சிறுவர் கல்வி மேம்பாட்டுத் திட்டம் &mdash; மாதாந்தச் செலவு மதிப்பீடு</div>
+        <div class="ceassume">
+          <div class="cea"><div class="l">Who is taught</div><div class="v">Grades 2&ndash;5</div>
+            <div class="d">Four year groups in every school on the programme.</div></div>
+          <div class="cea"><div class="l">How often</div><div class="v">4 classes / month</div>
+            <div class="d">One class every Saturday.</div></div>
+          <div class="cea"><div class="l">Teacher wage</div><div class="v">Rs 1,500</div>
+            <div class="d">Per teacher, per class taught.</div></div>
+          <div class="cea"><div class="l">Exam papers</div><div class="v">Rs 32</div>
+            <div class="d">Per student, per class &mdash; 4 papers at about Rs 8 each.</div></div>
+        </div>
+        <div class="cetable">
+          <div class="cehead">
+            <span class="t">Estimated cost per month, by school size</span>
+          </div>
+          <div class="celegbar">
+            <span><i class="cebar-wage"></i>Teacher wages</span>
+            <span><i class="cebar-pap"></i>Exam papers</span>
+            <span class="ceunit">All figures in Sri Lankan rupees, per month</span>
+          </div>
+          <table class="ce">
+            <thead><tr>
+              <th>School size</th><th class="n">Teachers</th><th>Monthly cost</th>
+              <th class="n">Teacher wages</th><th class="n">Exam papers</th>
+              <th class="n">Total / month</th><th class="n">Per student</th>
+            </tr></thead>
+            <tbody>
+            <tr>
+              <td class="sz">20 students</td>
+              <td class="n">2</td>
+              <td class="cebarcell">
+                <div class="cetrack" title="20 students · teacher wages Rs 12,000 + exam papers Rs 2,560 = Rs 14,560 a month">
+                  <i class="cebar-wage" style="width:32.61%"></i><i class="cebar-pap" style="width:6.96%"></i>
+                </div>
+              </td>
+              <td class="n">12,000</td>
+              <td class="n">2,560</td>
+              <td class="n tot">14,560</td>
+              <td class="n per">728</td>
+            </tr>
+            <tr>
+              <td class="sz">30 students</td>
+              <td class="n">3</td>
+              <td class="cebarcell">
+                <div class="cetrack" title="30 students · teacher wages Rs 18,000 + exam papers Rs 3,840 = Rs 21,840 a month">
+                  <i class="cebar-wage" style="width:48.91%"></i><i class="cebar-pap" style="width:10.43%"></i>
+                </div>
+              </td>
+              <td class="n">18,000</td>
+              <td class="n">3,840</td>
+              <td class="n tot">21,840</td>
+              <td class="n per">728</td>
+            </tr>
+            <tr class="plateau">
+              <td class="sz">40 students</td>
+              <td class="n">4</td>
+              <td class="cebarcell">
+                <div class="cetrack" title="40 students · teacher wages Rs 24,000 + exam papers Rs 5,120 = Rs 29,120 a month">
+                  <i class="cebar-wage" style="width:65.22%"></i><i class="cebar-pap" style="width:13.91%"></i>
+                </div>
+              </td>
+              <td class="n">24,000</td>
+              <td class="n">5,120</td>
+              <td class="n tot">29,120</td>
+              <td class="n per">728</td>
+            </tr>
+            <tr class="plateau">
+              <td class="sz">60 students</td>
+              <td class="n">4</td>
+              <td class="cebarcell">
+                <div class="cetrack" title="60 students · teacher wages Rs 24,000 + exam papers Rs 7,680 = Rs 31,680 a month">
+                  <i class="cebar-wage" style="width:65.22%"></i><i class="cebar-pap" style="width:20.87%"></i>
+                </div>
+              </td>
+              <td class="n">24,000</td>
+              <td class="n">7,680</td>
+              <td class="n tot">31,680</td>
+              <td class="n per">528</td>
+            </tr>
+            <tr class="plateau">
+              <td class="sz">80 students</td>
+              <td class="n">4</td>
+              <td class="cebarcell">
+                <div class="cetrack" title="80 students · teacher wages Rs 24,000 + exam papers Rs 10,240 = Rs 34,240 a month">
+                  <i class="cebar-wage" style="width:65.22%"></i><i class="cebar-pap" style="width:27.83%"></i>
+                </div>
+              </td>
+              <td class="n">24,000</td>
+              <td class="n">10,240</td>
+              <td class="n tot">34,240</td>
+              <td class="n per">428</td>
+            </tr>
+            <tr class="plateau">
+              <td class="sz">100 students</td>
+              <td class="n">4</td>
+              <td class="cebarcell">
+                <div class="cetrack" title="100 students · teacher wages Rs 24,000 + exam papers Rs 12,800 = Rs 36,800 a month">
+                  <i class="cebar-wage" style="width:65.22%"></i><i class="cebar-pap" style="width:34.78%"></i>
+                </div>
+              </td>
+              <td class="n">24,000</td>
+              <td class="n">12,800</td>
+              <td class="n tot">36,800</td>
+              <td class="n per">368</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cecall">
+          <div class="cecard">
+            <div class="l">The number that matters to a donor</div>
+            <h3>One more child costs Rs 128 a month</h3>
+            <p>Four teachers &mdash; one for each grade &mdash; cover a school of any size we currently
+               run. Past that point the only cost an additional child adds is
+               <b>their exam papers: Rs 32 a class, Rs 128 a month</b>.</p>
+          </div>
+          <div class="cecard">
+            <div class="l">Why bigger schools are better value</div>
+            <h3>Cost per child roughly halves as a school fills</h3>
+            <div class="cedrop">
+              <span class="a">Rs 728<small>at 20 students</small></span>
+              <span class="ar">&rarr;</span>
+              <span class="b">Rs 368<small>at 100 students</small></span>
+            </div>
+            <p>A 100-student school costs about <b>2.5&times;</b> a 20-student school
+               while teaching <b>5&times;</b> the children.</p>
+          </div>
+        </div>
+        <div class="smfoot">Figures are a <b>rough working estimate</b> at current rates, for planning and
+          for talking to supporters &mdash; not an audited budget. Teacher wages are the fixed cost;
+          exam papers are the only part that grows with the roll. Shaded rows are schools already at the
+          four-teacher ceiling.</div>`;
     }else if(type==="seminar" && frame && frame.sem==="hanguranketha"){
       ocard.innerHTML=`<div class="eyebrow">Nuwara Eliya District &middot; Hanguranketha Education Zone</div>
         <h1>Two mathematics teachers for 144 O/L students</h1>
