@@ -254,11 +254,11 @@
   .smgrid2{grid-template-columns:repeat(2,1fr);gap:8px 16px}
   .smmonth.subj{background:var(--gold);color:#3B1F06}
   /* ---------- 2026 scholarship results ---------- */
-  .rshero{display:grid;grid-template-columns:repeat(5,1fr);gap:11px;margin-top:12px;text-align:left}
-  .rsh{background:var(--paper-2);border:2px solid var(--gold-lt);border-radius:11px;padding:9px 13px;
+  .rshero{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:10px;text-align:left}
+  .rsh{background:var(--paper-2);border:2px solid var(--gold-lt);border-radius:11px;padding:8px 12px;
     box-shadow:0 8px 20px rgba(90,50,10,.12)}
   .rsh.big{border-color:var(--maroon);background:#FFF7E2}
-  .rsh .n{font-family:"Fraunces",serif;font-size:1.78rem;font-weight:600;color:var(--maroon);
+  .rsh .n{font-family:"Fraunces",serif;font-size:1.6rem;font-weight:600;color:var(--maroon);
     line-height:1;font-variant-numeric:tabular-nums}
   .rsh .n em{font-style:normal;font-size:.5em;color:var(--ink-3);margin-left:4px}
   .rsh .l{font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
@@ -267,7 +267,7 @@
   .rstable{margin-top:10px;background:var(--paper-2);border:2px solid var(--maroon);border-radius:14px;
     overflow:hidden;box-shadow:0 12px 32px rgba(90,50,10,.18), inset 0 0 0 2px var(--gold-pale)}
   table.rs{width:100%;border-collapse:collapse;font-size:12.5px}
-  table.rs th,table.rs td{padding:3.4px 11px;border-bottom:1px solid var(--line);text-align:left;
+  table.rs th,table.rs td{padding:2.3px 11px;border-bottom:1px solid var(--line);text-align:left;
     vertical-align:middle}
   table.rs th{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
     color:var(--gold);background:var(--paper-3);white-space:nowrap}
@@ -286,8 +286,8 @@
   .rstrack i{display:block;height:100%;background:#9B2334;border-radius:4px}
   .rspct{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;color:var(--maroon);
     width:46px;text-align:right;font-variant-numeric:tabular-nums}
-  table.rs tr.grp td{background:var(--maroon);color:var(--gold-lt);font-size:10px;font-weight:600;
-    letter-spacing:.06em;padding:4px 11px;border-bottom:none}
+  table.rs tr.grp td{background:var(--maroon);color:var(--gold-lt);font-size:9.5px;font-weight:600;
+    letter-spacing:.06em;padding:3px 11px;border-bottom:none}
   table.rs tr.grp td b{color:var(--paper-2);font-weight:700}
   table.rs tr.grp.ach td{background:var(--ink-2)}
   table.rs tr.achrow td{background:#FAF3DE}
@@ -301,7 +301,7 @@
   @media (max-height:1000px){
     .rshero{gap:8px;margin-top:9px} .rsh{padding:7px 11px} .rsh .n{font-size:1.5rem}
     .rsh .s{font-size:10.2px} .rstable{margin-top:10px}
-    table.rs{font-size:11.6px} table.rs th,table.rs td{padding:2.4px 10px}
+    table.rs{font-size:11.4px} table.rs th,table.rs td{padding:1.6px 10px}
     table.rs .snm{font-size:11.8px} table.rs .sen{font-size:10px}
   }
   @media (max-height:940px){
@@ -1152,19 +1152,19 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
         </div>`;
     }else if(type==="seminar" && frame && frame.sem==="results"){
       ocard.innerHTML=`<div class="eyebrow">2026 Grade 5 Scholarship &middot; What the programme produced</div>
-        <h1>165 children scored 70 or more</h1>
+        <h1>183 children scored 70 or more</h1>
         <div class="smsub ta">தரம் 5 புலமைப் பரிசில் பரீட்சை 2026 &mdash; பெறுபேறுகள்</div>
         <div class="rshero">
-          <div class="rsh"><div class="n">14</div><div class="l">Schools reporting</div>
+          <div class="rsh"><div class="n">15</div><div class="l">Schools reporting</div>
             <div class="s">Batticaloa, Kalutara, Mullaitivu,<br>Nuwara Eliya and Ratnapura.</div></div>
-          <div class="rsh big"><div class="n">165</div><div class="l">Scored 70 or more</div>
-            <div class="s">157 of them from schools that<br>reported their full cohort.</div></div>
-          <div class="rsh"><div class="n">75.5<em>%</em></div><div class="l">Pass rate</div>
-            <div class="s">157 of the 208 children who sat<br>where full results were given.</div></div>
-          <div class="rsh"><div class="n">20</div><div class="l">Passed the cut-off</div>
-            <div class="s">Across the ten schools that<br>reported the cut-off.</div></div>
-          <div class="rsh"><div class="n">157</div><div class="l">Highest mark</div>
-            <div class="s">Getaheththa Tamil Vidyalaya.</div></div>
+          <div class="rsh big"><div class="n">183</div><div class="l">Scored 70 or more</div>
+            <div class="s">175 of them from schools that<br>reported their full cohort.</div></div>
+          <div class="rsh"><div class="n">74.2<em>%</em></div><div class="l">Pass rate</div>
+            <div class="s">175 of the 236 children who sat<br>where full results were given.</div></div>
+          <div class="rsh"><div class="n">24</div><div class="l">Passed the cut-off</div>
+            <div class="s">Across the eleven schools that<br>reported the cut-off.</div></div>
+          <div class="rsh"><div class="n">159</div><div class="l">Highest mark</div>
+            <div class="s">Bharathi Tamil Maha Vidyalayam,<br>Arappolakanda.</div></div>
         </div>
         <div class="rstable">
           <table class="rs">
@@ -1173,7 +1173,7 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
               <th>Share scoring 70+</th><th class="n">100+</th><th class="n">Cut-off</th><th class="n">Best</th>
             </tr></thead>
             <tbody>
-            <tr class="grp"><td colspan="8">Full results reported &mdash; <b>208 children sat</b>, these percentages are the programme's pass rate</td></tr>
+            <tr class="grp"><td colspan="8">Full results reported &mdash; <b>236 children sat</b>, these percentages are the programme's pass rate</td></tr>
             <tr>
               <td><span class="snm ta">தங்ககலை இல 03 தமிழ் வித்தியாலயம்</span><span class="sen">Thangakalai No. 03 Tamil Vidyalayam</span></td>
               <td><span class="dist">Nuwara Eliya</span></td>
@@ -1256,6 +1256,15 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
               <td class="n"><span class="dim">&mdash;</span></td><td class="n">4</td><td class="n"><span class="dim">&mdash;</span></td>
             </tr>
             <tr>
+              <td><span class="snm ta">அறப்பொலகந்த பாரதி தமிழ் மகா வித்தியாலயம்</span><span class="sen">Bharathi Tamil Maha Vidyalayam, Arappolakanda &middot; WP/KL</span></td>
+              <td><span class="dist">Kalutara</span></td>
+              <td class="n">28</td><td class="n">18</td>
+              <td class="rsbarcell"><div class="rsrow">
+                <div class="rstrack" title="Bharathi Tamil Maha Vidyalayam: 18 of 28 scored 70 or more (64.3%)"><i style="width:64.3%"></i></div>
+                <span class="rspct">64.3%</span></div></td>
+              <td class="n">10</td><td class="n">4</td><td class="n">159</td>
+            </tr>
+            <tr>
               <td><span class="snm ta">மில்லகந்த தமிழ் மகா வித்தியாலயம்</span><span class="sen">Millagantha Tamil Maha Vidyalayam</span></td>
               <td><span class="dist">Kalutara</span></td>
               <td class="n">31</td><td class="n">18</td>
@@ -1283,12 +1292,12 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
               <td class="n"><span class="dim">&mdash;</span></td><td class="n"><span class="dim">&mdash;</span></td><td class="n"><span class="dim">&mdash;</span></td>
             </tr>
             <tr class="totrow">
-                <td>Twelve schools with full results</td><td></td>
-                <td class="n">208</td><td class="n">157</td>
+                <td>Thirteen schools with full results</td><td></td>
+                <td class="n">236</td><td class="n">175</td>
                 <td class="rsbarcell"><div class="rsrow">
-                  <div class="rstrack" title="157 of 208 children scored 70 or more (75.5%)"><i style="width:75.5%"></i></div>
-                  <span class="rspct">75.5%</span></div></td>
-                <td class="n">39</td><td class="n">20</td><td class="n">157</td>
+                  <div class="rstrack" title="175 of 236 children scored 70 or more (74.2%)"><i style="width:74.2%"></i></div>
+                  <span class="rspct">74.2%</span></div></td>
+                <td class="n">49</td><td class="n">24</td><td class="n">159</td>
               </tr>
             <tr class="grp ach"><td colspan="8">Achievers published only &mdash; these two schools named their high scorers, not the full cohort, so they sit outside the percentage</td></tr>
             <tr class="achrow">
