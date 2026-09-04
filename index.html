@@ -925,6 +925,12 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
     if(i>0) FRAMES.unshift(...FRAMES.splice(i,2));
   })();
 
+  // close on the giving circle rather than the "what next" slide
+  (function(){
+    const a=FRAMES.findIndex(f=>f.key==="giving"), b=FRAMES.findIndex(f=>f.key==="closing");
+    if(a>-1 && b>-1) [FRAMES[a],FRAMES[b]]=[FRAMES[b],FRAMES[a]];
+  })();
+
   let cur=0, scale=1;
 
   function avail(type,hasPhotos){
