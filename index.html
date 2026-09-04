@@ -718,6 +718,9 @@
   .smshow{background:var(--paper-2);border:2px solid var(--maroon);border-radius:14px;overflow:hidden;
     box-shadow:0 12px 32px rgba(90,50,10,.2), inset 0 0 0 2px var(--gold-pale);position:relative}
   .smshow .ph-stage{height:330px}
+  .overlay.pshow .smtop{grid-template-columns:1fr 412px}
+  .overlay.pshow .smshow .ph-stage{height:520px}
+  .ph-stage img.fitall{object-fit:contain;background:var(--paper-3)}
   .smshow:hover .ph-nav{opacity:1}
   @media (max-height:1000px){
     .overlay.seminar{padding:48px 40px 84px}
@@ -725,6 +728,8 @@
     .smsub{font-size:1rem}
     .smlead{font-size:.94rem;line-height:1.52}
     .smshow .ph-stage{height:296px}
+    .overlay.pshow .smtop{grid-template-columns:1fr 386px}
+    .overlay.pshow .smshow .ph-stage{height:466px}
     .smtop{grid-template-columns:1fr 486px;gap:20px;margin-top:12px}
     .smsch em{font-size:12.8px} .smsch .tr{font-size:11px}
     .smsch{padding:6px 10px} .smgrid{gap:6px 12px;margin-top:9px}
@@ -736,6 +741,8 @@
     .smsub{font-size:.93rem}
     .smlead{font-size:.88rem;line-height:1.48}
     .smshow .ph-stage{height:218px}
+    .overlay.pshow .smtop{grid-template-columns:1fr 340px}
+    .overlay.pshow .smshow .ph-stage{height:404px}
     .smtop{grid-template-columns:1fr 430px;gap:17px;margin-top:9px}
     .smhost-n{font-size:.92rem} .smhost-t{font-size:12px}
     .smmonth{font-size:11px;padding:5px 11px}
@@ -750,6 +757,8 @@
     .smsub{font-size:.87rem;margin-top:5px}
     .smlead{font-size:.83rem;line-height:1.45}
     .smshow .ph-stage{height:178px}
+    .overlay.pshow .smtop{grid-template-columns:1fr 300px}
+    .overlay.pshow .smshow .ph-stage{height:352px}
     .smtop{grid-template-columns:1fr 372px;gap:15px;margin-top:8px}
     .smhost{padding:9px 13px} .smhost-n{font-size:.86rem} .smhost-t{font-size:11.5px}
     .smsch em{font-size:11.4px} .smsch .tr{font-size:10px}
@@ -766,14 +775,16 @@
     .smlead{font-size:.76rem;line-height:1.38}
     .smtop{grid-template-columns:1fr 322px;gap:13px;margin-top:7px}
     .smshow .ph-stage{height:138px}
+    .overlay.pshow .smtop{grid-template-columns:1fr 252px}
+    .overlay.pshow .smshow .ph-stage{height:300px}
     .smhost{padding:6px 10px;margin-top:7px} .smhost-n{font-size:.76rem;margin-top:3px}
     .smhost-t{font-size:10px;margin-top:2px}
     .smhost-l{font-size:9.5px}
     .smmonths{margin-top:7px} .smmonth{font-size:9.5px;padding:3px 8px}
     .smprog{margin-top:4px} .smproglbl{font-size:10px;min-width:98px}
-    .smsch{padding:3.6px 8px} .smsch em{font-size:10.4px} .smsch .tr{font-size:9.2px}
+    .smsch{padding:3.2px 8px} .smsch em{font-size:10.2px} .smsch .tr{font-size:9px}
     .smsch .n{width:16px;height:16px;font-size:9px}
-    .smgrid{gap:4px 8px;margin-top:6px}
+    .smgrid{gap:3px 8px;margin-top:5px}
     .curhead{margin-top:7px;font-size:9.6px}
     .smfoot{font-size:10px;margin-top:7px;padding-top:6px}
     .stgrid{gap:8px;margin-top:8px} .stcard{padding:8px 11px}
@@ -1272,7 +1283,7 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
   FRAMES.push({key:"thaipusam",label:"Thaipusam festival",type:"seminar",
                sem:"thaipusam",photoKey:"__thaipusam__",bbox:FULL});
   FRAMES.push({key:"panthal",label:"Kataragama water panthal",type:"seminar",
-               sem:"panthal",photoKey:"__panthal__",bbox:FULL});
+               sem:"panthal",photoKey:"__panthal__",photoShape:"portrait",bbox:FULL});
   FRAMES.push({key:"institute",label:"Kottagala institute",type:"seminar",
                sem:"institute",photoKey:"__institute__",bbox:FULL});
 
@@ -1373,9 +1384,10 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
       overlay.classList.toggle("wide",f.type==="challenges"||f.type==="giving"
         ||f.type==="araneri"||f.type==="siddhanta"||f.type==="thirupani");
       overlay.classList.toggle("seminar",isSeminar);
+      overlay.classList.toggle("pshow",f.photoShape==="portrait");
       overlay.classList.remove("hidden");
     }
-    else { overlay.classList.add("hidden"); overlay.classList.remove("seminar"); }
+    else { overlay.classList.add("hidden"); overlay.classList.remove("seminar","pshow"); }
     if(isSeminar) smLoad(f.photoKey); else smStop();
 
     // planned-expansion districts light up only on the closing slide
@@ -2681,6 +2693,11 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
     list.forEach((p,k)=>{
       const im=document.createElement("img");
       im.src=p.src; im.alt=`Grade 5 scholarship programme photograph ${k+1}`;
+      im.addEventListener("load",()=>{
+        const st2=im.parentElement; if(!st2) return;
+        const sa=st2.clientWidth/st2.clientHeight, ia=im.naturalWidth/im.naturalHeight;
+        im.classList.toggle("fitall", Math.abs(ia-sa)/sa > 0.35);
+      },{once:true});
       im.addEventListener("click",()=>openLB(smList,k));
       st.appendChild(im);
       const d=document.createElement("div"); d.className="ph-dot";
