@@ -268,9 +268,9 @@
   .exgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:9px;text-align:left}
   .excard{background:var(--paper-2);border:2px solid var(--gold-lt);border-top:5px solid var(--maroon);
     border-radius:11px;padding:10px 13px;box-shadow:0 6px 16px rgba(90,50,10,.11)}
-  .excard .ab{font-family:"Fraunces",serif;font-size:1.5rem;font-weight:600;color:var(--maroon);line-height:1}
-  .excard .fl{font-size:12px;font-weight:700;color:var(--ink);line-height:1.3;margin-top:5px}
-  .excard .tl{font-size:11px;color:var(--maroon-lt);font-weight:600;line-height:1.4;margin-top:3px}
+  .excard .fl{font-family:"Fraunces",serif;font-size:1.06rem;font-weight:600;color:var(--maroon);
+    line-height:1.25}
+  .excard .tl{font-size:11.5px;color:var(--ink-2);font-weight:600;line-height:1.4;margin-top:5px}
   .exnote{font-size:11px;color:var(--ink-3);font-style:italic;margin-top:8px}
   .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;text-align:left}
   .pcard{background:var(--paper-2);border:2px solid var(--gold-lt);border-left:6px solid var(--maroon);
@@ -286,22 +286,21 @@
     .fxlist{gap:5px;margin-top:9px} .fx{padding:6px 11px} .fx .v{font-size:13px}
     .fx.hero .v{font-size:1.3rem} .fx .v small{font-size:10.8px}
     .exhead{margin-top:11px} .exgrid{gap:9px;margin-top:7px} .excard{padding:8px 11px}
-    .excard .ab{font-size:1.3rem} .excard .fl{font-size:11.4px} .excard .tl{font-size:10.4px}
+    .excard .fl{font-size:.95rem} .excard .tl{font-size:10.8px}
     .pgrid{gap:10px;margin-top:9px} .pcard{padding:9px 13px} .pcard p{font-size:11.8px}
   }
   @media (max-height:940px){
     .fx{padding:5px 10px} .fx .v{font-size:12.2px} .fx.hero .v{font-size:1.15rem}
     .fx .l{font-size:9.2px;width:100px}
-    .excard{padding:7px 10px} .excard .ab{font-size:1.15rem} .excard .fl{font-size:10.8px}
-    .excard .tl{font-size:9.8px} .exnote{font-size:10px;margin-top:6px}
+    .excard{padding:7px 10px} .excard .fl{font-size:.87rem}
+    .excard .tl{font-size:10.2px;margin-top:4px}
     .pchip{font-size:11px;padding:3px 9px} .pcard p{font-size:11.2px}
   }
   @media (max-height:850px){
     .fxlist{gap:4px;margin-top:7px} .fx{padding:4px 9px} .fx .v{font-size:11px}
     .fx.hero .v{font-size:1rem} .fx .l{font-size:8.6px;width:88px} .fx .v small{font-size:9.6px}
     .exhead{margin-top:8px;font-size:9.6px} .exgrid{gap:7px;margin-top:6px} .excard{padding:6px 9px}
-    .excard .ab{font-size:1rem} .excard .fl{font-size:9.8px} .excard .tl{font-size:9px}
-    .exnote{font-size:9.2px;margin-top:5px}
+    .excard .fl{font-size:.78rem} .excard .tl{font-size:9.4px;margin-top:3px}
     .pgrid{gap:8px;margin-top:7px} .pcard{padding:7px 11px} .pcard .l{font-size:8.8px}
     .pchip{font-size:10px;padding:2.5px 8px} .pcard p{font-size:10.4px;line-height:1.4}
   }
@@ -1275,8 +1274,6 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
                 <span class="v">Kaluthavalai Cultural Hall<small class="ta">களுதாவளை கலாசார மண்டபம்</small></span></div>
               <div class="fx"><span class="l">Centred on</span>
                 <span class="v">Batticaloa district<small>Open to candidates across the East</small></span></div>
-              <div class="fx"><span class="l">For</span>
-                <span class="v">Graduates, not schoolchildren<small>Coaching otherwise found only in Colombo</small></span></div>
             </div>
           </div>
           <div class="smshow" id="smShow">
@@ -1293,10 +1290,10 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
         </div>
         <div class="exhead">Examinations the classes prepare for &mdash; Grade III open competitive</div>
         <div class="exgrid">
-          <div class="excard"><div class="ab">SLAS</div><div class="fl">Sri Lanka Administrative Service</div><div class="tl ta">இலங்கை நிருவாக சேவை</div></div>
-          <div class="excard"><div class="ab">SLAcS</div><div class="fl">Sri Lanka Accountants' Service</div><div class="tl ta">கணக்காளர் சேவை</div></div>
-          <div class="excard"><div class="ab">SLPlS</div><div class="fl">Sri Lanka Planning Service</div><div class="tl ta">திட்டமிடல் சேவை</div></div>
-          <div class="excard"><div class="ab">SLEAS</div><div class="fl">Sri Lanka Education Administrative Service</div><div class="tl ta">கல்வி நிருவாக சேவை</div></div>
+          <div class="excard"><div class="fl">Sri Lanka Administrative Service</div><div class="tl ta">இலங்கை நிருவாக சேவை</div></div>
+          <div class="excard"><div class="fl">Sri Lanka Accountants' Service</div><div class="tl ta">கணக்காளர் சேவை</div></div>
+          <div class="excard"><div class="fl">Sri Lanka Planning Service</div><div class="tl ta">திட்டமிடல் சேவை</div></div>
+          <div class="excard"><div class="fl">Sri Lanka Education Administrative Service</div><div class="tl ta">கல்வி நிருவாக சேவை</div></div>
         </div>
         <div class="pgrid">
           <div class="pcard">
@@ -1312,10 +1309,10 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
             <div class="l">Where it goes next</div>
             <div class="pchips">
               <span class="pchip">Jaffna</span>
-              <span class="pchip">Hill Country</span>
+              <span class="pchip">Kotagala</span>
             </div>
-            <p>Continuing classes planned, dates to be announced &mdash; <b>the children's programme's
-              reach, carried up to graduate level</b>.</p>
+            <p>Classes are due to begin next in <b>Jaffna</b> and <b>Kotagala</b> &mdash; taking the same
+              coaching north and into the hill country.</p>
           </div>
         </div>
         <div class="smfoot"><span class="ta">சிவபெருமானை வழிபடுபவர் கல்வியில் மேம்பட்டு விளங்குவர்</span>
