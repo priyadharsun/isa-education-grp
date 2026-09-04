@@ -254,15 +254,16 @@
   .smgrid2{grid-template-columns:repeat(2,1fr);gap:8px 16px}
   .smmonth.subj{background:var(--gold);color:#3B1F06}
   /* ---------- national competitive exam classes ---------- */
-  .exhead{display:flex;align-items:center;gap:14px;font-size:12.5px;font-weight:700;letter-spacing:.15em;
-    text-transform:uppercase;color:var(--gold);margin-top:14px}
+  .exlayout{display:grid;grid-template-columns:372px 1fr 500px;gap:18px;margin-top:14px;align-items:start}
+  .exhead{display:flex;align-items:center;gap:12px;font-size:11.5px;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--gold)}
   .exhead::after{content:"";flex:1;height:2px;background:var(--gold-lt)}
-  .exgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:10px;text-align:left}
-  .excard{background:var(--maroon);border:2px solid var(--maroon-dk);border-top:6px solid var(--gold);
-    border-radius:12px;padding:14px 16px;box-shadow:0 10px 24px rgba(90,50,10,.24);
-    display:flex;flex-direction:column;justify-content:center;min-height:96px}
-  .excard .fl{font-family:"Fraunces",serif;font-size:1.16rem;font-weight:600;color:#FFFBEE;line-height:1.24}
-  .excard .tl{font-size:12.5px;color:var(--gold-lt);font-weight:600;line-height:1.4;margin-top:6px}
+  .exsub{font-size:11.5px;font-weight:700;color:var(--maroon-lt);margin-top:5px;letter-spacing:.02em}
+  .exgrid{display:grid;grid-template-columns:1fr;gap:9px;margin-top:9px;text-align:left}
+  .excard{background:var(--maroon);border:2px solid var(--maroon-dk);border-left:7px solid var(--gold);
+    border-radius:11px;padding:11px 15px;box-shadow:0 8px 20px rgba(90,50,10,.22)}
+  .excard .fl{font-family:"Fraunces",serif;font-size:1.08rem;font-weight:600;color:#FFFBEE;line-height:1.22}
+  .excard .tl{font-size:12px;color:var(--gold-lt);font-weight:600;line-height:1.4;margin-top:4px}
   .venue{background:var(--paper-2);border:2px solid var(--maroon);border-left-width:9px;border-radius:13px;
     padding:15px 20px;box-shadow:0 10px 26px rgba(90,50,10,.16)}
   .venue .l{font-size:10.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
@@ -277,8 +278,8 @@
   .stt{background:#FFF7E2;border:2px solid var(--maroon);border-radius:11px;padding:11px 15px}
   .stt .n{font-family:"Fraunces",serif;font-size:1.7rem;font-weight:600;color:var(--maroon);line-height:1}
   .stt .n small{font-size:.5em;color:var(--ink-3);margin-left:4px}
-  .stt .l{font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
-    color:var(--gold);margin-top:6px}
+  .stt .l{font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--gold);margin-top:6px;white-space:nowrap}
   .stt .s{font-size:11px;color:var(--ink-2);margin-top:2px;line-height:1.35}
   .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;text-align:left}
   .pcard{background:var(--paper-2);border:2px solid var(--gold-lt);border-left:6px solid var(--maroon);
@@ -290,18 +291,21 @@
   .pchip.hot{background:var(--maroon);color:var(--paper-2);border-color:var(--maroon)}
   .pcard p{font-size:12.5px;line-height:1.5;color:var(--ink-2);margin:7px 0 0}
   .pcard p b{color:var(--maroon-lt)}
-  @media (max-width:1250px){ .exgrid{grid-template-columns:repeat(2,1fr)} .pgrid{grid-template-columns:1fr} }
+  @media (max-width:1250px){ .exlayout{grid-template-columns:1fr;gap:14px} .pgrid{grid-template-columns:1fr} }
   @media (max-height:1000px){
-    .exhead{margin-top:11px;font-size:11.5px} .exgrid{gap:11px;margin-top:8px}
-    .excard{padding:11px 13px;min-height:84px} .excard .fl{font-size:1.03rem} .excard .tl{font-size:11.6px}
+    .exlayout{grid-template-columns:348px 1fr 462px;gap:15px;margin-top:11px}
+    .exhead{font-size:10.8px} .exgrid{gap:8px;margin-top:8px}
+    .excard{padding:9px 13px} .excard .fl{font-size:1rem} .excard .tl{font-size:11.2px}
     .venue{padding:12px 17px} .venue .n{font-size:1.4rem} .venue .t{font-size:13px}
     .plcrow{margin-top:10px} .plc{padding:6px 12px;font-size:12px}
     .statrow{gap:9px;margin-top:10px} .stt{padding:9px 13px} .stt .n{font-size:1.45rem} .stt .s{font-size:10.4px}
     .pgrid{gap:10px;margin-top:9px} .pcard{padding:9px 13px} .pcard p{font-size:11.8px}
   }
   @media (max-height:940px){
-    .exhead{margin-top:9px;font-size:10.6px} .exgrid{gap:9px;margin-top:7px}
-    .excard{padding:9px 12px;min-height:74px} .excard .fl{font-size:.94rem} .excard .tl{font-size:10.8px;margin-top:4px}
+    .exlayout{grid-template-columns:312px 1fr 420px;gap:13px;margin-top:9px}
+    .exhead{font-size:10px} .exgrid{gap:6px;margin-top:7px}
+    .excard{padding:7px 11px;border-left-width:6px} .excard .fl{font-size:.9rem}
+    .excard .tl{font-size:10.2px;margin-top:3px}
     .venue{padding:10px 15px;border-left-width:7px} .venue .n{font-size:1.22rem} .venue .t{font-size:11.8px}
     .venue .l{font-size:9.5px}
     .plcrow{margin-top:8px;gap:7px} .plc{padding:5px 10px;font-size:11px}
@@ -310,9 +314,10 @@
     .pchip{font-size:11px;padding:3px 9px} .pcard p{font-size:11.2px}
   }
   @media (max-height:850px){
-    .exhead{margin-top:7px;font-size:9.6px;gap:10px} .exgrid{gap:7px;margin-top:6px}
-    .excard{padding:7px 10px;min-height:60px;border-top-width:4px}
-    .excard .fl{font-size:.82rem;line-height:1.2} .excard .tl{font-size:9.6px;margin-top:3px}
+    .exlayout{grid-template-columns:272px 1fr 360px;gap:11px;margin-top:7px}
+    .exhead{font-size:9.2px;gap:9px} .exgrid{gap:5px;margin-top:6px}
+    .excard{padding:5.5px 9px;border-left-width:5px}
+    .excard .fl{font-size:.78rem;line-height:1.18} .excard .tl{font-size:9.2px;margin-top:2px}
     .venue{padding:8px 12px;border-left-width:6px} .venue .n{font-size:1.02rem} .venue .t{font-size:10.4px}
     .venue .l{font-size:8.8px}
     .plcrow{margin-top:7px;gap:6px} .plc{padding:4px 9px;font-size:10px}
@@ -1279,14 +1284,17 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
       ocard.innerHTML=`<div class="eyebrow">Batticaloa District &middot; Running since September 2025</div>
         <h1>Guidance classes for the national competitive examinations</h1>
         <div class="smsub ta">நாடளாவிய போட்டிப் பரீட்சைகளுக்கான தொடர் வழிகாட்டல் வகுப்புக்கள்</div>
-        <div class="exhead">Examinations the classes prepare for &mdash; Grade III open competitive</div>
-        <div class="exgrid">
-          <div class="excard"><div class="fl">Sri Lanka Administrative Service</div><div class="tl ta">இலங்கை நிருவாக சேவை</div></div>
-          <div class="excard"><div class="fl">Sri Lanka Accountants' Service</div><div class="tl ta">கணக்காளர் சேவை</div></div>
-          <div class="excard"><div class="fl">Sri Lanka Planning Service</div><div class="tl ta">திட்டமிடல் சேவை</div></div>
-          <div class="excard"><div class="fl">Sri Lanka Education Administrative Service</div><div class="tl ta">கல்வி நிருவாக சேவை</div></div>
-        </div>
-        <div class="smtop">
+        <div class="exlayout">
+          <div>
+            <div class="exhead">Examinations prepared for</div>
+            <div class="exsub">Grade III open competitive</div>
+            <div class="exgrid">
+            <div class="excard"><div class="fl">Sri Lanka Administrative Service</div><div class="tl ta">இலங்கை நிருவாக சேவை</div></div>
+            <div class="excard"><div class="fl">Sri Lanka Accountants' Service</div><div class="tl ta">கணக்காளர் சேவை</div></div>
+            <div class="excard"><div class="fl">Sri Lanka Planning Service</div><div class="tl ta">திட்டமிடல் சேவை</div></div>
+            <div class="excard"><div class="fl">Sri Lanka Education Administrative Service</div><div class="tl ta">கல்வி நிருவாக சேவை</div></div>
+            </div>
+          </div>
           <div>
             <div class="venue">
               <div class="l">Where the classes are held</div>
@@ -1295,13 +1303,12 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
               <div class="plcrow">
                 <span class="plc">Batticaloa District</span>
                 <span class="plc">Eastern Province</span>
-                <span class="plc alt">Open to candidates across the East</span>
               </div>
+              <div class="plcrow"><span class="plc alt">Open to candidates across the East</span></div>
             </div>
             <div class="statrow">
-              <div class="stt"><div class="n">250<small>+</small></div><div class="l">Candidates registered</div>
-                <div class="s">Places filled from across the district.</div></div>
-              <div class="stt"><div class="n">1<small> year</small></div><div class="l">Running since Sept 2025</div>
+              <div class="stt"><div class="n">250<small>+</small></div><div class="l">Candidates registered</div></div>
+              <div class="stt"><div class="n">1<small> year</small></div><div class="l">Since Sept 2025</div>
                 <div class="s">First session 6 September 2025.</div></div>
             </div>
           </div>
