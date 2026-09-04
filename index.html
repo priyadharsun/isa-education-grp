@@ -345,6 +345,44 @@
     text-transform:uppercase;color:var(--gold);margin-top:3px}
   .smgrid2{grid-template-columns:repeat(2,1fr);gap:8px 16px}
   .smmonth.subj{background:var(--gold);color:#3B1F06}
+  /* ---------- tamil nadu pilgrimage ---------- */
+  .tngrid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px 12px;margin-top:11px}
+  .tn{display:flex;gap:8px;align-items:flex-start;background:var(--paper-2);
+    border:1px solid var(--gold-lt);border-left:4px solid var(--maroon);border-radius:8px;padding:6px 10px}
+  .tn .k{font-family:"IBM Plex Mono",monospace;font-size:9.4px;font-weight:700;color:var(--paper-2);
+    background:var(--maroon);width:18px;height:18px;flex:none;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;margin-top:2px}
+  .tn .nta{display:block;font-family:"Noto Sans Tamil","Source Sans 3",sans-serif;font-size:13.4px;
+    font-weight:700;color:var(--maroon);line-height:1.42}
+  .tn .nen{display:block;font-size:10.6px;color:var(--ink-3);font-weight:600;line-height:1.3;margin-top:1px}
+  .tn.big{border-left-color:var(--gold);background:#FFF7E2}
+  .tnquote{background:var(--paper-2);border:2px solid var(--gold-lt);border-left:6px solid var(--maroon);
+    border-radius:11px;padding:11px 16px;margin-top:12px}
+  .tnquote .q{font-family:"Noto Sans Tamil","Source Sans 3",sans-serif;font-size:13.4px;font-weight:700;
+    color:var(--maroon);line-height:1.65}
+  .tnquote .e{font-size:12px;color:var(--ink-2);line-height:1.5;margin-top:4px}
+  .tnquote .src{font-size:10.5px;color:var(--ink-3);font-weight:700;letter-spacing:.06em;margin-top:5px}
+  @media (max-width:1250px){ .tngrid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-height:1000px){
+    .tngrid{gap:6px 10px;margin-top:9px} .tn{padding:5px 9px}
+    .tn .nta{font-size:12.4px} .tn .nen{font-size:10px}
+    .tnquote{padding:9px 14px;margin-top:10px} .tnquote .q{font-size:12.4px;line-height:1.6}
+    .tnquote .e{font-size:11.2px}
+  }
+  @media (max-height:940px){
+    .tngrid{gap:5px 9px} .tn{padding:4px 8px;border-left-width:3px}
+    .tn .k{width:16px;height:16px;font-size:8.8px}
+    .tn .nta{font-size:11.2px;line-height:1.38} .tn .nen{font-size:9.4px}
+    .tnquote{padding:7px 12px} .tnquote .q{font-size:11.2px;line-height:1.55} .tnquote .e{font-size:10.2px}
+  }
+  @media (max-height:850px){
+    .tngrid{gap:4px 8px;margin-top:7px} .tn{padding:3px 7px}
+    .tn .k{width:14px;height:14px;font-size:8px}
+    .tn .nta{font-size:9.8px;line-height:1.33} .tn .nen{font-size:8.6px}
+    .tnquote{padding:6px 10px;margin-top:7px} .tnquote .q{font-size:9.8px;line-height:1.5}
+    .tnquote .e{font-size:9.2px} .tnquote .src{font-size:9px}
+  }
+
   /* ---------- temple pilgrimage ---------- */
   .tmpgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;margin-top:9px}
   .tmp{display:flex;gap:9px;align-items:flex-start;background:var(--paper-2);
@@ -1338,6 +1376,8 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
                sem:"institute",photoKey:"__institute__",bbox:FULL});
   FRAMES.push({key:"yathirai",label:"Temple pilgrimage",type:"seminar",
                sem:"yathirai",photoKey:"__yathirai__",bbox:FULL});
+  FRAMES.push({key:"tnyathirai",label:"Tamil Nadu pilgrimage",type:"seminar",
+               sem:"tnyathirai",photoKey:null,bbox:FULL});
 
   // the Saiva religious education section opens the deck
   (function(){
@@ -1457,11 +1497,15 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
     document.querySelectorAll(".sidlabel").forEach(l=>l.classList.toggle("show",isSid));
 
     const isAraneriSection=f.type==="araneri"||f.type==="araneriMap"||f.sem==="yathirai";
+    const isTn=f.sem==="tnyathirai";
     const isSiddhantaSection=f.type==="siddhanta"||f.type==="siddhantaMap";
     const isThirupani=f.type==="thirupani"||f.sem==="thaipusam"
                        ||f.sem==="panthal"||f.sem==="institute";
     const isYathirai=f.sem==="yathirai";
-    document.getElementById("brand").innerHTML=isYathirai
+    document.getElementById("brand").innerHTML=isTn
+      ? `Ilankai Saivism Association &middot; Tamil Nadu temple pilgrimage
+         <span class="ta">தமிழ்நாடு திருத்தல யாத்திரை</span>`
+      : isYathirai
       ? `Ilankai Saivism Association &middot; Arunasalathesigamaniyaar Araneri Education Board
          <span class="ta">திருத்தல யாத்திரை</span>`
       : isThirupani
@@ -1703,6 +1747,45 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
           <div class="stat"><span class="n">${ARD.length}</span><span class="l">Districts</span></div>
           <div class="stat"><span class="n" style="font-size:1.3rem">Sundays</span><span class="l">When classes are held</span></div>
         </div>`;
+    }else if(type==="seminar" && frame && frame.sem==="tnyathirai"){
+      ocard.innerHTML=`<div class="eyebrow">Tamil Nadu &middot; 2025 and 2026</div>
+        <h1 class="ta" style="font-size:clamp(1.5rem,2.6vw,2.05rem)">தமிழ்நாடு திருத்தல யாத்திரை</h1>
+        <div class="smsub" style="color:var(--ink-2);font-weight:600">A pilgrimage across Tamil Nadu &mdash; twenty-two sacred sites, from Thiruvarur to Nagapattinam</div>
+        <div class="tngrid">
+          <div class="tn"><span class="k">01</span><div><span class="nta">திருவாரூர்</span><span class="nen">Thiruvarur</span></div></div>
+          <div class="tn"><span class="k">02</span><div><span class="nta">திருவிற்குடி வீரட்டம்</span><span class="nen">Thiruvirkudi Veerattam</span></div></div>
+          <div class="tn"><span class="k">03</span><div><span class="nta">திருப்பயற்றங்குடி</span><span class="nen">Thiruppayatrangudi</span></div></div>
+          <div class="tn"><span class="k">04</span><div><span class="nta">திருச்செங்காட்டன்குடி</span><span class="nen">Thiruchengattankudi</span></div></div>
+          <div class="tn"><span class="k">05</span><div><span class="nta">இராமனதீச்சரம்</span><span class="nen">Ramanatheeswaram</span></div></div>
+          <div class="tn"><span class="k">06</span><div><span class="nta">மயிலாடுதுறை</span><span class="nen">Mayiladuthurai</span></div></div>
+          <div class="tn"><span class="k">07</span><div><span class="nta">திருப்புகலூர்</span><span class="nen">Thirupugalur</span></div></div>
+          <div class="tn"><span class="k">08</span><div><span class="nta">திருவெண்காடு</span><span class="nen">Thiruvenkadu</span></div></div>
+          <div class="tn big"><span class="k">09</span><div><span class="nta">கோயில் (சிதம்பரம்)</span><span class="nen">Chidambaram — Kanakasabai &amp; Thirumoolattanam</span></div></div>
+          <div class="tn"><span class="k">10</span><div><span class="nta">சீர்காழி</span><span class="nen">Seerkazhi</span></div></div>
+          <div class="tn"><span class="k">11</span><div><span class="nta">திருநாவலூர்</span><span class="nen">Thirunavalur</span></div></div>
+          <div class="tn"><span class="k">12</span><div><span class="nta">திருவெண்ணெய்நல்லூர்</span><span class="nen">Thiruvennainallur</span></div></div>
+          <div class="tn big"><span class="k">13</span><div><span class="nta">திருவண்ணாமலை</span><span class="nen">Thiruvannamalai — with girivalam</span></div></div>
+          <div class="tn"><span class="k">14</span><div><span class="nta">திருவையாறு</span><span class="nen">Thiruvaiyaru</span></div></div>
+          <div class="tn"><span class="k">15</span><div><span class="nta">தஞ்சை பெருங்கோயில்</span><span class="nen">Thanjavur Perungoil</span></div></div>
+          <div class="tn"><span class="k">16</span><div><span class="nta">திருச்சிராப்பள்ளி (மலைக்கோட்டை)</span><span class="nen">Tiruchirappalli, Rockfort</span></div></div>
+          <div class="tn"><span class="k">17</span><div><span class="nta">திருவாலவாய் (மதுரை)</span><span class="nen">Thiruvalavai, Madurai</span></div></div>
+          <div class="tn"><span class="k">18</span><div><span class="nta">திருப்பூவணம்</span><span class="nen">Thirupuvanam</span></div></div>
+          <div class="tn"><span class="k">19</span><div><span class="nta">திருஎத்திரகோசமங்கை</span><span class="nen">Thiru Ethirakosamangai</span></div></div>
+          <div class="tn"><span class="k">20</span><div><span class="nta">திருஇராமேச்சுரம்</span><span class="nen">Thiru Rameswaram</span></div></div>
+          <div class="tn big"><span class="k">21</span><div><span class="nta">திருவாவடுதுறை</span><span class="nen">Thiruvavaduthurai</span></div></div>
+          <div class="tn"><span class="k">22</span><div><span class="nta">நாகபட்டினம்</span><span class="nen">Nagapattinam</span></div></div>
+        </div>
+        <div class="tnquote">
+          <div class="q">&ldquo;ஈழத்துச் சிவனடியார்களுக்குக் கிடைத்தற்கரிய இந்த வாய்ப்பினை ஒழுங்கு செய்த இலங்கைச் சைவநெறிக் கழகத்தினரைப் போற்றுவதுடன், அவர்களின் சிவப்பணிகள் இடைவிடாது தொடர்ந்திட என்றும் தென்னாடு ஐம்பூதநாதர் திருவருள் புரிந்திடுவாராக.&rdquo;</div>
+          <div class="e">Praising the Ilankai Saivism Association, who arranged this rare opportunity for the
+            Siva devotees of Eelam &mdash; and may their Siva service continue without break.</div>
+          <div class="src">தென்னாடு &middot; புரட்டாதி 2025 &nbsp;|&nbsp; thennadu.org</div>
+        </div>
+        <div class="smfoot">Chidambaram counts twice, at the <span class="ta">கனகசபை</span> and the
+          <span class="ta">திருமூலட்டானம்</span>, and Thiruvannamalai began with the
+          <span class="ta">கிரிவலம்</span>. <b>Thiruvavaduthurai is the Adheenam whose Saiva Siddhanta
+          centres this deck showed at Nallur, Kottagala and Bandarawela</b> &mdash; the same lineage,
+          visited at its source.</div>`;
     }else if(type==="seminar" && frame && frame.sem==="yathirai"){
       ocard.innerHTML=`<div class="eyebrow">Batticaloa &amp; Ampara Districts &middot; October 2025</div>
         <h1 class="ta" style="font-size:clamp(1.5rem,2.6vw,2.05rem)">திருத்தல யாத்திரை</h1>
