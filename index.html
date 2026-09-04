@@ -201,8 +201,9 @@
   .curgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px 16px;margin-top:12px;text-align:left}
   .cur{background:var(--paper-2);border:1px solid var(--gold-lt);border-left:4px solid var(--maroon);
     border-radius:8px;padding:9px 13px}
-  .cur span{display:block;font-size:14px;font-weight:700;color:var(--ink);line-height:1.3}
-  .cur em{display:block;font-style:normal;font-size:12.5px;color:var(--maroon-lt);margin-top:3px;line-height:1.45}
+  .cur span{display:block;font-size:15.5px;font-weight:700;color:var(--maroon);line-height:1.45}
+  .cur em{display:block;font-style:normal;font-size:11.8px;font-weight:600;color:var(--ink-3);
+    margin-top:3px;line-height:1.35}
   .curgrid .cur:last-child{grid-column:1 / -1}
   .stats3{grid-template-columns:repeat(3,1fr) !important;margin-top:22px}
   .artitle{font-size:2.4rem;line-height:1.3;font-weight:700;color:var(--maroon)}
@@ -1428,13 +1429,13 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
            halls for the children of the same communities.</p>
         <div class="curhead">What the children are taught</div>
         <div class="curgrid">
-          <div class="cur"><span>Saiva observances and daily practice</span><em class="ta">சைவ அனுட்டானம்</em></div>
-          <div class="cur"><span>Saiva Siddhanta for children</span><em class="ta">சிறுவர்களுக்கான சைவ சித்தாந்தம்</em></div>
-          <div class="cur"><span>Full recitation of the Thirumurai</span><em class="ta">திருமுறை முற்றோதல்</em></div>
-          <div class="cur"><span>Pann isai devotional singing</span><em class="ta">பண்ணிசை</em></div>
-          <div class="cur"><span>The meaning of the fasts and festivals</span><em class="ta">விரதங்கள் மற்றும் பண்டிகைகளின் முக்கியத்துவங்கள்</em></div>
-          <div class="cur"><span>Temple worship</span><em class="ta">ஆலய வழிபாடு</em></div>
-          <div class="cur"><span>How to take part in temple service</span><em class="ta">ஆலயத் தொண்டுகள் செய்யும் முறை</em></div>
+          <div class="cur"><span class="ta">சைவ அனுட்டானம்</span><em>Saiva observances and daily practice</em></div>
+          <div class="cur"><span class="ta">சிறுவர்களுக்கான சைவ சித்தாந்தம்</span><em>Saiva Siddhanta for children</em></div>
+          <div class="cur"><span class="ta">திருமுறை முற்றோதல்</span><em>Full recitation of the Thirumurai</em></div>
+          <div class="cur"><span class="ta">பண்ணிசை</span><em>Pann isai devotional singing</em></div>
+          <div class="cur"><span class="ta">விரதங்கள் மற்றும் பண்டிகைகளின் முக்கியத்துவங்கள்</span><em>The meaning of the fasts and festivals</em></div>
+          <div class="cur"><span class="ta">ஆலய வழிபாடு</span><em>Temple worship</em></div>
+          <div class="cur"><span class="ta">ஆலயத் தொண்டுகள் செய்யும் முறை</span><em>How to take part in temple service</em></div>
         </div>
         <div class="stats stats3">
           <div class="stat"><span class="n">${AR.length}</span><span class="l">Araneri schools</span></div>
@@ -2130,12 +2131,9 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
            <b>five locations</b>, from Nallur in the north to Colombo.</p>
         <div class="curhead">In whose name the work is carried</div>
         <div class="curgrid">
-          <div class="cur"><span>A school principal by profession</span>
-            <em class="ta">பாடசாலை அதிபராகப் பணியாற்றியவர்</em></div>
-          <div class="cur"><span>Gave the Saiva Siddhanta classic Thiruvarutpayan a plain-language commentary</span>
-            <em class="ta">திருவருட்பயன் நூலுக்கு எளிமையான உரை செய்தருளியவர்</em></div>
-          <div class="cur"><span>Served as head of the Thirukketheeswaram temple</span>
-            <em class="ta">திருக்கேதீச்சரத் திருத்தலத்தின் தலைவராகப் பணியாற்றியவர்</em></div>
+          <div class="cur"><span class="ta">பாடசாலை அதிபராகப் பணியாற்றியவர்</span><em>A school principal by profession</em></div>
+          <div class="cur"><span class="ta">திருவருட்பயன் நூலுக்கு எளிமையான உரை செய்தருளியவர்</span><em>Gave the Saiva Siddhanta classic Thiruvarutpayan a plain-language commentary</em></div>
+          <div class="cur"><span class="ta">திருக்கேதீச்சரத் திருத்தலத்தின் தலைவராகப் பணியாற்றியவர்</span><em>Served as head of the Thirukketheeswaram temple</em></div>
         </div>
         <div class="stats stats3">
           <div class="stat"><span class="n">4</span><span class="l">Training centres</span></div>
