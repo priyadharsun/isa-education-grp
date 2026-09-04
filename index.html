@@ -296,10 +296,10 @@
   .venue .n{font-family:"Fraunces",serif;font-size:1.62rem;font-weight:600;color:var(--maroon);
     line-height:1.15;margin-top:5px}
   .venue .t{font-size:14px;color:var(--maroon-lt);font-weight:600;line-height:1.5;margin-top:4px}
-  .plcrow{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
-  .plc{background:var(--maroon);color:var(--paper-2);border-radius:8px;padding:7px 14px;
+  .vtagrow{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+  .vtag{background:var(--maroon);color:var(--paper-2);border-radius:8px;padding:7px 14px;
     font-size:13px;font-weight:700;letter-spacing:.03em}
-  .plc.alt{background:var(--paper);color:var(--maroon);border:2px solid var(--gold-lt)}
+  .vtag.alt{background:var(--paper);color:var(--maroon);border:2px solid var(--gold-lt)}
   .statrow{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
   .stt{background:#FFF7E2;border:2px solid var(--maroon);border-radius:11px;padding:11px 15px}
   .stt .n{font-family:"Fraunces",serif;font-size:1.7rem;font-weight:600;color:var(--maroon);line-height:1}
@@ -323,7 +323,7 @@
     .exhead{font-size:10.8px} .exgrid{gap:8px;margin-top:8px}
     .excard{padding:9px 13px} .excard .fl{font-size:1rem} .excard .tl{font-size:11.2px}
     .venue{padding:12px 17px} .venue .n{font-size:1.4rem} .venue .t{font-size:13px}
-    .plcrow{margin-top:10px} .plc{padding:6px 12px;font-size:12px}
+    .vtagrow{margin-top:10px} .vtag{padding:6px 12px;font-size:12px}
     .statrow{gap:9px;margin-top:10px} .stt{padding:9px 13px} .stt .n{font-size:1.45rem} .stt .s{font-size:10.4px}
     .pgrid{gap:10px;margin-top:9px} .pcard{padding:9px 13px} .pcard p{font-size:11.8px}
   }
@@ -334,7 +334,7 @@
     .excard .tl{font-size:10.2px;margin-top:3px}
     .venue{padding:10px 15px;border-left-width:7px} .venue .n{font-size:1.22rem} .venue .t{font-size:11.8px}
     .venue .l{font-size:9.5px}
-    .plcrow{margin-top:8px;gap:7px} .plc{padding:5px 10px;font-size:11px}
+    .vtagrow{margin-top:8px;gap:7px} .vtag{padding:5px 10px;font-size:11px}
     .statrow{gap:8px;margin-top:9px} .stt{padding:7px 11px} .stt .n{font-size:1.25rem}
     .stt .l{font-size:9.4px;margin-top:4px} .stt .s{display:none}
     .pchip{font-size:11px;padding:3px 9px} .pcard p{font-size:11.2px}
@@ -346,7 +346,7 @@
     .excard .fl{font-size:.78rem;line-height:1.18} .excard .tl{font-size:9.2px;margin-top:2px}
     .venue{padding:8px 12px;border-left-width:6px} .venue .n{font-size:1.02rem} .venue .t{font-size:10.4px}
     .venue .l{font-size:8.8px}
-    .plcrow{margin-top:7px;gap:6px} .plc{padding:4px 9px;font-size:10px}
+    .vtagrow{margin-top:7px;gap:6px} .vtag{padding:4px 9px;font-size:10px}
     .statrow{gap:7px;margin-top:7px} .stt{padding:6px 10px} .stt .n{font-size:1.05rem} .stt .l{font-size:8.8px}
     .pgrid{gap:8px;margin-top:7px} .pcard{padding:7px 11px} .pcard .l{font-size:8.8px}
     .pchip{font-size:10px;padding:2.5px 8px} .pcard p{font-size:10.4px;line-height:1.4}
@@ -369,7 +369,7 @@
   table.rs th,table.rs td{padding:2.3px 11px;border-bottom:1px solid var(--line);text-align:left;
     vertical-align:middle}
   table.rs th{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-    color:var(--gold);background:var(--paper-3);white-space:nowrap}
+    color:var(--gold-ink);background:var(--paper-3);white-space:nowrap}
   table.rs td.n,table.rs th.n{text-align:right;font-family:"IBM Plex Mono",monospace;
     font-variant-numeric:tabular-nums;white-space:nowrap}
   table.rs tr:last-child td{border-bottom:none}
@@ -437,7 +437,7 @@
   table.ce th,table.ce td{padding:8px 12px;border-bottom:1px solid var(--line);text-align:left;
     vertical-align:middle}
   table.ce th{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-    color:var(--gold);background:var(--paper-3);white-space:nowrap}
+    color:var(--gold-ink);background:var(--paper-3);white-space:nowrap}
   table.ce td.n,table.ce th.n{text-align:right;font-family:"IBM Plex Mono",monospace;
     font-variant-numeric:tabular-nums;white-space:nowrap}
   table.ce .sz{font-weight:700;color:var(--ink)}
@@ -489,7 +489,7 @@
   table.rt{width:100%;border-collapse:collapse;font-size:13px}
   table.rt th,table.rt td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line)}
   table.rt th{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-    color:var(--gold);background:var(--paper-3)}
+    color:var(--gold-ink);background:var(--paper-3)}
   table.rt td.num,table.rt th.num{text-align:right;font-variant-numeric:tabular-nums;
     font-family:"IBM Plex Mono",monospace;width:62px}
   table.rt td.i{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3);width:30px}
@@ -544,7 +544,7 @@
   .smprog{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:7px}
   .smproglbl{font-size:12.5px;font-weight:700;color:var(--ink);min-width:132px}
   .smcode{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:700;
-    letter-spacing:.06em;color:var(--gold);background:var(--paper-3);border:1px solid var(--gold-lt);
+    letter-spacing:.06em;color:var(--gold-ink);background:var(--paper-3);border:1px solid var(--gold-lt);
     border-radius:4px;padding:1px 5px;margin-right:6px;vertical-align:2px}
   .smfoot{margin-top:13px;font-size:12.5px;color:var(--ink-3);line-height:1.55;
     border-top:1px solid var(--line);padding-top:11px}
@@ -1462,11 +1462,11 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
               <div class="l">Where the classes are held</div>
               <div class="n">Kaluthavalai Cultural Hall</div>
               <div class="t ta">களுதாவளை கலாசார மண்டபம்</div>
-              <div class="plcrow">
-                <span class="plc">Batticaloa District</span>
-                <span class="plc">Eastern Province</span>
+              <div class="vtagrow">
+                <span class="vtag">Batticaloa District</span>
+                <span class="vtag">Eastern Province</span>
               </div>
-              <div class="plcrow"><span class="plc alt">Open to candidates across the East</span></div>
+              <div class="vtagrow"><span class="vtag alt">Open to candidates across the East</span></div>
             </div>
             <div class="statrow">
               <div class="stt"><div class="n">250<small>+</small></div><div class="l">Candidates registered</div></div>
