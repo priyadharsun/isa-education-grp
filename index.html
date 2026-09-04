@@ -1201,6 +1201,7 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
   FRAMES.push({key:"siddhanta",label:"Saiva Siddhanta",type:"siddhanta",bbox:FULL});
   FRAMES.push({key:"centres",label:"Siddhanta centres",type:"siddhantaMap",
                bbox:{x0:-215,y0:-45,x1:W+215,y1:H+25}});
+  FRAMES.push({key:"thirupani",label:"Saiva service works",type:"thirupani",bbox:FULL});
   FRAMES.push({key:"thaipusam",label:"Thaipusam festival",type:"seminar",
                sem:"thaipusam",photoKey:"__thaipusam__",bbox:FULL});
   FRAMES.push({key:"institute",label:"Kottagala institute",type:"seminar",
@@ -1298,10 +1299,10 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
 
     const isSeminar=f.type==="seminar";
     if(f.type==="title"||f.type==="challenges"||f.type==="giving"||f.type==="araneri"
-       ||f.type==="siddhanta"||isSeminar){
+       ||f.type==="siddhanta"||f.type==="thirupani"||isSeminar){
       renderOverlay(f.type,f);
       overlay.classList.toggle("wide",f.type==="challenges"||f.type==="giving"
-        ||f.type==="araneri"||f.type==="siddhanta");
+        ||f.type==="araneri"||f.type==="siddhanta"||f.type==="thirupani");
       overlay.classList.toggle("seminar",isSeminar);
       overlay.classList.remove("hidden");
     }
@@ -1318,14 +1319,10 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
 
     const isAraneriSection=f.type==="araneri"||f.type==="araneriMap";
     const isSiddhantaSection=f.type==="siddhanta"||f.type==="siddhantaMap";
-    const isThaipusam=f.sem==="thaipusam";
-    const isInstitute=f.sem==="institute";
-    document.getElementById("brand").innerHTML=isInstitute
-      ? `Ilankai Saivism Association &middot; Saiva Tamil Community Educational Institute
-         <span class="ta">சைவத்தமிழ்க் குமுகாயக் கல்விக்கூடம்</span>`
-      : isThaipusam
-      ? `Ilankai Saivism Association &middot; Saiva Perunjamaya Thaipusam Festival
-         <span class="ta">சைவப்பெருஞ்சமயத் தைப்பூசத் திருவிழா</span>`
+    const isThirupani=f.type==="thirupani"||f.sem==="thaipusam"||f.sem==="institute";
+    document.getElementById("brand").innerHTML=isThirupani
+      ? `Ilankai Saivism Association &middot; Saiva religious service works
+         <span class="ta">சைவ சமயத் திருப்பணிகள்</span>`
       : isSiddhantaSection
       ? `Ilankai Saivism Association &middot; Saiva Periyar Sivapathasundaranar Saiva Siddhanta Board
          <span class="ta">சைவசித்தாந்தப் பணிகள்</span>`
@@ -2364,6 +2361,28 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
         </div>
         <div class="smfoot">Bringing the schools together means <b>one strong teaching panel reaches every
           child</b> preparing for the examination, instead of each small school trying to run its own class.</div>`;
+    }else if(type==="thirupani"){
+      ocard.innerHTML=`<div class="eyebrow">Ilankai Saivism Association</div>
+        <div class="tamil ta" style="font-size:1.3rem;margin-top:10px">இலங்கைச் சைவநெறிக் கழகம்</div>
+        <h1 class="ta artitle">சைவ சமயத் திருப்பணிகள்</h1>
+        <p class="arlead">Beyond the classroom, the association carries <b>works of Saiva religious
+           service</b> &mdash; festivals kept with the temples and local Saiva bodies, initiation given to
+           those who seek it, and <b>permanent premises built for a community to learn in</b>. The two that
+           follow show both kinds: a festival day in the east, and a new institute in the hill country.</p>
+        <div class="curhead">The forms this service takes</div>
+        <div class="curgrid">
+          <div class="cur"><span class="ta">திருவிழாக்களும் வழிபாடும்</span>
+            <em>Festivals and worship, kept with the temple and the district's Saiva bodies</em></div>
+          <div class="cur"><span class="ta">சைவசமயத் தீக்கை</span>
+            <em>Saiva initiation, given to those who come to receive it</em></div>
+          <div class="cur"><span class="ta">நிலையான கல்வி நிலையங்கள்</span>
+            <em>Permanent premises &mdash; a library, a hall and a training centre a community can keep using</em></div>
+        </div>
+        <div class="stats stats3">
+          <div class="stat"><span class="n" style="font-size:1.35rem">Ampara &middot; Nuwara Eliya</span><span class="l">Where these two reach</span></div>
+          <div class="stat"><span class="n">14</span><span class="l">Bodies on one platform</span></div>
+          <div class="stat"><span class="n">3</span><span class="l">Units in the new institute</span></div>
+        </div>`;
     }else if(type==="siddhanta"){
       ocard.innerHTML=`<div class="eyebrow">Saiva Periyar Sivapathasundaranar Saiva Siddhanta Board</div>
         <div class="tamil ta" style="font-size:1.3rem;margin-top:10px">இலங்கைச் சைவநெறிக் கழகம்</div>
