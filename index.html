@@ -253,6 +253,48 @@
     text-transform:uppercase;color:var(--gold);margin-top:3px}
   .smgrid2{grid-template-columns:repeat(2,1fr);gap:8px 16px}
   .smmonth.subj{background:var(--gold);color:#3B1F06}
+  /* ---------- saiva siddhanta centres ---------- */
+  .ctrgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;text-align:left}
+  .ctr{background:var(--paper-2);border:2px solid var(--gold-lt);border-left:7px solid var(--maroon);
+    border-radius:12px;padding:13px 17px;box-shadow:0 8px 20px rgba(90,50,10,.13)}
+  .ctr .hd{display:flex;gap:11px;align-items:flex-start}
+  .ctr .num{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:700;color:var(--paper-2);
+    background:var(--maroon);width:22px;height:22px;flex:none;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;margin-top:2px}
+  .ctr .cn{font-family:"Fraunces",serif;font-size:1.08rem;font-weight:600;color:var(--maroon);line-height:1.22}
+  .ctr .cta{display:block;font-family:"Noto Sans Tamil","Source Sans 3",sans-serif;font-size:11.5px;
+    color:var(--ink-2);font-weight:600;line-height:1.45;margin-top:3px}
+  .cloc{margin-top:9px;padding-left:33px}
+  .cloc+.cloc{margin-top:7px}
+  .cplace{display:inline-block;background:var(--maroon);color:var(--paper-2);border-radius:7px;
+    padding:4px 11px;font-size:12px;font-weight:700;margin-bottom:5px}
+  .cvenue{font-size:12.5px;color:var(--ink);font-weight:600;line-height:1.4}
+  .cvenue .ta{display:block;font-size:11px;color:var(--maroon-lt);font-weight:600;margin-top:2px}
+  .csup{font-size:11.5px;color:var(--ink-2);line-height:1.5;margin-top:5px}
+  .csup b{color:var(--gold);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:9.5px;
+    display:block;margin-bottom:2px}
+  @media (max-width:1250px){ .ctrgrid{grid-template-columns:1fr} }
+  @media (max-height:1000px){
+    .ctrgrid{gap:11px;margin-top:11px} .ctr{padding:10px 14px}
+    .ctr .cn{font-size:1rem} .ctr .cta{font-size:10.8px}
+    .cloc{margin-top:7px;padding-left:30px} .cvenue{font-size:11.8px} .csup{font-size:10.8px}
+  }
+  @media (max-height:940px){
+    .ctrgrid{gap:9px;margin-top:9px} .ctr{padding:8px 12px;border-left-width:6px}
+    .ctr .cn{font-size:.92rem} .ctr .cta{font-size:10.2px}
+    .ctr .num{width:19px;height:19px;font-size:9.6px}
+    .cloc{margin-top:6px;padding-left:26px} .cplace{font-size:11px;padding:3px 9px}
+    .cvenue{font-size:11.2px} .cvenue .ta{font-size:10.2px} .csup{font-size:10.2px;line-height:1.45}
+  }
+  @media (max-height:850px){
+    .ctrgrid{gap:7px;margin-top:7px} .ctr{padding:6px 10px;border-left-width:5px}
+    .ctr .cn{font-size:.82rem} .ctr .cta{font-size:9.4px;margin-top:2px}
+    .ctr .num{width:17px;height:17px;font-size:9px}
+    .cloc{margin-top:5px;padding-left:22px} .cplace{font-size:10px;padding:2.5px 8px;margin-bottom:3px}
+    .cvenue{font-size:10.2px} .cvenue .ta{font-size:9.2px} .csup{font-size:9.4px;line-height:1.4}
+    .csup b{font-size:8.6px}
+  }
+
   /* ---------- national competitive exam classes ---------- */
   .exlayout{display:grid;grid-template-columns:372px 1fr 500px;gap:18px;margin-top:14px;align-items:start}
   .exhead{display:flex;align-items:center;gap:12px;font-size:11.5px;font-weight:700;letter-spacing:.14em;
@@ -993,6 +1035,9 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
   FRAMES.push({key:"araneri",label:"Araneri",type:"araneri",bbox:FULL});
   FRAMES.push({key:"araneriMap",label:"Araneri map",type:"araneriMap",
                bbox:{x0:-215,y0:-45,x1:W+215,y1:H+25}});
+  FRAMES.push({key:"siddhanta",label:"Saiva Siddhanta",type:"siddhanta",bbox:FULL});
+  FRAMES.push({key:"centres",label:"Siddhanta centres",type:"seminar",
+               sem:"centres",photoKey:null,bbox:FULL});
 
   // the Saiva religious education section opens the deck
   (function(){
@@ -1074,9 +1119,11 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
     else { panel.classList.add("hidden"); phLoad(null); }
 
     const isSeminar=f.type==="seminar";
-    if(f.type==="title"||f.type==="challenges"||f.type==="giving"||f.type==="araneri"||isSeminar){
+    if(f.type==="title"||f.type==="challenges"||f.type==="giving"||f.type==="araneri"
+       ||f.type==="siddhanta"||isSeminar){
       renderOverlay(f.type,f);
-      overlay.classList.toggle("wide",f.type==="challenges"||f.type==="giving"||f.type==="araneri");
+      overlay.classList.toggle("wide",f.type==="challenges"||f.type==="giving"
+        ||f.type==="araneri"||f.type==="siddhanta");
       overlay.classList.toggle("seminar",isSeminar);
       overlay.classList.remove("hidden");
     }
@@ -1091,7 +1138,11 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
     document.querySelectorAll(".arlabel").forEach(l=>l.classList.toggle("show",f.type==="araneriMap"));
 
     const isAraneriSection=f.type==="araneri"||f.type==="araneriMap";
-    document.getElementById("brand").innerHTML=isAraneriSection
+    const isSiddhantaSection=f.type==="siddhanta"||(f.sem==="centres");
+    document.getElementById("brand").innerHTML=isSiddhantaSection
+      ? `Ilankai Saivism Association &middot; Saiva Periyar Sivapathasundaranar Saiva Siddhanta Board
+         <span class="ta">சைவசித்தாந்தப் பணிகள்</span>`
+      : isAraneriSection
       ? `Ilankai Saivism Association &middot; Arunasalathesigamaniyaar Araneri Education Board
          <span class="ta">சைவசமய அறநெறிப் பாடசாலைகள்</span>`
       : `Ilankai Saivism Association &middot; Children's Education Development Programme
@@ -1280,6 +1331,68 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
           <div class="stat"><span class="n">${ARD.length}</span><span class="l">Districts</span></div>
           <div class="stat"><span class="n" style="font-size:1.3rem">Sundays</span><span class="l">When classes are held</span></div>
         </div>`;
+    }else if(type==="seminar" && frame && frame.sem==="centres"){
+      ocard.innerHTML=`<div class="eyebrow">Saiva Siddhanta work &middot; Where it is taught</div>
+        <h1>Four training centres, five locations</h1>
+        <div class="smsub ta">சைவசித்தாந்தப் பயிற்சி மையங்கள்</div>
+        <div class="ctrgrid">
+          <div class="ctr">
+            <div class="hd"><span class="num">01</span>
+              <span><span class="cn">Thiruvavaduthurai Adheenam Jaffna Saiva Siddhanta In-Person Training Centre</span>
+              <span class="cta">திருவாவடுதுறை ஆதீனத்து யாழ்ப்பாணச் சைவசித்தாந்த நேர்முகப் பயிற்சி மையம்</span></span></div>
+            <div class="cloc">
+              <span class="cplace">Nallur, Jaffna</span>
+              <div class="cvenue">All Ceylon Hindu Congress Jaffna office building
+                <span class="ta">அகில இலங்கை இந்து மாமன்றத்தின் யாழ்ப்பாணப் பணிமனைக் கட்டடம்</span></div>
+              <div class="csup"><b>Principal sponsor</b>All Ceylon Hindu Congress</div>
+            </div>
+          </div>
+          <div class="ctr">
+            <div class="hd"><span class="num">02</span>
+              <span><span class="cn">Thiruvavaduthurai Adheenam Hill Country Saiva Siddhanta Training Centre</span>
+              <span class="cta">திருவாவடுதுறை ஆதீனத்து மலையக சைவசித்தாந்தப் பயிற்சி மையம்</span></span></div>
+            <div class="cloc">
+              <span class="cplace">Kotagala</span>
+              <div class="csup"><b>Principal sponsor</b>Ulagelaam Sivamayam Spiritual Peedam
+                <span class="ta">உலகெலாம் சிவமயம் ஆன்மீக பீடம்</span></div>
+            </div>
+            <div class="cloc">
+              <span class="cplace">Bandarawela</span>
+              <div class="csup"><b>Principal sponsor</b>Sivasubramaniar Temple, Bandarawela
+                <span class="ta">சிவசுப்பிரமணியர் திருக்கோயில்</span></div>
+            </div>
+          </div>
+          <div class="ctr">
+            <div class="hd"><span class="num">03</span>
+              <span><span class="cn">Mannar centre</span>
+              <span class="cta">மன்னார்</span></span></div>
+            <div class="cloc">
+              <span class="cplace">Mannar</span>
+              <div class="cvenue">Hall of the Thirukketheeswaram Ammaiyappar Illam
+                <span class="ta">திருக்கேதீச்சரம் அம்மையப்பர் இல்லத்தின் மண்டபம்</span></div>
+              <div class="csup"><b>Chief organiser</b>Madhu Region Saiva Peravai
+                <span class="ta">மடுப்பிரதேச சைவப்பேரவை</span></div>
+              <div class="csup"><b>With the support of</b>Ammaiyappar Illam &middot; Eelathu Sivanadiyar
+                Thirukkoottam Thiruvasagamadam &middot; Department of Hindu Religious and Cultural Affairs
+                &middot; Mrs Abirami Kailasapillai</div>
+            </div>
+          </div>
+          <div class="ctr">
+            <div class="hd"><span class="num">04</span>
+              <span><span class="cn">Colombo centre</span>
+              <span class="cta">கொழும்பு</span></span></div>
+            <div class="cloc">
+              <span class="cplace">Bambalapitiya, Colombo</span>
+              <div class="cvenue">All Ceylon Hindu Congress premises, Asoka Gardens
+                <span class="ta">அகில இலங்கை இந்து மாமன்ற பம்பலப்பிட்டி அசோக்கா கார்டின் இல்லம்</span></div>
+              <div class="csup"><b>Principal sponsor</b>All Ceylon Hindu Congress</div>
+            </div>
+          </div>
+        </div>
+        <div class="smfoot">Centres 1 and 2 are run under the <b>Thiruvavaduthurai Adheenam</b>. Every
+          location is carried by a local sponsor &mdash; a congress branch, a temple, a spiritual centre
+          or a family &mdash; which is what lets the teaching reach Jaffna, the hill country, Mannar and
+          Colombo at once.</div>`;
     }else if(type==="seminar" && frame && frame.sem==="exams"){
       ocard.innerHTML=`<div class="eyebrow">Batticaloa District &middot; Running since September 2025</div>
         <h1>Guidance classes for the national competitive examinations</h1>
@@ -1959,6 +2072,28 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
         </div>
         <div class="smfoot">Bringing the schools together means <b>one strong teaching panel reaches every
           child</b> preparing for the examination, instead of each small school trying to run its own class.</div>`;
+    }else if(type==="siddhanta"){
+      ocard.innerHTML=`<div class="eyebrow">Saiva Periyar Sivapathasundaranar Saiva Siddhanta Board</div>
+        <div class="tamil ta" style="font-size:1.3rem;margin-top:10px">இலங்கைச் சைவநெறிக் கழகம்</div>
+        <h1 class="ta artitle">சைவசித்தாந்தப் பணிகள்</h1>
+        <p class="arlead">The association's <b>Saiva Siddhanta work</b> is carried on in the name of
+           <b>Saiva Periyar Sivapathasundaranar</b>, and is taught in association with the
+           <b>Thiruvavaduthurai Adheenam</b>. It runs today as <b>four training centres</b> at
+           <b>five locations</b>, from Nallur in the north to Colombo.</p>
+        <div class="curhead">In whose name the work is carried</div>
+        <div class="curgrid">
+          <div class="cur"><span>A school principal by profession</span>
+            <em class="ta">பாடசாலை அதிபராகப் பணியாற்றியவர்</em></div>
+          <div class="cur"><span>Gave the Saiva Siddhanta classic Thiruvarutpayan a plain-language commentary</span>
+            <em class="ta">திருவருட்பயன் நூலுக்கு எளிமையான உரை செய்தருளியவர்</em></div>
+          <div class="cur"><span>Served as head of the Thirukketheeswaram temple</span>
+            <em class="ta">திருக்கேதீச்சரத் திருத்தலத்தின் தலைவராகப் பணியாற்றியவர்</em></div>
+        </div>
+        <div class="stats stats3">
+          <div class="stat"><span class="n">4</span><span class="l">Training centres</span></div>
+          <div class="stat"><span class="n">5</span><span class="l">Locations</span></div>
+          <div class="stat"><span class="n" style="font-size:1.25rem">Nallur &middot; Kotagala &middot; Bandarawela &middot; Mannar &middot; Colombo</span><span class="l">Where they meet</span></div>
+        </div>`;
     }else if(type==="giving"){
       ocard.innerHTML=`<div class="eyebrow">With gratitude</div>
         <h1>Our Monthly Giving Circle</h1>
