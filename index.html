@@ -254,24 +254,32 @@
   .smgrid2{grid-template-columns:repeat(2,1fr);gap:8px 16px}
   .smmonth.subj{background:var(--gold);color:#3B1F06}
   /* ---------- national competitive exam classes ---------- */
-  .fxlist{display:grid;gap:7px;margin-top:12px}
-  .fx{display:flex;align-items:baseline;gap:12px;background:var(--paper-2);border:1px solid var(--gold-lt);
-    border-left:5px solid var(--maroon);border-radius:9px;padding:8px 13px}
-  .fx .l{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);
-    width:112px;flex:none}
-  .fx .v{font-size:14px;font-weight:700;color:var(--ink);line-height:1.35}
-  .fx .v small{display:block;font-size:11.5px;font-weight:600;color:var(--maroon-lt);margin-top:1px}
-  .fx.hero{background:#FFF7E2;border-color:var(--maroon);border-left-width:7px}
-  .fx.hero .v{font-family:"Fraunces",serif;font-size:1.5rem;font-weight:600;color:var(--maroon);line-height:1}
-  .exhead{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--gold);margin-top:15px}
-  .exgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:9px;text-align:left}
-  .excard{background:var(--paper-2);border:2px solid var(--gold-lt);border-top:5px solid var(--maroon);
-    border-radius:11px;padding:10px 13px;box-shadow:0 6px 16px rgba(90,50,10,.11)}
-  .excard .fl{font-family:"Fraunces",serif;font-size:1.06rem;font-weight:600;color:var(--maroon);
-    line-height:1.25}
-  .excard .tl{font-size:11.5px;color:var(--ink-2);font-weight:600;line-height:1.4;margin-top:5px}
-  .exnote{font-size:11px;color:var(--ink-3);font-style:italic;margin-top:8px}
+  .exhead{display:flex;align-items:center;gap:14px;font-size:12.5px;font-weight:700;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--gold);margin-top:14px}
+  .exhead::after{content:"";flex:1;height:2px;background:var(--gold-lt)}
+  .exgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:10px;text-align:left}
+  .excard{background:var(--maroon);border:2px solid var(--maroon-dk);border-top:6px solid var(--gold);
+    border-radius:12px;padding:14px 16px;box-shadow:0 10px 24px rgba(90,50,10,.24);
+    display:flex;flex-direction:column;justify-content:center;min-height:96px}
+  .excard .fl{font-family:"Fraunces",serif;font-size:1.16rem;font-weight:600;color:#FFFBEE;line-height:1.24}
+  .excard .tl{font-size:12.5px;color:var(--gold-lt);font-weight:600;line-height:1.4;margin-top:6px}
+  .venue{background:var(--paper-2);border:2px solid var(--maroon);border-left-width:9px;border-radius:13px;
+    padding:15px 20px;box-shadow:0 10px 26px rgba(90,50,10,.16)}
+  .venue .l{font-size:10.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+  .venue .n{font-family:"Fraunces",serif;font-size:1.62rem;font-weight:600;color:var(--maroon);
+    line-height:1.15;margin-top:5px}
+  .venue .t{font-size:14px;color:var(--maroon-lt);font-weight:600;line-height:1.5;margin-top:4px}
+  .plcrow{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+  .plc{background:var(--maroon);color:var(--paper-2);border-radius:8px;padding:7px 14px;
+    font-size:13px;font-weight:700;letter-spacing:.03em}
+  .plc.alt{background:var(--paper);color:var(--maroon);border:2px solid var(--gold-lt)}
+  .statrow{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
+  .stt{background:#FFF7E2;border:2px solid var(--maroon);border-radius:11px;padding:11px 15px}
+  .stt .n{font-family:"Fraunces",serif;font-size:1.7rem;font-weight:600;color:var(--maroon);line-height:1}
+  .stt .n small{font-size:.5em;color:var(--ink-3);margin-left:4px}
+  .stt .l{font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--gold);margin-top:6px}
+  .stt .s{font-size:11px;color:var(--ink-2);margin-top:2px;line-height:1.35}
   .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;text-align:left}
   .pcard{background:var(--paper-2);border:2px solid var(--gold-lt);border-left:6px solid var(--maroon);
     border-radius:11px;padding:11px 15px}
@@ -279,28 +287,36 @@
   .pchips{display:flex;gap:7px;flex-wrap:wrap;margin-top:7px}
   .pchip{background:var(--paper);border:1px solid var(--gold-lt);border-radius:999px;padding:4px 11px;
     font-size:12px;font-weight:700;color:var(--ink)}
+  .pchip.hot{background:var(--maroon);color:var(--paper-2);border-color:var(--maroon)}
   .pcard p{font-size:12.5px;line-height:1.5;color:var(--ink-2);margin:7px 0 0}
   .pcard p b{color:var(--maroon-lt)}
   @media (max-width:1250px){ .exgrid{grid-template-columns:repeat(2,1fr)} .pgrid{grid-template-columns:1fr} }
   @media (max-height:1000px){
-    .fxlist{gap:5px;margin-top:9px} .fx{padding:6px 11px} .fx .v{font-size:13px}
-    .fx.hero .v{font-size:1.3rem} .fx .v small{font-size:10.8px}
-    .exhead{margin-top:11px} .exgrid{gap:9px;margin-top:7px} .excard{padding:8px 11px}
-    .excard .fl{font-size:.95rem} .excard .tl{font-size:10.8px}
+    .exhead{margin-top:11px;font-size:11.5px} .exgrid{gap:11px;margin-top:8px}
+    .excard{padding:11px 13px;min-height:84px} .excard .fl{font-size:1.03rem} .excard .tl{font-size:11.6px}
+    .venue{padding:12px 17px} .venue .n{font-size:1.4rem} .venue .t{font-size:13px}
+    .plcrow{margin-top:10px} .plc{padding:6px 12px;font-size:12px}
+    .statrow{gap:9px;margin-top:10px} .stt{padding:9px 13px} .stt .n{font-size:1.45rem} .stt .s{font-size:10.4px}
     .pgrid{gap:10px;margin-top:9px} .pcard{padding:9px 13px} .pcard p{font-size:11.8px}
   }
   @media (max-height:940px){
-    .fx{padding:5px 10px} .fx .v{font-size:12.2px} .fx.hero .v{font-size:1.15rem}
-    .fx .l{font-size:9.2px;width:100px}
-    .excard{padding:7px 10px} .excard .fl{font-size:.87rem}
-    .excard .tl{font-size:10.2px;margin-top:4px}
+    .exhead{margin-top:9px;font-size:10.6px} .exgrid{gap:9px;margin-top:7px}
+    .excard{padding:9px 12px;min-height:74px} .excard .fl{font-size:.94rem} .excard .tl{font-size:10.8px;margin-top:4px}
+    .venue{padding:10px 15px;border-left-width:7px} .venue .n{font-size:1.22rem} .venue .t{font-size:11.8px}
+    .venue .l{font-size:9.5px}
+    .plcrow{margin-top:8px;gap:7px} .plc{padding:5px 10px;font-size:11px}
+    .statrow{gap:8px;margin-top:9px} .stt{padding:7px 11px} .stt .n{font-size:1.25rem}
+    .stt .l{font-size:9.4px;margin-top:4px} .stt .s{display:none}
     .pchip{font-size:11px;padding:3px 9px} .pcard p{font-size:11.2px}
   }
   @media (max-height:850px){
-    .fxlist{gap:4px;margin-top:7px} .fx{padding:4px 9px} .fx .v{font-size:11px}
-    .fx.hero .v{font-size:1rem} .fx .l{font-size:8.6px;width:88px} .fx .v small{font-size:9.6px}
-    .exhead{margin-top:8px;font-size:9.6px} .exgrid{gap:7px;margin-top:6px} .excard{padding:6px 9px}
-    .excard .fl{font-size:.78rem} .excard .tl{font-size:9.4px;margin-top:3px}
+    .exhead{margin-top:7px;font-size:9.6px;gap:10px} .exgrid{gap:7px;margin-top:6px}
+    .excard{padding:7px 10px;min-height:60px;border-top-width:4px}
+    .excard .fl{font-size:.82rem;line-height:1.2} .excard .tl{font-size:9.6px;margin-top:3px}
+    .venue{padding:8px 12px;border-left-width:6px} .venue .n{font-size:1.02rem} .venue .t{font-size:10.4px}
+    .venue .l{font-size:8.8px}
+    .plcrow{margin-top:7px;gap:6px} .plc{padding:4px 9px;font-size:10px}
+    .statrow{gap:7px;margin-top:7px} .stt{padding:6px 10px} .stt .n{font-size:1.05rem} .stt .l{font-size:8.8px}
     .pgrid{gap:8px;margin-top:7px} .pcard{padding:7px 11px} .pcard .l{font-size:8.8px}
     .pchip{font-size:10px;padding:2.5px 8px} .pcard p{font-size:10.4px;line-height:1.4}
   }
@@ -1263,17 +1279,30 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
       ocard.innerHTML=`<div class="eyebrow">Batticaloa District &middot; Running since September 2025</div>
         <h1>Guidance classes for the national competitive examinations</h1>
         <div class="smsub ta">நாடளாவிய போட்டிப் பரீட்சைகளுக்கான தொடர் வழிகாட்டல் வகுப்புக்கள்</div>
+        <div class="exhead">Examinations the classes prepare for &mdash; Grade III open competitive</div>
+        <div class="exgrid">
+          <div class="excard"><div class="fl">Sri Lanka Administrative Service</div><div class="tl ta">இலங்கை நிருவாக சேவை</div></div>
+          <div class="excard"><div class="fl">Sri Lanka Accountants' Service</div><div class="tl ta">கணக்காளர் சேவை</div></div>
+          <div class="excard"><div class="fl">Sri Lanka Planning Service</div><div class="tl ta">திட்டமிடல் சேவை</div></div>
+          <div class="excard"><div class="fl">Sri Lanka Education Administrative Service</div><div class="tl ta">கல்வி நிருவாக சேவை</div></div>
+        </div>
         <div class="smtop">
           <div>
-            <div class="fxlist">
-              <div class="fx hero"><span class="l">Registered</span>
-                <span class="v">250+ candidates</span></div>
-              <div class="fx"><span class="l">Running since</span>
-                <span class="v">September 2025 &mdash; a full year<small>First session 6 September 2025, 9.00 am</small></span></div>
-              <div class="fx"><span class="l">Held at</span>
-                <span class="v">Kaluthavalai Cultural Hall<small class="ta">களுதாவளை கலாசார மண்டபம்</small></span></div>
-              <div class="fx"><span class="l">Centred on</span>
-                <span class="v">Batticaloa district<small>Open to candidates across the East</small></span></div>
+            <div class="venue">
+              <div class="l">Where the classes are held</div>
+              <div class="n">Kaluthavalai Cultural Hall</div>
+              <div class="t ta">களுதாவளை கலாசார மண்டபம்</div>
+              <div class="plcrow">
+                <span class="plc">Batticaloa District</span>
+                <span class="plc">Eastern Province</span>
+                <span class="plc alt">Open to candidates across the East</span>
+              </div>
+            </div>
+            <div class="statrow">
+              <div class="stt"><div class="n">250<small>+</small></div><div class="l">Candidates registered</div>
+                <div class="s">Places filled from across the district.</div></div>
+              <div class="stt"><div class="n">1<small> year</small></div><div class="l">Running since Sept 2025</div>
+                <div class="s">First session 6 September 2025.</div></div>
             </div>
           </div>
           <div class="smshow" id="smShow">
@@ -1288,13 +1317,6 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
             <div class="ph-dots" id="smDots"></div>
           </div>
         </div>
-        <div class="exhead">Examinations the classes prepare for &mdash; Grade III open competitive</div>
-        <div class="exgrid">
-          <div class="excard"><div class="fl">Sri Lanka Administrative Service</div><div class="tl ta">இலங்கை நிருவாக சேவை</div></div>
-          <div class="excard"><div class="fl">Sri Lanka Accountants' Service</div><div class="tl ta">கணக்காளர் சேவை</div></div>
-          <div class="excard"><div class="fl">Sri Lanka Planning Service</div><div class="tl ta">திட்டமிடல் சேவை</div></div>
-          <div class="excard"><div class="fl">Sri Lanka Education Administrative Service</div><div class="tl ta">கல்வி நிருவாக சேவை</div></div>
-        </div>
         <div class="pgrid">
           <div class="pcard">
             <div class="l">Organised with</div>
@@ -1308,8 +1330,8 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
           <div class="pcard">
             <div class="l">Where it goes next</div>
             <div class="pchips">
-              <span class="pchip">Jaffna</span>
-              <span class="pchip">Kotagala</span>
+              <span class="pchip hot">Jaffna</span>
+              <span class="pchip hot">Kotagala</span>
             </div>
             <p>Classes are due to begin next in <b>Jaffna</b> and <b>Kotagala</b> &mdash; taking the same
               coaching north and into the hill country.</p>
