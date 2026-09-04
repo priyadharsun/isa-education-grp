@@ -195,6 +195,73 @@
   .arow .nmta{font-size:15px;font-weight:700;line-height:1.45;color:var(--ink)}
   .arow .nmen{font-size:12px;color:var(--ink-3);margin-top:4px;line-height:1.4}
   .arow .plc{font-size:12.5px;color:var(--ink-2);margin-top:4px;line-height:1.4;font-weight:600}
+  /* centred section intros: reserve the top bar and the nav bar, and scale with height */
+  .overlay.wide{padding:56px 44px 92px}
+  @media (max-height:1000px){
+    .overlay.wide{padding:48px 40px 86px}
+    .overlay.wide .ocard .tamil{font-size:1.15rem;margin-top:10px}
+    .overlay.wide .ocard h1.ta{font-size:2.05rem;margin-top:10px}
+    .overlay.wide .artitle{font-size:2.05rem}
+    .overlay.wide .arlead{font-size:.98rem;line-height:1.55;margin-top:13px}
+    .overlay.wide .curhead{margin-top:15px}
+    .overlay.wide .curgrid{gap:7px 13px;margin-top:9px}
+    .overlay.wide .cur{padding:7px 11px}
+    .overlay.wide .cur span{font-size:14px;line-height:1.4}
+    .overlay.wide .cur em{font-size:11px;margin-top:2px}
+    .overlay.wide .stats{margin-top:20px} .overlay.wide .stat{padding:13px 14px}
+    .overlay.wide .stat .n{font-size:1.9rem} .overlay.wide .stat .l{font-size:12px}
+  }
+  @media (max-height:940px){
+    .overlay.wide{padding:42px 34px 80px}
+    .overlay.wide .ocard .eyebrow{font-size:12px}
+    .overlay.wide .ocard .tamil{font-size:1rem;margin-top:7px}
+    .overlay.wide .ocard h1.ta{font-size:1.72rem;margin-top:8px}
+    .overlay.wide .artitle{font-size:1.72rem}
+    .overlay.wide .arlead{font-size:.88rem;line-height:1.5;margin-top:10px}
+    .overlay.wide .curhead{margin-top:11px;font-size:11px}
+    .overlay.wide .curgrid{gap:5px 11px;margin-top:7px}
+    .overlay.wide .cur{padding:5px 10px;border-left-width:3px}
+    .overlay.wide .cur span{font-size:12.4px;line-height:1.35}
+    .overlay.wide .cur em{font-size:10px}
+    .overlay.wide .stats{margin-top:14px} .overlay.wide .stat{padding:9px 11px}
+    .overlay.wide .stat .n{font-size:1.5rem} .overlay.wide .stat .l{font-size:10.6px}
+  }
+  @media (max-height:850px){
+    .overlay.wide{padding:36px 28px 74px}
+    .overlay.wide .ocard .eyebrow{font-size:10.5px;letter-spacing:.12em}
+    .overlay.wide .ocard .eyebrow::before,.overlay.wide .ocard .eyebrow::after{width:22px}
+    .overlay.wide .ocard .tamil{font-size:.88rem;margin-top:5px}
+    .overlay.wide .ocard h1.ta{font-size:1.42rem;margin-top:6px}
+    .overlay.wide .artitle{font-size:1.42rem}
+    .overlay.wide .arlead{font-size:.79rem;line-height:1.45;margin-top:8px}
+    .overlay.wide .curhead{margin-top:9px;font-size:9.8px}
+    .overlay.wide .curgrid{gap:4px 9px;margin-top:6px}
+    .overlay.wide .cur{padding:4px 8px}
+    .overlay.wide .cur span{font-size:10.8px;line-height:1.3}
+    .overlay.wide .cur em{font-size:9.2px;margin-top:1px}
+    .overlay.wide .stats{margin-top:10px} .overlay.wide .stat{padding:7px 9px}
+    .overlay.wide .stat .n{font-size:1.2rem} .overlay.wide .stat .l{font-size:9.4px}
+  }
+  .bio{background:var(--paper-2);border:2px solid var(--gold-lt);border-left:7px solid var(--maroon);
+    border-radius:12px;padding:13px 20px;margin-top:18px;text-align:left;
+    box-shadow:0 8px 20px rgba(90,50,10,.12)}
+  .bio .bl{font-family:"Fraunces",serif;font-size:1.12rem;font-weight:600;color:var(--maroon);line-height:1.25}
+  .bio .bl span{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;color:var(--gold-ink);
+    margin-left:9px;letter-spacing:.04em}
+  .bio p{font-family:"Noto Sans Tamil","Source Sans 3",sans-serif;font-size:14px;font-weight:600;
+    line-height:1.75;color:var(--ink-2);margin:7px 0 0;max-width:none;text-align:left}
+  @media (max-height:1000px){
+    .bio{padding:11px 17px;margin-top:14px} .bio .bl{font-size:1.03rem} .bio p{font-size:13px;line-height:1.7}
+  }
+  @media (max-height:940px){
+    .bio{padding:9px 15px;margin-top:11px;border-left-width:6px}
+    .bio .bl{font-size:.95rem} .bio p{font-size:12px;line-height:1.65;margin-top:5px}
+  }
+  @media (max-height:850px){
+    .bio{padding:7px 12px;margin-top:9px;border-left-width:5px}
+    .bio .bl{font-size:.85rem} .bio .bl span{font-size:10.5px}
+    .bio p{font-size:10.6px;line-height:1.6;margin-top:4px}
+  }
   .arlead{font-size:1.05rem;line-height:1.6;color:var(--ink-2);margin:16px auto 0;max-width:66ch}
   .curhead{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
     color:var(--gold);margin-top:22px}
@@ -1538,6 +1605,10 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
         <p class="arlead">Alongside the education programme, the association runs
            <b>Saiva religious education schools</b> — <b>Sunday classes</b> held at temples and school
            halls for the children of the same communities.</p>
+        <div class="bio">
+          <div class="bl">அருணாசல தேசிகர் <span>1888 &ndash; 1969</span></div>
+          <p class="ta">அருணாசல தேசிகர் (1888 - 1969) இலங்கையின் கிழக்கிலங்கையில் உள்ள மட்டக்களப்பில் பிறந்து, சைவ சித்தாந்த மற்றும் இந்து சமய வளர்ச்சியில் பெரும் பங்கு வகித்த ஓர் அறிஞர் மற்றும் கல்வியாளர் ஆவார். மட்டக்களப்பில் சைவசமயம் சார்ந்த சுதேச இயக்கங்களில் இணைந்து, அக்காலகட்டத்தில் தீவிரமாக நடைபெற்ற மதமாற்ற நடவடிக்கைகளை எதிர்த்து, நலிவுற்றிருந்த இந்து சமயத்தை மீட்டெடுக்கப் பாடுபட்டார்.</p>
+        </div>
         <div class="curhead">What the children are taught</div>
         <div class="curgrid">
           <div class="cur"><span class="ta">சைவ அனுட்டானம்</span><em>Saiva observances and daily practice</em></div>
