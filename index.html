@@ -876,6 +876,12 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
   FRAMES.push({key:"araneriMap",label:"Araneri map",type:"araneriMap",
                bbox:{x0:-215,y0:-45,x1:W+215,y1:H+25}});
 
+  // the Saiva religious education section opens the deck
+  (function(){
+    const i=FRAMES.findIndex(f=>f.key==="araneri");
+    if(i>0) FRAMES.unshift(...FRAMES.splice(i,2));
+  })();
+
   let cur=0, scale=1;
 
   function avail(type,hasPhotos){
