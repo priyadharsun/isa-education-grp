@@ -238,6 +238,12 @@
     .overlay.wide .cur{padding:7px 11px}
     .overlay.wide .cur span{font-size:14px;line-height:1.4}
     .overlay.wide .cur em{font-size:11px;margin-top:2px}
+    .overlay.wide .isahead{margin-top:14px}
+    .overlay.wide .isagrid{gap:8px 12px;margin-top:9px}
+    .overlay.wide .isacard{padding:10px 12px 11px}
+    .overlay.wide .isata{font-size:13.4px;line-height:1.45}
+    .overlay.wide .isaen{font-size:10.7px}
+    .overlay.wide .isarole{font-size:11.4px;margin-top:auto;padding-top:6px}
     .overlay.wide .stats{margin-top:20px} .overlay.wide .stat{padding:13px 14px}
     .overlay.wide .stat .n{font-size:1.9rem} .overlay.wide .stat .l{font-size:12px}
   }
@@ -253,6 +259,13 @@
     .overlay.wide .cur{padding:5px 10px;border-left-width:3px}
     .overlay.wide .cur span{font-size:12.4px;line-height:1.35}
     .overlay.wide .cur em{font-size:10px}
+    .overlay.wide .isahead{margin-top:11px;font-size:11px}
+    .overlay.wide .isagrid{gap:6px 10px;margin-top:7px}
+    .overlay.wide .isacard{padding:8px 10px 9px;border-top-width:3px}
+    .overlay.wide .isata{font-size:12px;line-height:1.4}
+    .overlay.wide .isaen{font-size:9.8px;margin-top:3px}
+    .overlay.wide .isarole{font-size:10.4px;margin-top:auto;padding-top:5px}
+    .overlay.wide .isan{font-size:10px}
     .overlay.wide .stats{margin-top:14px} .overlay.wide .stat{padding:9px 11px}
     .overlay.wide .stat .n{font-size:1.5rem} .overlay.wide .stat .l{font-size:10.6px}
   }
@@ -269,6 +282,14 @@
     .overlay.wide .cur{padding:4px 8px}
     .overlay.wide .cur span{font-size:10.8px;line-height:1.3}
     .overlay.wide .cur em{font-size:9.2px;margin-top:1px}
+    .overlay.wide .isahead{margin-top:12px;font-size:10.6px}
+    .overlay.wide .isagrid{gap:8px 11px;margin-top:8px}
+    .overlay.wide .isagrid.g2{max-width:74%}
+    .overlay.wide .isacard{padding:9px 11px 10px}
+    .overlay.wide .isata{font-size:12.4px;line-height:1.42}
+    .overlay.wide .isaen{font-size:10.2px;margin-top:3px}
+    .overlay.wide .isarole{font-size:11px;margin-top:auto;padding-top:6px;line-height:1.4}
+    .overlay.wide .isan{font-size:9.8px}
     .overlay.wide .stats{margin-top:10px} .overlay.wide .stat{padding:7px 9px}
     .overlay.wide .stat .n{font-size:1.2rem} .overlay.wide .stat .l{font-size:9.4px}
   }
@@ -305,6 +326,21 @@
   .stats3{grid-template-columns:repeat(3,1fr) !important;margin-top:22px}
   .artitle{font-size:2.4rem;line-height:1.3;font-weight:700;color:var(--maroon)}
   .arsub{font-size:1.05rem;color:var(--ink-2);margin-top:14px;line-height:1.6;max-width:60ch}
+  /* association intro: the five committees */
+  .isahead{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold);margin-top:20px}
+  .isagrid{display:grid;gap:10px 14px;margin-top:11px;text-align:left}
+  .isagrid.g3{grid-template-columns:repeat(3,1fr)}
+  .isagrid.g2{grid-template-columns:repeat(2,1fr);max-width:78%;margin-left:auto;margin-right:auto}
+  .isacard{background:var(--paper-2);border:1px solid var(--gold-lt);border-top:4px solid var(--maroon);
+    border-radius:10px;padding:12px 14px 13px;position:relative;display:flex;flex-direction:column}
+  .isan{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;color:var(--gold-ink);
+    letter-spacing:.08em}
+  .isata{display:block;font-family:"Noto Sans Tamil","Source Sans 3",sans-serif;font-size:14.5px;
+    font-weight:700;color:var(--maroon);line-height:1.5;margin-top:3px}
+  .isaen{display:block;font-size:11.4px;font-weight:600;color:var(--ink-3);line-height:1.35;margin-top:4px}
+  .isarole{display:block;font-size:12.2px;font-weight:500;color:var(--ink-2);line-height:1.45;
+    margin-top:auto;padding-top:7px;border-top:1px dashed var(--gold-lt)}
   .gvlead{font-size:1.12rem;line-height:1.6;color:var(--ink-2);margin:18px auto 0;max-width:64ch}
   .gvgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;text-align:left}
   .gvcard{background:var(--paper-2);border:2px solid var(--gold-lt);border-radius:12px;padding:20px 22px;
@@ -1387,6 +1423,7 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
                sem:"yathirai",photoKey:"__yathirai__",bbox:FULL});
   FRAMES.push({key:"tnyathirai",label:"Tamil Nadu pilgrimage",type:"seminar",
                sem:"tnyathirai",photoKey:null,bbox:FULL});
+  FRAMES.push({key:"isa",label:"Ilankai Saivism Association",type:"isa",bbox:FULL});
 
   // the Saiva religious education section opens the deck
   (function(){
@@ -1404,6 +1441,12 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
   (function(){
     const i=FRAMES.findIndex(f=>f.key==="closing");
     if(i>19) FRAMES.splice(19,0,FRAMES.splice(i,1)[0]);
+  })();
+
+  // the association as a whole introduces the deck
+  (function(){
+    const i=FRAMES.findIndex(f=>f.key==="isa");
+    if(i>0) FRAMES.unshift(FRAMES.splice(i,1)[0]);
   })();
 
   let cur=0, scale=1;
@@ -1486,10 +1529,10 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
 
     const isSeminar=f.type==="seminar";
     if(f.type==="title"||f.type==="challenges"||f.type==="giving"||f.type==="araneri"
-       ||f.type==="siddhanta"||f.type==="thirupani"||isSeminar){
+       ||f.type==="siddhanta"||f.type==="thirupani"||f.type==="isa"||isSeminar){
       renderOverlay(f.type,f);
       overlay.classList.toggle("wide",f.type==="challenges"||f.type==="giving"
-        ||f.type==="araneri"||f.type==="siddhanta"||f.type==="thirupani");
+        ||f.type==="araneri"||f.type==="siddhanta"||f.type==="thirupani"||f.type==="isa");
       overlay.classList.toggle("seminar",isSeminar);
       overlay.classList.toggle("pshow",f.photoShape==="portrait");
       overlay.classList.toggle("tnmap",f.sem==="tnyathirai");
@@ -1512,7 +1555,11 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
     const isThirupani=f.type==="thirupani"||f.sem==="thaipusam"
                        ||f.sem==="panthal"||f.sem==="institute";
     const isYathirai=f.sem==="yathirai";
-    document.getElementById("brand").innerHTML=isTn
+    const isIsa=f.type==="isa";
+    document.getElementById("brand").innerHTML=isIsa
+      ? `Ilankai Saivism Association
+         <span class="ta">இலங்கைச் சைவநெறிக் கழகம்</span>`
+      : isTn
       ? `Ilankai Saivism Association &middot; Tamil Nadu temple pilgrimage
          <span class="ta">தமிழ்நாடு திருத்தல யாத்திரை</span>`
       : isYathirai
@@ -2697,6 +2744,60 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
         </div>
         <div class="smfoot">Bringing the schools together means <b>one strong teaching panel reaches every
           child</b> preparing for the examination, instead of each small school trying to run its own class.</div>`;
+    }else if(type==="isa"){
+      ocard.innerHTML=`<div class="eyebrow">The association</div>
+        <h1 class="ta artitle">இலங்கைச் சைவநெறிக் கழகம்</h1>
+        <div class="tamil" style="font-size:1.12rem;margin-top:8px;letter-spacing:.02em">Ilankai Saivism Association</div>
+        <p class="arlead">A Saiva body working across Sri Lanka to keep <b>Saiva learning and Saiva
+           practice alive among children and families</b> &mdash; religious-ethics schools, weekend
+           classes in the schools that have no teachers, Siddhanta training, festivals kept with the
+           temples, and help when disaster comes. The work is carried by <b>five committees</b>,
+           three of them named for Saiva elders who gave their lives to it.</p>
+        <div class="isahead">Boards that carry the work</div>
+        <div class="isagrid g3">
+          <div class="isacard">
+            <span class="isan">01</span>
+            <span class="isata">சைவப் பெரியார் அருணாசலதேசிகமணியார் அறநெறிக் கல்விச் செயற்குழு</span>
+            <span class="isaen">Saiva Periyar Arunasalathesigamaniyaar Araneri Education Board</span>
+            <span class="isarole">Runs the Saiva religious-ethics schools and the temple pilgrimages that go with them.</span>
+          </div>
+          <div class="isacard">
+            <span class="isan">02</span>
+            <span class="isata">சைவப் பெரியார் சூரன் பெருமானார் கல்விச் செயற்குழு</span>
+            <span class="isaen">Saiva Periyar Sooran Perumanar Education Board</span>
+            <span class="isarole">Carries the Children's Education Development Programme &mdash; Saturday
+              classes, scholarship seminars and O/L subject classes in ${T.total} schools.</span>
+          </div>
+          <div class="isacard">
+            <span class="isan">03</span>
+            <span class="isata">சைவப் பெரியார் சிவபாதசுந்தரனார் சைவசித்தாந்தச் செயற்குழு</span>
+            <span class="isaen">Saiva Periyar Sivapathasundaranar Saiva Siddhanta Board</span>
+            <span class="isarole">Teaches Saiva Siddhanta through four training centres, in association
+              with the Thiruvavaduthurai Adheenam.</span>
+          </div>
+        </div>
+        <div class="isahead">Committees that support them</div>
+        <div class="isagrid g2">
+          <div class="isacard">
+            <span class="isan">04</span>
+            <span class="isata">விழா ஒருங்கிணைப்புக் குழு</span>
+            <span class="isaen">Festival Coordination Committee</span>
+            <span class="isarole">Coordinates the association's festivals and religious observances
+              together with the temples and the district's Saiva bodies.</span>
+          </div>
+          <div class="isacard">
+            <span class="isan">05</span>
+            <span class="isata">பேரிடர் மேலாண்மைக் குழு</span>
+            <span class="isaen">Disaster Management Committee</span>
+            <span class="isarole">Organises the association's response when disaster strikes the
+              communities it serves.</span>
+          </div>
+        </div>
+        <div class="stats stats3">
+          <div class="stat"><span class="n">5</span><span class="l">Committees</span></div>
+          <div class="stat"><span class="n">${T.total}</span><span class="l">Schools in the education programme</span></div>
+          <div class="stat"><span class="n">${withSchools.length}</span><span class="l">Districts reached</span></div>
+        </div>`;
     }else if(type==="thirupani"){
       ocard.innerHTML=`<div class="eyebrow">Ilankai Saivism Association</div>
         <div class="tamil ta" style="font-size:1.3rem;margin-top:10px">இலங்கைச் சைவநெறிக் கழகம்</div>
