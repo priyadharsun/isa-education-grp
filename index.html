@@ -253,6 +253,35 @@
     text-transform:uppercase;color:var(--gold);margin-top:3px}
   .smgrid2{grid-template-columns:repeat(2,1fr);gap:8px 16px}
   .smmonth.subj{background:var(--gold);color:#3B1F06}
+  /* ---------- national competitive exam classes ---------- */
+  .svwrap{background:var(--paper-2);border:2px solid var(--maroon);border-radius:14px;overflow:hidden;
+    box-shadow:0 12px 32px rgba(90,50,10,.2), inset 0 0 0 2px var(--gold-pale)}
+  .svhead{padding:9px 16px 8px;background:var(--maroon);color:var(--paper-2);
+    font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+  .svlist{padding:11px 14px;display:grid;gap:8px}
+  .svrow{display:flex;gap:11px;align-items:flex-start;background:var(--paper);
+    border:1px solid var(--gold-lt);border-left:4px solid var(--maroon);border-radius:8px;padding:8px 12px}
+  .svrow .k{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:700;color:var(--paper-2);
+    background:var(--maroon);width:20px;height:20px;flex:none;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;margin-top:2px}
+  .svrow .en{display:block;font-size:13.5px;font-weight:700;line-height:1.3;color:var(--ink)}
+  .svrow .ta2{display:block;font-size:12px;color:var(--maroon-lt);font-weight:600;line-height:1.45;margin-top:2px}
+  .svmore{font-size:11.5px;color:var(--ink-3);line-height:1.45;padding:0 14px 11px;font-style:italic}
+  @media (max-height:1000px){
+    .svlist{padding:9px 12px;gap:6px} .svrow{padding:6px 11px}
+    .svrow .en{font-size:12.6px} .svrow .ta2{font-size:11.2px} .svmore{font-size:10.8px;padding-bottom:9px}
+  }
+  @media (max-height:940px){
+    .svlist{gap:5px} .svrow{padding:5px 10px} .svrow .en{font-size:12px} .svrow .ta2{font-size:10.6px}
+    .svhead{padding:7px 14px 6px;font-size:11px}
+  }
+  @media (max-height:850px){
+    .svlist{padding:7px 10px;gap:4px} .svrow{padding:4px 9px}
+    .svrow .en{font-size:10.8px} .svrow .ta2{font-size:9.6px}
+    .svrow .k{width:17px;height:17px;font-size:9px}
+    .svhead{padding:5px 12px 5px;font-size:9.8px} .svmore{font-size:9.6px;padding-bottom:7px}
+  }
+
   /* ---------- 2026 scholarship results ---------- */
   .rshero{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:10px;text-align:left}
   .rsh{background:var(--paper-2);border:2px solid var(--gold-lt);border-radius:11px;padding:8px 12px;
@@ -912,6 +941,8 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
   FRAMES.push({key:"cost",label:"What it costs",type:"seminar",
                sem:"cost",photoKey:null,bbox:FULL});
   FRAMES.push({key:"challenges",label:"Challenges",type:"challenges",bbox:FULL});
+  FRAMES.push({key:"exams",label:"Competitive exam classes",type:"seminar",
+               sem:"exams",photoKey:null,bbox:FULL});
   FRAMES.push({key:"giving",label:"Giving Circle",type:"giving",bbox:FULL});
   const CLOSING_BB={x0:-190,y0:-55,x1:W+265,y1:H+30};
   FRAMES.push({key:"closing",label:"Next",type:"closing",bbox:CLOSING_BB});
@@ -1205,6 +1236,65 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
           <div class="stat"><span class="n">${ARD.length}</span><span class="l">Districts</span></div>
           <div class="stat"><span class="n" style="font-size:1.3rem">Sundays</span><span class="l">When classes are held</span></div>
         </div>`;
+    }else if(type==="seminar" && frame && frame.sem==="exams"){
+      ocard.innerHTML=`<div class="eyebrow">Batticaloa District &middot; Running since September 2025</div>
+        <h1>Guidance classes for the national competitive examinations</h1>
+        <div class="smsub ta">நாடளாவிய போட்டிப் பரீட்சைகளுக்கான தொடர் வழிகாட்டல் வகுப்புக்கள்</div>
+        <div class="smtop nophoto">
+          <div>
+            <p class="smlead">Alongside the work in schools, the association runs a
+               <b>continuing series of guidance classes for the islandwide competitive examinations</b>
+               that open the public service. Centred on the <b>Batticaloa district</b>, the classes have
+               been running since <b>September 2025</b> &mdash; a full year of teaching for candidates
+               who would otherwise have to travel to Colombo for coaching of this kind.</p>
+            <div class="smhost">
+              <div class="smhost-l">Where and when it began</div>
+              <div class="smhost-n">Kaluthavalai Cultural Hall</div>
+              <div class="smhost-t ta">களுதாவளை கலாசார மண்டபம்</div>
+              <div class="smmonths" style="margin-top:11px">
+                <span class="smmonth">Saturday 6 Sept 2025</span>
+                <span class="smmonth">9.00 am</span>
+                <span class="smmonth">Batticaloa</span>
+              </div>
+            </div>
+          </div>
+          <div class="svwrap">
+            <div class="svhead">Examinations the classes prepare for</div>
+            <div class="svlist">
+              <div class="svrow"><span class="k">01</span><div><span class="en">Sri Lanka Administrative Service</span><span class="ta2 ta">இலங்கை நிருவாக சேவை</span></div></div>
+              <div class="svrow"><span class="k">02</span><div><span class="en">Accountants' Service</span><span class="ta2 ta">கணக்காளர் சேவை</span></div></div>
+              <div class="svrow"><span class="k">03</span><div><span class="en">Planning Service</span><span class="ta2 ta">திட்டமிடல் சேவை</span></div></div>
+              <div class="svrow"><span class="k">04</span><div><span class="en">Education Administrative Service</span><span class="ta2 ta">கல்வி நிருவாக சேவை</span></div></div>
+            </div>
+            <div class="svmore">&hellip; and the other islandwide competitive examinations
+              &mdash; <span class="ta">உள்ளிட்ட தீவளாவிய போட்டிப் பரீட்சைகள்</span></div>
+          </div>
+        </div>
+        <div class="stgrid">
+          <div class="stcard">
+            <div class="stl">Who makes it possible</div>
+            <h3>Organised by the association, carried by four partners</h3>
+            <p>Run by the <b>Ilankai Saivism Association</b> with the support of the
+               <b>All Ceylon Hindu Congress</b>, the <b>Manitha Neyam Trust</b> and the
+               <b>Kaluthavalai Arulmigu Suyambulinga Pillaiyar Temple</b>.</p>
+          </div>
+          <div class="stcard good">
+            <div class="stl">How candidates join</div>
+            <h3>Limited places, booked in advance</h3>
+            <p>Places are capped, so candidates <b>pre-register through a form reached by the QR code</b>
+               on the notice. Enquiries go to <b>0777695918</b>, by WhatsApp message only.</p>
+          </div>
+          <div class="stcard warn">
+            <div class="stl">Where it goes next</div>
+            <h3>Jaffna and the Hill Country to follow</h3>
+            <p>Continuing classes are planned for <b>Jaffna</b> and the <b>Hill Country</b>,
+               with dates to be announced &mdash; the same reach the children's programme is
+               building, carried up to graduate level.</p>
+          </div>
+        </div>
+        <div class="smfoot"><span class="ta">சிவபெருமானை வழிபடுபவர் கல்வியில் மேம்பட்டு விளங்குவர்</span>
+          &mdash; <b>those who worship Lord Siva excel in learning</b>, the Thevaram line the association
+          prints on this invitation. This programme serves graduates and adults, not schoolchildren.</div>`;
     }else if(type==="seminar" && frame && frame.sem==="results"){
       ocard.innerHTML=`<div class="eyebrow">2026 Grade 5 Scholarship &middot; What the programme produced</div>
         <h1>183 children scored 70 or more</h1>
