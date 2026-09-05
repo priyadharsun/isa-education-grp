@@ -1739,6 +1739,12 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
     if(i>0) FRAMES.unshift(FRAMES.splice(i,1)[0]);
   })();
 
+  // and the circle of major contributors closes it
+  (function(){
+    const i=FRAMES.findIndex(f=>f.key==="giving");
+    if(i>-1 && i<FRAMES.length-1) FRAMES.push(FRAMES.splice(i,1)[0]);
+  })();
+
   let cur=0, scale=1;
 
   function avail(type,hasPhotos){
@@ -2277,11 +2283,11 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
                 <span class="bken">Saiva Sanniyasa Paddhati in Tamil translation &mdash; composed by Veezhi Sivakkirayogeendra Gnanasivacharyar</span>
                 <span class="bka"><span class="ta">செ. முருகவேள்</span> &middot; Se. Murugavel</span></div></div>
             <div class="bk"><span class="bkn">07</span>
-              <div class="bkb"><span class="bkt">வாதுளசுத்தாக்கிய தந்திரம் <em>(சங்கரமும் &ndash; தமிழும்)</em></span>
+              <div class="bkb"><span class="bkt">வாதுளசுத்தாக்கிய தந்திரம் <em>(சங்கதமும் &ndash; தமிழும்)</em></span>
                 <span class="bken">Vathula Suddhakhya Tantram, with the original beside the Tamil</span>
                 <span class="bka"><span class="ta">செ. முருகவேள்</span> &middot; Se. Murugavel</span></div></div>
             <div class="bk"><span class="bkn">08</span>
-              <div class="bkb"><span class="bkt">ரௌரவ ஆகம வித்யா பாதம் <em>(சங்கரமும் &ndash; தமிழும்)</em></span>
+              <div class="bkb"><span class="bkt">ரௌரவ ஆகம வித்யா பாதம் <em>(சங்கதமும் &ndash; தமிழும்)</em></span>
                 <span class="bken">Raurava Agama Vidya Padam, with the original beside the Tamil</span>
                 <span class="bka"><span class="ta">செ. முருகவேள்</span> &middot; Se. Murugavel</span></div></div>
             <div class="bk"><span class="bkn">09</span>
