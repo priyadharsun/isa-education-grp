@@ -238,6 +238,11 @@
     .overlay.wide .cur{padding:7px 11px}
     .overlay.wide .cur span{font-size:14px;line-height:1.4}
     .overlay.wide .cur em{font-size:11px;margin-top:2px}
+    .overlay.wide .gvgrid.g3{gap:11px;margin-top:15px}
+    .overlay.wide .gvgrid.g3 .gvcard{padding:11px 13px;gap:10px}
+    .overlay.wide .gvgrid.g3 .gvcard h3{font-size:.96rem}
+    .overlay.wide .gvgrid.g3 .gvcard h3.ta{font-size:.9rem}
+    .overlay.wide .gvlead{font-size:1rem;margin-top:14px} .overlay.wide .gvfoot{margin-top:18px;font-size:.95rem}
     .overlay.wide .isahead{margin-top:14px}
     .overlay.wide .isagrid{gap:8px 12px;margin-top:9px}
     .overlay.wide .isacard{padding:10px 12px 11px}
@@ -259,6 +264,15 @@
     .overlay.wide .cur{padding:5px 10px;border-left-width:3px}
     .overlay.wide .cur span{font-size:12.4px;line-height:1.35}
     .overlay.wide .cur em{font-size:10px}
+    .overlay.wide .gvgrid.g3{gap:9px;margin-top:12px}
+    .overlay.wide .gvgrid.g3 .gvcard{padding:9px 11px;gap:9px;border-width:1px}
+    .overlay.wide .gvgrid.g3 .gvmark{width:25px;height:25px;font-size:13px}
+    .overlay.wide .gvgrid.g3 .gvcard h3{font-size:.86rem;line-height:1.28}
+    .overlay.wide .gvgrid.g3 .gvcard h3.ta{font-size:.82rem;line-height:1.4}
+    .overlay.wide .gvgrid.g3 .gvcard .gven{font-size:10.2px;margin-top:2px}
+    .overlay.wide .gvgrid.g3 .gvcard .gvmeta{font-size:9.4px;margin-top:4px}
+    .overlay.wide .gvgrid.g3 .gvcard .gvurl{font-size:10px}
+    .overlay.wide .gvlead{font-size:.9rem;margin-top:11px} .overlay.wide .gvfoot{margin-top:14px;font-size:.86rem}
     .overlay.wide .isahead{margin-top:11px;font-size:11px}
     .overlay.wide .isagrid{gap:6px 10px;margin-top:7px}
     .overlay.wide .isacard{padding:8px 10px 9px;border-top-width:3px}
@@ -282,6 +296,15 @@
     .overlay.wide .cur{padding:4px 8px}
     .overlay.wide .cur span{font-size:10.8px;line-height:1.3}
     .overlay.wide .cur em{font-size:9.2px;margin-top:1px}
+    .overlay.wide .gvgrid.g3{gap:7px;margin-top:10px}
+    .overlay.wide .gvgrid.g3 .gvcard{padding:7px 9px;gap:7px}
+    .overlay.wide .gvgrid.g3 .gvmark{width:21px;height:21px;font-size:11px}
+    .overlay.wide .gvgrid.g3 .gvcard h3{font-size:.76rem;line-height:1.25}
+    .overlay.wide .gvgrid.g3 .gvcard h3.ta{font-size:.73rem;line-height:1.35}
+    .overlay.wide .gvgrid.g3 .gvcard .gven{font-size:9.2px}
+    .overlay.wide .gvgrid.g3 .gvcard .gvmeta{font-size:8.6px;margin-top:3px}
+    .overlay.wide .gvgrid.g3 .gvcard .gvurl{font-size:9.2px}
+    .overlay.wide .gvlead{font-size:.8rem;margin-top:9px} .overlay.wide .gvfoot{margin-top:11px;font-size:.78rem}
     .overlay.wide .isahead{margin-top:12px;font-size:10.6px}
     .overlay.wide .isagrid{gap:8px 11px;margin-top:8px}
     .overlay.wide .isagrid.g2{max-width:74%}
@@ -343,6 +366,16 @@
     margin-top:auto;padding-top:7px;border-top:1px dashed var(--gold-lt)}
   .gvlead{font-size:1.12rem;line-height:1.6;color:var(--ink-2);margin:18px auto 0;max-width:64ch}
   .gvgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;text-align:left}
+  .gvgrid.g3{grid-template-columns:repeat(3,1fr);gap:13px;margin-top:18px}
+  .gvgrid.g3 .gvcard{padding:13px 15px;gap:12px}
+  .gvgrid.g3 .gvmark{width:30px;height:30px;font-size:15px}
+  .gvgrid.g3 .gvcard h3{font-size:1.02rem;line-height:1.3}
+  .gvgrid.g3 .gvcard h3.ta{font-family:"Noto Sans Tamil","Source Sans 3",sans-serif;font-size:.96rem;
+    line-height:1.45;color:var(--maroon)}
+  .gvgrid.g3 .gvcard .gven{display:block;font-size:11.5px;font-weight:600;color:var(--ink-2);
+    line-height:1.35;margin-top:3px}
+  .gvgrid.g3 .gvcard .gvmeta{font-size:10.5px;margin-top:5px}
+  .gvgrid.g3 .gvcard .gvurl{font-size:11px;margin-top:3px}
   .gvcard{background:var(--paper-2);border:2px solid var(--gold-lt);border-radius:12px;padding:20px 22px;
     box-shadow:0 8px 22px rgba(90,50,10,.13);display:flex;gap:15px;align-items:flex-start}
   .gvmark{width:38px;height:38px;flex:none;border-radius:50%;background:var(--maroon);color:var(--gold-lt);
@@ -1594,7 +1627,7 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
   FRAMES.push({key:"challenges",label:"Challenges",type:"challenges",bbox:FULL});
   FRAMES.push({key:"exams",label:"Competitive exam classes",type:"seminar",
                sem:"exams",photoKey:"__exams__",bbox:FULL});
-  FRAMES.push({key:"giving",label:"Giving Circle",type:"giving",bbox:FULL});
+  FRAMES.push({key:"giving",label:"Major contributors",type:"giving",bbox:FULL});
   const CLOSING_BB={x0:-190,y0:-55,x1:W+265,y1:H+30};
   FRAMES.push({key:"closing",label:"Next",type:"closing",bbox:CLOSING_BB});
   FRAMES.push({key:"araneri",label:"Araneri",type:"araneri",bbox:FULL});
@@ -3331,41 +3364,52 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
         </div>`;
     }else if(type==="giving"){
       ocard.innerHTML=`<div class="eyebrow">With gratitude</div>
-        <h1>Our Monthly Giving Circle</h1>
-        <p class="gvlead">These supporters give <b>every month</b>. Standing support is what turns a
-           plan into classes that actually run — teachers paid, papers printed, week after week.</p>
-        <div class="gvgrid">
+        <h1>Our Circle of Major Contributors</h1>
+        <div class="tamil ta" style="font-size:1.15rem;margin-top:8px">முக்கிய நன்கொடையாளர் வட்டம்</div>
+        <p class="gvlead">These are the <b>trusts, temples, businesses and families whose giving
+           carries the work</b> &mdash; the standing support that turns a plan into classes that
+           actually run: teachers paid, papers printed, week after week.</p>
+        <div class="gvgrid g3">
           <div class="gvcard">
             <div class="gvmark">&#10041;</div>
-            <div>
-              <h3>Manitha Neyam Trust</h3>
-              <div class="gvmeta">Charitable trust</div>
-              <div class="gvurl">manithaneyam.org</div>
-            </div>
+            <div><h3>Manitha Neyam Trust</h3><div class="gvmeta">Charitable trust</div><div class="gvurl">manithaneyam.org</div></div>
           </div>
           <div class="gvcard">
             <div class="gvmark">&#10041;</div>
-            <div>
-              <h3>Nithyakalyani Jewellery</h3>
-              <div class="gvmeta">Wellawatta</div>
-            </div>
+            <div><h3>Nithyakalyani Jewellery</h3><div class="gvmeta">Wellawatta</div></div>
           </div>
           <div class="gvcard">
             <div class="gvmark">&#10041;</div>
-            <div>
-              <h3>Neelakandan &amp; Neelakandan</h3>
-              <div class="gvmeta">Law firm</div>
-            </div>
+            <div><h3>Neelakandan &amp; Neelakandan</h3><div class="gvmeta">Law firm</div></div>
           </div>
           <div class="gvcard">
             <div class="gvmark">&#10041;</div>
-            <div>
-              <h3>Panadura Murugan Temple</h3>
-              <div class="gvmeta">Panadura</div>
-            </div>
+            <div><h3>Panadura Murugan Temple</h3><div class="gvmeta">Panadura</div></div>
+          </div>
+          <div class="gvcard">
+            <div class="gvmark">&#10041;</div>
+            <div><h3 class="ta">உலகெல்லாம் சிவமயம் ஆன்மீக பீடம்</h3><span class="gven">Ulagellam Sivamayam Aanmeega Peedam</span><div class="gvmeta">Spiritual foundation</div></div>
+          </div>
+          <div class="gvcard">
+            <div class="gvmark">&#10041;</div>
+            <div><h3 class="ta">செங்கதிர் அமைப்பு</h3><span class="gven">Sengathir Amaippu</span><div class="gvmeta">Organisation</div></div>
+          </div>
+          <div class="gvcard">
+            <div class="gvmark">&#10041;</div>
+            <div><h3>Jaffna City Hardware</h3><div class="gvmeta">Jaffna</div></div>
+          </div>
+          <div class="gvcard">
+            <div class="gvmark">&#10041;</div>
+            <div><h3 class="ta">திருமதி. அபிராமி கயிலாசப்பிள்ளை</h3><span class="gven">Mrs. Abirami Kailasapillai</span><div class="gvmeta">Individual giver</div></div>
+          </div>
+          <div class="gvcard">
+            <div class="gvmark">&#10041;</div>
+            <div><h3 class="ta">திருமதி. சுகன்யா தினேஷ்</h3><span class="gven">Mrs. Sukanya Dinesh</span><div class="gvmeta">Individual giver</div></div>
           </div>
         </div>
-        <div class="gvfoot">Every additional monthly giver moves a waiting school off the list.</div>`;
+        <div class="gvfoot">And <b>many individual contributors besides</b>, whose names are not on this
+          slide but whose giving is in every class we run.
+          <span class="ta">&nbsp;எல்லோருக்கும் நன்றி.</span></div>`;
     }else{
       const missing=GEO.districts.filter(d=>!d.total).length;
       ocard.innerHTML=`<div class="eyebrow">What comes next</div>
