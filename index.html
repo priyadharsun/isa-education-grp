@@ -842,6 +842,40 @@
   .smcode{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:700;
     letter-spacing:.06em;color:var(--gold-ink);background:var(--paper-3);border:1px solid var(--gold-lt);
     border-radius:4px;padding:1px 5px;margin-right:6px;vertical-align:2px}
+  /* Sivaperuman Illam, Ratmalana */
+  .ilcols{display:grid;grid-template-columns:1.05fr 1fr;gap:26px;margin-top:20px;align-items:start}
+  .ilhead{font-size:12.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--gold-ink);margin-bottom:9px}
+  .ilhead .ta{letter-spacing:0;text-transform:none;font-size:14.5px;color:var(--maroon);margin-right:7px}
+  .ilstage{background:var(--paper-2);border:1px solid var(--gold-lt);border-left:5px solid var(--maroon);
+    border-radius:10px;padding:14px 17px 15px}
+  .ilstage.next{border-left-color:var(--gold);background:rgba(184,134,27,.07)}
+  .ilage{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--gold-ink);
+    border:1px solid var(--gold-lt);border-radius:999px;padding:2px 9px;margin-bottom:6px}
+  .ilta{display:block;font-family:"Noto Sans Tamil","Source Sans 3",sans-serif;font-size:17px;
+    font-weight:700;color:var(--maroon);line-height:1.5}
+  .ilen{display:block;font-size:13.8px;font-weight:600;color:var(--ink-2);line-height:1.5;margin-top:6px}
+  .ilarrow{display:flex;align-items:center;gap:10px;margin:11px 0 11px 20px;
+    font-size:12.6px;font-weight:700;color:var(--ink-3)}
+  .ilarrow i{font-style:normal;font-size:16px;color:var(--maroon);line-height:1}
+  .ilarrow .ta{font-weight:700;color:var(--maroon);font-size:14px}
+  .ilsteps{display:grid;gap:11px}
+  .ilstep{background:var(--paper-2);border:1px solid var(--gold-lt);border-radius:9px;
+    padding:12px 15px 13px;display:grid;grid-template-columns:auto 1fr;gap:4px 13px;align-items:start}
+  .ilchip{grid-row:1 / span 3;align-self:center;font-size:10.4px;font-weight:700;letter-spacing:.06em;
+    text-transform:uppercase;border-radius:999px;padding:3px 9px;white-space:nowrap;
+    background:rgba(184,134,27,.14);color:var(--gold-ink);border:1px solid var(--gold-lt)}
+  .ilchip.ok{background:rgba(31,110,66,.11);color:#1F6E42;border-color:rgba(31,110,66,.30)}
+  .ilstep .sta{font-family:"Noto Sans Tamil","Source Sans 3",sans-serif;font-size:15px;
+    font-weight:700;color:var(--maroon);line-height:1.45}
+  .ilstep .sen{font-size:13px;font-weight:600;color:var(--ink-3);line-height:1.4}
+  .ilbig{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:15px;
+    background:var(--maroon);color:#FFF7E6;border-radius:10px;padding:14px 20px}
+  .ilbig .lb{font-size:13.2px;font-weight:600;line-height:1.45;max-width:60ch}
+  .ilbig .lb .ta{display:block;font-size:14.4px;font-weight:700;margin-bottom:2px}
+  .ilbig .am{font-family:"Fraunces",serif;font-size:2.15rem;font-weight:700;white-space:nowrap}
+  .ilbig .am small{font-size:11px;font-weight:600;letter-spacing:.09em;opacity:.85;margin-left:6px}
   /* sivalaya construction requests */
   .svgrid{display:grid;gap:10px;margin-top:12px}
   .svcard{background:var(--paper-2);border:1px solid var(--gold-lt);border-left:5px solid var(--maroon);
@@ -890,6 +924,10 @@
     .overlay.pshow .smtop{grid-template-columns:1fr 386px}
     .overlay.pshow .smshow .ph-stage{height:466px}
     .smtop{grid-template-columns:1fr 486px;gap:20px;margin-top:12px}
+    .ilcols{gap:21px;margin-top:15px} .ilstage{padding:11px 14px 12px}
+    .ilta{font-size:15px} .ilen{font-size:12.6px} .ilstep{padding:10px 13px 11px}
+    .ilstep .sta{font-size:13.6px} .ilstep .sen{font-size:11.9px}
+    .ilbig{padding:11px 17px;margin-top:12px} .ilbig .am{font-size:1.8rem}
     .svgrid{gap:8px;margin-top:10px} .svcard{padding:8px 11px 9px}
     .svta{font-size:13.4px;line-height:1.4} .sven{font-size:11px}
     .svcost .amt{font-size:1.4rem} .svtot{padding:8px 13px;margin-top:9px} .svtot .am{font-size:1.35rem}
@@ -906,6 +944,15 @@
     .overlay.pshow .smtop{grid-template-columns:1fr 340px}
     .overlay.pshow .smshow .ph-stage{height:404px}
     .smtop{grid-template-columns:1fr 430px;gap:17px;margin-top:9px}
+    .ilcols{gap:15px;margin-top:10px} .ilhead{font-size:10.6px;margin-bottom:7px}
+    .ilhead .ta{font-size:12px} .ilstage{padding:8px 11px 9px;border-left-width:4px}
+    .ilage{font-size:9.6px;padding:1px 8px;margin-bottom:5px}
+    .ilta{font-size:12.6px;line-height:1.45} .ilen{font-size:10.6px;margin-top:3px}
+    .ilarrow{margin:6px 0 6px 14px;font-size:10.4px} .ilarrow .ta{font-size:11.4px}
+    .ilsteps{gap:7px} .ilstep{padding:7px 10px 8px;gap:2px 9px}
+    .ilstep .sta{font-size:11.6px} .ilstep .sen{font-size:10.2px} .ilchip{font-size:9px;padding:2px 8px}
+    .ilbig{padding:8px 13px;margin-top:9px} .ilbig .am{font-size:1.45rem}
+    .ilbig .lb{font-size:11px} .ilbig .lb .ta{font-size:11.8px}
     .svgrid{gap:7px;margin-top:8px} .svcard{padding:7px 10px 8px;border-left-width:4px}
     .svta{font-size:12.4px;line-height:1.38} .sven{font-size:10.3px}
     .svplace span{font-size:9.6px;padding:1px 7px}
@@ -928,6 +975,15 @@
     .overlay.pshow .smtop{grid-template-columns:1fr 300px}
     .overlay.pshow .smshow .ph-stage{height:352px}
     .smtop{grid-template-columns:1fr 372px;gap:15px;margin-top:8px}
+    .ilcols{gap:13px;margin-top:8px} .ilhead{font-size:9.8px;margin-bottom:6px}
+    .ilhead .ta{font-size:11px} .ilstage{padding:7px 10px 8px}
+    .ilage{font-size:9px;padding:1px 7px;margin-bottom:4px}
+    .ilta{font-size:11.6px;line-height:1.4} .ilen{font-size:9.9px}
+    .ilarrow{margin:5px 0 5px 12px;font-size:9.7px} .ilarrow .ta{font-size:10.6px}
+    .ilarrow i{font-size:14px} .ilsteps{gap:6px} .ilstep{padding:6px 9px 7px}
+    .ilstep .sta{font-size:10.8px} .ilstep .sen{font-size:9.5px} .ilchip{font-size:8.5px;padding:2px 7px}
+    .ilbig{padding:7px 12px;margin-top:8px} .ilbig .am{font-size:1.3rem}
+    .ilbig .lb{font-size:10.2px} .ilbig .lb .ta{font-size:11px}
     .svgrid{gap:6px;margin-top:7px} .svcard{padding:6px 9px 7px}
     .svta{font-size:11.6px;line-height:1.35} .sven{font-size:9.7px}
     .svplace span{font-size:9px;padding:1px 6px} .svplace{gap:4px;margin-top:3px}
@@ -948,6 +1004,10 @@
     .smsub{font-size:.82rem;margin-top:4px}
     .smlead{font-size:.76rem;line-height:1.38}
     .smtop{grid-template-columns:1fr 322px;gap:13px;margin-top:7px}
+    .ilcols{gap:11px;margin-top:7px} .ilstage{padding:6px 9px 7px}
+    .ilta{font-size:10.9px} .ilen{font-size:9.3px} .ilstep{padding:5px 8px 6px}
+    .ilstep .sta{font-size:10.2px} .ilstep .sen{font-size:9px}
+    .ilbig{padding:6px 11px;margin-top:7px} .ilbig .am{font-size:1.18rem}
     .svgrid{gap:5px;margin-top:6px} .svcard{padding:5px 8px 6px}
     .svta{font-size:10.9px} .sven{font-size:9.2px} .svcost .amt{font-size:1.06rem}
     .svtot{padding:5px 10px;margin-top:6px} .svtot .am{font-size:1.04rem}
@@ -1472,6 +1532,8 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
                sem:"tnyathirai",photoKey:null,bbox:FULL});
   FRAMES.push({key:"sivalaya",label:"Sivalaya construction",type:"seminar",
                sem:"sivalaya",photoKey:"__sivalaya__",bbox:FULL});
+  FRAMES.push({key:"illam",label:"Sivaperuman Illam",type:"seminar",
+               sem:"illam",photoKey:null,bbox:FULL});
   FRAMES.push({key:"isa",label:"Ilankai Saivism Association",type:"isa",bbox:FULL});
 
   // the Saiva religious education section opens the deck
@@ -1602,7 +1664,8 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
     const isTn=f.sem==="tnyathirai";
     const isSiddhantaSection=f.type==="siddhanta"||f.type==="siddhantaMap";
     const isThirupani=f.type==="thirupani"||f.sem==="thaipusam"
-                       ||f.sem==="panthal"||f.sem==="institute"||f.sem==="sivalaya";
+                       ||f.sem==="panthal"||f.sem==="institute"||f.sem==="sivalaya"
+                       ||f.sem==="illam";
     const isYathirai=f.sem==="yathirai";
     const isIsa=f.type==="isa";
     document.getElementById("brand").innerHTML=isIsa
@@ -1991,6 +2054,57 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
           <b>Sooran Perumanar</b> and a training centre named for <b>Sivapathasundaranar</b> &mdash; the two
           Saiva Periyars whose boards run the school programme and the Siddhanta work.
           <span class="ta">எல்லாம் திருவருட் சம்மதம்</span></div>`;
+    }else if(type==="seminar" && frame && frame.sem==="illam"){
+      ocard.innerHTML=`<div class="eyebrow">Ratmalana, Colombo District &middot; Building nearly finished</div>
+        <h1 class="ta" style="font-size:clamp(1.5rem,2.6vw,2.05rem)">சிவபெருமான் இல்லம்</h1>
+        <div class="smsub" style="color:var(--ink-2);font-weight:600">Sivaperuman Illam, Ratmalana &mdash; a home for the youngest children, raised in the Saiva way</div>
+        <div class="ilcols">
+          <div>
+            <div class="ilhead"><span class="ta">யாருக்காக</span> Who the home is for</div>
+            <div class="ilstage">
+              <span class="ilage">Under 5 years</span>
+              <span class="ilta">5 வயதிற்குக் குறைந்த பிள்ளைகளை சைவநெறியில் வளர்த்தெடுக்கும் சிறுவர் இல்லம்</span>
+              <span class="ilen">A children's home that takes in children below the age of five and
+                <b>brings them up in the Saiva way</b>.</span>
+            </div>
+            <div class="ilarrow"><i>&darr;</i><span class="ta">5 வயது நிறைந்ததும்</span>
+              <span>On turning five, the child moves on</span></div>
+            <div class="ilstage next">
+              <span class="ilage">5 years and above</span>
+              <span class="ilta">அருகிலுள்ள சக்தி இல்லத்திற்குப் பொறுப்புக் கொடுக்கப்படும்</span>
+              <span class="ilen">Care is handed over to <b>Sakthi Illam</b>, the home nearby, so the
+                child continues in the same care without a break.</span>
+            </div>
+          </div>
+          <div>
+            <div class="ilhead"><span class="ta">தற்போதைய நிலை</span> Where it stands today</div>
+            <div class="ilsteps">
+              <div class="ilstep">
+                <span class="ilchip ok">Nearly done</span>
+                <span class="sta">கட்டுமானப்பணிகள் தற்போது நிறைவுறும் தறுவாயில் உள்ளது</span>
+                <span class="sen">The construction work is now close to completion.</span>
+              </div>
+              <div class="ilstep">
+                <span class="ilchip">Still needed</span>
+                <span class="sta">அரசாங்க அனுமதி பெற வேண்டியுள்ளது</span>
+                <span class="sen">Government approval has yet to be obtained.</span>
+              </div>
+              <div class="ilstep">
+                <span class="ilchip">Still needed</span>
+                <span class="sta">வங்கிக்கணக்கில் Rs 2,000,000 இருப்பைக் காட்ட வேண்டியுள்ளது</span>
+                <span class="sen">A balance of Rs 2,000,000 must be shown in the bank account.</span>
+              </div>
+            </div>
+            <div class="ilbig">
+              <span class="lb"><span class="ta">வங்கிக்கணக்கில் காட்ட வேண்டிய இருப்பு</span>
+                The balance the home must be able to show in its bank account</span>
+              <span class="am">2,000,000<small>RUPEES</small></span>
+            </div>
+          </div>
+        </div>
+        <div class="smfoot"><b>The building is all but ready; what is left is on paper and in the bank.</b>
+          Standing support towards that balance, or help in seeing the approval through, is what will
+          let the first children come through the door.</div>`;
     }else if(type==="seminar" && frame && frame.sem==="sivalaya"){
       ocard.innerHTML=`<div class="eyebrow">Requests received &middot; Kalutara and Vavuniya Districts</div>
         <h1 class="ta" style="font-size:clamp(1.5rem,2.6vw,2.05rem)">சிவாலயத் திருப்பணிகள்</h1>
@@ -2913,10 +3027,11 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
            service</b> &mdash; festivals kept with the temples and the district's Saiva bodies, initiation
            given to those who seek it, water offered to pilgrims on the road, <b>permanent premises built
            for a community to learn in</b>, pilgrimages that take children and devotees to the
-           shrines themselves, and <b>Sivalayams built where a community asks for one</b>.
-           The <b>six that follow</b> show each kind.</p>
+           shrines themselves, <b>Sivalayams built where a community asks for one</b>, and
+           <b>a home for children with no one else to raise them</b>.
+           The <b>seven that follow</b> show each kind.</p>
         <div class="curhead">The forms this service takes</div>
-        <div class="curgrid c6">
+        <div class="curgrid">
           <div class="cur"><span class="ta">திருவிழாக்களும் வழிபாடும்</span>
             <em>Festivals and worship, kept with the temple and the district's Saiva bodies</em></div>
           <div class="cur"><span class="ta">சைவசமயத் தீக்கை</span>
@@ -2929,9 +3044,11 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
             <em>Pilgrimages in the East and across Tamil Nadu, so the children stand in the temples themselves</em></div>
           <div class="cur"><span class="ta">சிவாலயத் திருப்பணிகள்</span>
             <em>Sivalayams built where a community has asked for one &mdash; three requested so far</em></div>
+          <div class="cur"><span class="ta">சிறுவர் இல்லம்</span>
+            <em>A home in Ratmalana for children under five, raised in the Saiva way</em></div>
         </div>
         <div class="stats stats3">
-          <div class="stat"><span class="n">6</span><span class="l">Works shown here</span></div>
+          <div class="stat"><span class="n">7</span><span class="l">Works shown here</span></div>
           <div class="stat"><span class="n">33</span><span class="l">Temples visited on pilgrimage</span></div>
           <div class="stat"><span class="n" style="font-size:1.2rem">Sri Lanka<br>&amp; Tamil Nadu</span><span class="l">How far they reached</span></div>
         </div>`;
