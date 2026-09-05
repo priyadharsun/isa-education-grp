@@ -3643,7 +3643,12 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
   const PH_DELAY=4800;
 
   function phStop(){ if(phTimer){clearInterval(phTimer); phTimer=null;} }
-  function phPlay(){ phStop(); if(phList.length>1) phTimer=setInterval(()=>{ if(!phPaused) phShow(phIdx+1); },PH_DELAY); }
+  function phHover(){
+    if(inFullscreen()) return false;
+    try{ return !!(phEl && phEl.matches(":hover")); }catch(e){ return false; }
+  }
+  function phPlay(){ phStop(); if(phList.length>1) phTimer=setInterval(()=>{
+    if(!phPaused && !phHover()) phShow(phIdx+1); },PH_DELAY); }
 
   function phShow(i){
     if(!phList.length) return;
@@ -3678,8 +3683,6 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
 
   document.getElementById("phPrev").addEventListener("click",()=>{phShow(phIdx-1);phPlay();});
   document.getElementById("phNext").addEventListener("click",()=>{phShow(phIdx+1);phPlay();});
-  phEl.addEventListener("mouseenter",()=>phPaused=true);
-  phEl.addEventListener("mouseleave",()=>phPaused=false);
 
   // generic lightbox — works for both the district card and the seminar slide
   let lbList=[], lbIdx=0;
@@ -3700,7 +3703,15 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
   let smList=[], smIdx=0, smTimer=null, smPaused=false;
   const SM_DELAY=4200;
   function smStop(){ if(smTimer){clearInterval(smTimer); smTimer=null;} }
-  function smPlay(){ smStop(); if(smList.length>1) smTimer=setInterval(()=>{ if(!smPaused) smShow(smIdx+1); },SM_DELAY); }
+  function smHover(){
+    // a live test: a pointer left parked on the panel must not latch the show off,
+    // and while presenting full screen it should never pause at all
+    if(inFullscreen()) return false;
+    const w=document.getElementById("smShow");
+    try{ return !!(w && w.matches(":hover")); }catch(e){ return false; }
+  }
+  function smPlay(){ smStop(); if(smList.length>1) smTimer=setInterval(()=>{
+    if(!smPaused && !smHover()) smShow(smIdx+1); },SM_DELAY); }
   function smShow(i){
     const st=document.getElementById("smStage"); if(!st||!smList.length) return;
     smIdx=(i+smList.length)%smList.length;
@@ -3735,8 +3746,6 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
     dz.style.display=list.length>1?"flex":"none";
     document.getElementById("smPrev").addEventListener("click",()=>{smShow(smIdx-1);smPlay();});
     document.getElementById("smNext").addEventListener("click",()=>{smShow(smIdx+1);smPlay();});
-    wrap.addEventListener("mouseenter",()=>smPaused=true);
-    wrap.addEventListener("mouseleave",()=>smPaused=false);
     smShow(0); smPlay();
   }
 
