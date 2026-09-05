@@ -842,6 +842,67 @@
   .smcode{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:700;
     letter-spacing:.06em;color:var(--gold-ink);background:var(--paper-3);border:1px solid var(--gold-lt);
     border-radius:4px;padding:1px 5px;margin-right:6px;vertical-align:2px}
+  /* disaster management */
+  .dmcols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:14px;align-items:start}
+  .dmhead{font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--gold-ink);margin-bottom:8px}
+  .dmhead .ta{letter-spacing:0;text-transform:none;font-size:13px;color:var(--maroon);margin-right:7px}
+  .dmpack{background:var(--maroon);color:#FFF7E6;border-radius:11px;padding:12px 16px;
+    display:flex;align-items:center;gap:16px}
+  .dmpack .big{font-family:"Fraunces",serif;font-size:2.5rem;font-weight:700;line-height:1}
+  .dmpack .lb{font-size:12.5px;font-weight:600;line-height:1.45}
+  .dmpack .lb .ta{display:block;font-size:14px;font-weight:700;margin-bottom:2px}
+  .dmitems{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:9px}
+  .dmitem{background:var(--paper-2);border:1px solid var(--gold-lt);border-radius:8px;
+    padding:7px 9px;text-align:center}
+  .dmitem .q{display:block;font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:600;
+    color:var(--maroon)}
+  .dmitem .k{display:block;font-family:"Noto Sans Tamil","Source Sans 3",sans-serif;font-size:11.5px;
+    font-weight:700;color:var(--ink-2);margin-top:2px}
+  .dmitem .e{display:block;font-size:9.8px;font-weight:600;color:var(--ink-3);margin-top:1px}
+  .dmareas{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+  .dmarea{font-family:"Noto Sans Tamil","Source Sans 3",sans-serif;font-size:11.8px;font-weight:700;
+    color:var(--maroon);background:var(--paper-2);border:1px solid var(--gold-lt);
+    border-radius:999px;padding:3px 10px}
+  .dmarea small{font-family:"Source Sans 3",sans-serif;font-weight:600;color:var(--ink-3);
+    font-size:9.8px;margin-left:5px}
+  .dmlist{display:grid;gap:8px;margin-top:9px}
+  .dmrow{background:var(--paper-2);border:1px solid var(--gold-lt);border-left:4px solid var(--maroon);
+    border-radius:8px;padding:8px 12px 9px;display:grid;grid-template-columns:1fr auto;gap:2px 12px}
+  .dmrow .rta{font-family:"Noto Sans Tamil","Source Sans 3",sans-serif;font-size:12.8px;
+    font-weight:700;color:var(--maroon);line-height:1.45}
+  .dmrow .ren{font-size:11px;font-weight:600;color:var(--ink-3);line-height:1.4}
+  .dmrow .ram{grid-column:2;grid-row:1 / span 2;align-self:center;font-family:"IBM Plex Mono",monospace;
+    font-size:13px;font-weight:600;color:var(--maroon);white-space:nowrap}
+  .dmwrap{margin-top:12px;background:var(--paper-2);border:2px solid var(--maroon);border-radius:12px;
+    overflow:hidden}
+  table.dm{width:100%;border-collapse:collapse;font-size:12.5px}
+  table.dm th,table.dm td{padding:5px 11px;border-bottom:1px solid var(--line);text-align:left;
+    vertical-align:middle}
+  table.dm th{font-size:9.6px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--gold-ink);background:var(--paper-3);white-space:nowrap}
+  table.dm td.k,table.dm th.k{width:34px;text-align:center;font-family:"IBM Plex Mono",monospace;
+    font-size:10.5px;font-weight:600;color:var(--gold-ink)}
+  table.dm td.n,table.dm th.n{text-align:right;font-family:"IBM Plex Mono",monospace;
+    font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600;color:var(--maroon)}
+  table.dm .dta{display:block;font-family:"Noto Sans Tamil","Source Sans 3",sans-serif;
+    font-size:12.4px;font-weight:700;color:var(--maroon);line-height:1.4}
+  table.dm .den{display:block;font-size:10.6px;font-weight:600;color:var(--ink-3);line-height:1.35}
+  table.dm tr:last-child td{border-bottom:none}
+  table.dm td.na{text-align:right;font-size:9.8px;font-weight:700;color:var(--ink-3);
+    letter-spacing:.03em;white-space:nowrap}
+  .dmsum{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:12px}
+  .dmsumbox{background:var(--paper-2);border:1px solid var(--gold-lt);border-radius:10px;
+    padding:10px 14px;text-align:center}
+  .dmsumbox.hero{background:var(--maroon);color:#FFF7E6;border-color:var(--maroon)}
+  .dmsumbox .am{display:block;font-family:"Fraunces",serif;font-size:1.55rem;font-weight:700;
+    color:var(--maroon);line-height:1.15}
+  .dmsumbox.hero .am{color:#FFF7E6}
+  .dmsumbox .lb{display:block;font-size:11px;font-weight:600;color:var(--ink-3);margin-top:3px;
+    line-height:1.35}
+  .dmsumbox.hero .lb{color:rgba(255,247,230,.88)}
+  .dmsumbox .lb .ta{display:block;font-size:12px;font-weight:700;color:var(--maroon)}
+  .dmsumbox.hero .lb .ta{color:#FFF7E6}
   /* Sivaperuman Illam, Ratmalana */
   .ilcols{display:grid;grid-template-columns:1.05fr 1fr;gap:26px;margin-top:20px;align-items:start}
   .ilhead{font-size:12.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
@@ -924,6 +985,11 @@
     .overlay.pshow .smtop{grid-template-columns:1fr 386px}
     .overlay.pshow .smshow .ph-stage{height:466px}
     .smtop{grid-template-columns:1fr 486px;gap:20px;margin-top:12px}
+    .dmcols{gap:17px;margin-top:12px} .dmpack{padding:10px 14px} .dmpack .big{font-size:2.2rem}
+    .dmitem{padding:6px 8px} .dmrow{padding:7px 11px 8px} .dmrow .rta{font-size:12px}
+    table.dm{font-size:11.8px} table.dm th,table.dm td{padding:4px 10px}
+    table.dm .dta{font-size:11.8px} table.dm .den{font-size:10px}
+    .dmsum{gap:9px;margin-top:10px} .dmsumbox{padding:8px 12px} .dmsumbox .am{font-size:1.4rem}
     .ilcols{gap:21px;margin-top:15px} .ilstage{padding:11px 14px 12px}
     .ilta{font-size:15px} .ilen{font-size:12.6px} .ilstep{padding:10px 13px 11px}
     .ilstep .sta{font-size:13.6px} .ilstep .sen{font-size:11.9px}
@@ -944,6 +1010,20 @@
     .overlay.pshow .smtop{grid-template-columns:1fr 340px}
     .overlay.pshow .smshow .ph-stage{height:404px}
     .smtop{grid-template-columns:1fr 430px;gap:17px;margin-top:9px}
+    .dmcols{gap:14px;margin-top:10px} .dmhead{font-size:10.5px;margin-bottom:6px}
+    .dmhead .ta{font-size:11.8px} .dmpack{padding:8px 12px;gap:12px} .dmpack .big{font-size:1.85rem}
+    .dmpack .lb{font-size:11px} .dmpack .lb .ta{font-size:12.4px}
+    .dmitems{gap:6px;margin-top:7px} .dmitem{padding:5px 7px} .dmitem .q{font-size:12.4px}
+    .dmitem .k{font-size:10.4px} .dmitem .e{font-size:9px}
+    .dmareas{gap:5px;margin-top:7px} .dmarea{font-size:10.6px;padding:2px 8px}
+    .dmarea small{font-size:9px} .dmlist{gap:6px;margin-top:7px}
+    .dmrow{padding:6px 10px 7px} .dmrow .rta{font-size:11.2px} .dmrow .ren{font-size:9.8px}
+    .dmrow .ram{font-size:11.6px}
+    .dmwrap{margin-top:9px} table.dm{font-size:10.8px} table.dm th,table.dm td{padding:3px 9px}
+    table.dm .dta{font-size:10.8px;line-height:1.35} table.dm .den{font-size:9.3px;line-height:1.3}
+    table.dm th{font-size:8.8px} table.dm td.k{font-size:9.4px}
+    .dmsum{gap:8px;margin-top:8px} .dmsumbox{padding:7px 10px} .dmsumbox .am{font-size:1.22rem}
+    .dmsumbox .lb{font-size:9.8px} .dmsumbox .lb .ta{font-size:10.6px}
     .ilcols{gap:15px;margin-top:10px} .ilhead{font-size:10.6px;margin-bottom:7px}
     .ilhead .ta{font-size:12px} .ilstage{padding:8px 11px 9px;border-left-width:4px}
     .ilage{font-size:9.6px;padding:1px 8px;margin-bottom:5px}
@@ -975,6 +1055,16 @@
     .overlay.pshow .smtop{grid-template-columns:1fr 300px}
     .overlay.pshow .smshow .ph-stage{height:352px}
     .smtop{grid-template-columns:1fr 372px;gap:15px;margin-top:8px}
+    .dmcols{gap:12px;margin-top:8px} .dmhead{font-size:9.8px;margin-bottom:5px}
+    .dmpack{padding:7px 11px} .dmpack .big{font-size:1.6rem} .dmpack .lb{font-size:10.2px}
+    .dmitem{padding:4px 6px} .dmitem .q{font-size:11.4px} .dmitem .k{font-size:9.6px}
+    .dmarea{font-size:9.8px;padding:2px 7px} .dmrow{padding:5px 9px 6px}
+    .dmrow .rta{font-size:10.4px} .dmrow .ren{font-size:9.2px} .dmrow .ram{font-size:10.8px}
+    .dmwrap{margin-top:7px} table.dm{font-size:9.9px} table.dm th,table.dm td{padding:2.5px 8px}
+    table.dm .dta{font-size:9.9px;line-height:1.3} table.dm .den{font-size:8.7px;line-height:1.28}
+    table.dm th{font-size:8.2px} table.dm td.k{font-size:8.8px} table.dm td.na{font-size:8.8px}
+    .dmsum{gap:7px;margin-top:7px} .dmsumbox{padding:6px 9px} .dmsumbox .am{font-size:1.1rem}
+    .dmsumbox .lb{font-size:9.2px} .dmsumbox .lb .ta{font-size:10px}
     .ilcols{gap:13px;margin-top:8px} .ilhead{font-size:9.8px;margin-bottom:6px}
     .ilhead .ta{font-size:11px} .ilstage{padding:7px 10px 8px}
     .ilage{font-size:9px;padding:1px 7px;margin-bottom:4px}
@@ -1004,6 +1094,10 @@
     .smsub{font-size:.82rem;margin-top:4px}
     .smlead{font-size:.76rem;line-height:1.38}
     .smtop{grid-template-columns:1fr 322px;gap:13px;margin-top:7px}
+    .dmcols{gap:10px;margin-top:7px} .dmpack .big{font-size:1.45rem}
+    table.dm{font-size:9.3px} table.dm th,table.dm td{padding:2px 7px}
+    table.dm .dta{font-size:9.3px} table.dm .den{font-size:8.3px}
+    .dmsumbox .am{font-size:1.02rem} .dmrow .rta{font-size:9.9px}
     .ilcols{gap:11px;margin-top:7px} .ilstage{padding:6px 9px 7px}
     .ilta{font-size:10.9px} .ilen{font-size:9.3px} .ilstep{padding:5px 8px 6px}
     .ilstep .sta{font-size:10.2px} .ilstep .sen{font-size:9px}
@@ -1534,6 +1628,11 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
                sem:"sivalaya",photoKey:"__sivalaya__",bbox:FULL});
   FRAMES.push({key:"illam",label:"Sivaperuman Illam",type:"seminar",
                sem:"illam",photoKey:null,bbox:FULL});
+  FRAMES.push({key:"disaster",label:"Disaster management",type:"disaster",bbox:FULL});
+  FRAMES.push({key:"ditwah",label:"Ditwah relief",type:"seminar",
+               sem:"ditwah",photoKey:null,bbox:FULL});
+  FRAMES.push({key:"ditwahacc",label:"Ditwah relief accounts",type:"seminar",
+               sem:"ditwahacc",photoKey:null,bbox:FULL});
   FRAMES.push({key:"isa",label:"Ilankai Saivism Association",type:"isa",bbox:FULL});
 
   // the Saiva religious education section opens the deck
@@ -1640,10 +1739,11 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
 
     const isSeminar=f.type==="seminar";
     if(f.type==="title"||f.type==="challenges"||f.type==="giving"||f.type==="araneri"
-       ||f.type==="siddhanta"||f.type==="thirupani"||f.type==="isa"||isSeminar){
+       ||f.type==="siddhanta"||f.type==="thirupani"||f.type==="isa"||f.type==="disaster"||isSeminar){
       renderOverlay(f.type,f);
       overlay.classList.toggle("wide",f.type==="challenges"||f.type==="giving"
-        ||f.type==="araneri"||f.type==="siddhanta"||f.type==="thirupani"||f.type==="isa");
+        ||f.type==="araneri"||f.type==="siddhanta"||f.type==="thirupani"||f.type==="isa"
+        ||f.type==="disaster");
       overlay.classList.toggle("seminar",isSeminar);
       overlay.classList.toggle("pshow",f.photoShape==="portrait");
       overlay.classList.toggle("tnmap",f.sem==="tnyathirai");
@@ -1668,7 +1768,11 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
                        ||f.sem==="illam";
     const isYathirai=f.sem==="yathirai";
     const isIsa=f.type==="isa";
-    document.getElementById("brand").innerHTML=isIsa
+    const isDm=f.type==="disaster"||f.sem==="ditwah"||f.sem==="ditwahacc";
+    document.getElementById("brand").innerHTML=isDm
+      ? `Ilankai Saivism Association &middot; Disaster management works
+         <span class="ta">பேரிடர் மேலாண்மை நடவடிக்கைகள்</span>`
+      : isIsa
       ? `Ilankai Saivism Association
          <span class="ta">இலங்கைச் சைவநெறிக் கழகம்</span>`
       : isTn
@@ -2054,6 +2158,129 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
           <b>Sooran Perumanar</b> and a training centre named for <b>Sivapathasundaranar</b> &mdash; the two
           Saiva Periyars whose boards run the school programme and the Siddhanta work.
           <span class="ta">எல்லாம் திருவருட் சம்மதம்</span></div>`;
+    }else if(type==="seminar" && frame && frame.sem==="ditwah"){
+      ocard.innerHTML=`<div class="eyebrow">Cyclone Ditwah &middot; Sri Lanka, late November 2025</div>
+        <h1 class="ta" style="font-size:clamp(1.5rem,2.6vw,2.05rem)">திட்வா சூறாவளி &mdash; பேரிடர் மேலாண்மைப் பணிகள்</h1>
+        <div class="smsub" style="color:var(--ink-2);font-weight:600">What the association carried into the affected areas</div>
+        <div class="dmcols">
+          <div>
+            <div class="dmhead"><span class="ta">நிவாரணப் பொதிகள்</span> Relief packs</div>
+            <div class="dmpack">
+              <span class="big">310</span>
+              <span class="lb"><span class="ta">உடனடி வாழ்வாதாரப் பொருட்கள் அடங்கிய பொதிகள்</span>
+                Packs of immediate relief supplies, made up and handed out by the association</span>
+            </div>
+            <div class="dmitems">
+              <div class="dmitem"><span class="q">3 kg</span><span class="k">அரிசி</span><span class="e">Rice</span></div>
+              <div class="dmitem"><span class="q">&frac12; kg</span><span class="k">பருப்பு</span><span class="e">Dhal</span></div>
+              <div class="dmitem"><span class="q">200 g</span><span class="k">சோயா</span><span class="e">Soya</span></div>
+              <div class="dmitem"><span class="q">1 kg</span><span class="k">கோதுமைமா</span><span class="e">Wheat flour</span></div>
+            </div>
+            <div class="dmhead" style="margin-top:12px"><span class="ta">சென்றடைந்த பகுதிகள்</span> Where they went</div>
+            <div class="dmareas">
+              <span class="dmarea">ஹலிவெல<small>Haliwela</small></span>
+              <span class="dmarea">நுவரெலியா&ndash;பொரகல<small>Porakala</small></span>
+              <span class="dmarea">அபரகல<small>Aparakala</small></span>
+              <span class="dmarea">ஊவாபரணகம&ndash;அலிகொல்லை தோட்டம்<small>Uva Paranagama</small></span>
+              <span class="dmarea">லக்கிலாண்டி தோட்டம்<small>Lakiland estate</small></span>
+              <span class="dmarea">கம்பஹா தோட்டம்<small>Gampaha estate</small></span>
+              <span class="dmarea">இன்னாராங்கொளை<small>Innarangolla GN, Uva Aranahalands</small></span>
+            </div>
+          </div>
+          <div>
+            <div class="dmhead"><span class="ta">படுக்கைப் பொருட்கள்</span> Bedding carried in</div>
+            <div class="dmlist">
+              <div class="dmrow">
+                <span class="rta">பாய், தலையணை, படுக்கை விரிப்பு, பொதி பை &mdash; கம்பளை</span>
+                <span class="ren">Mats, pillows, bedsheets and packing bags for Gampola, with the
+                  transport from Colombo and to Soyasapura</span>
+                <span class="ram">190,600</span>
+              </div>
+              <div class="dmrow">
+                <span class="rta">தலையணைகள் &mdash; வெலிமடை</span>
+                <span class="ren">Pillows, carried by goods lorry from Colombo to Welimada, Badulla</span>
+                <span class="ram">68,900</span>
+              </div>
+            </div>
+            <div class="dmhead" style="margin-top:12px"><span class="ta">இணைந்து செய்த பணியும் நிதியுதவியும்</span> Working with others</div>
+            <div class="dmlist">
+              <div class="dmrow">
+                <span class="rta">உலகெலாம் சிவமயம் ஆன்மிக பீடம் &mdash; வெருகல்</span>
+                <span class="ren">Relief supplies at Verugal at the request of the Ulagelam Sivamayam
+                  Aanmiga Peedam, through its Verugal worker Mr. Gajaroopan</span>
+                <span class="ram">100,000</span>
+              </div>
+              <div class="dmrow">
+                <span class="rta">யாழ். இலங்கைச் சைவசமயப் பேரவை</span>
+                <span class="ren">Towards the disaster management work of the Saiva Samaya Peravai, Jaffna</span>
+                <span class="ram">30,000</span>
+              </div>
+              <div class="dmrow">
+                <span class="rta">அறநெறி ஆசிரியர்கள் &amp; மெய்கண்டார் பாடசாலைக் குடும்பங்கள்</span>
+                <span class="ren">Grants to affected Araneri teachers of the hill-country Siddhanta class,
+                  and to affected families in the association's own school groups</span>
+                <span class="ram">35,000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="smfoot">The committee also worked <b>alongside the social welfare division of the
+          Verugal Divisional Secretariat</b>. Cyclone Ditwah brought the worst flooding Sri Lanka had
+          seen in decades; more than a million people still needed aid weeks afterwards.</div>`;
+    }else if(type==="seminar" && frame && frame.sem==="ditwahacc"){
+      ocard.innerHTML=`<div class="eyebrow">Cyclone Ditwah 2025 &middot; The relief fund, line by line</div>
+        <h1 class="ta" style="font-size:clamp(1.5rem,2.6vw,2.05rem)">செலவு விவரம்</h1>
+        <div class="smsub" style="color:var(--ink-2);font-weight:600">Where every rupee of the Ditwah relief fund went</div>
+        <div class="dmwrap">
+          <table class="dm">
+            <thead><tr><th class="k">#</th><th>செலவு விவரம் &middot; What it was spent on</th>
+              <th class="n">தொகை (ரூ.)</th></tr></thead>
+            <tbody>
+              <tr><td class="k">1</td>
+                <td><span class="dta">இன்னாராங்கொளை &mdash; உடனடி வாழ்வாதாரப் பொருட்கள்</span><span class="den">Immediate relief supplies in the Innarangolla GN division, Uva Aranahalands estate, Badulla</span></td>
+                <td class="n">100,400</td></tr>
+              <tr><td class="k">2</td>
+                <td><span class="dta">310 நிவாரணப் பொதிகள் &mdash; ஆறு பகுதிகள்</span><span class="den">310 packs of rice, dhal, soya and flour across six areas of Badulla and Nuwara Eliya</span></td>
+                <td class="n">335,800</td></tr>
+              <tr><td class="k">3</td>
+                <td><span class="dta">பொதி விநியோகப் போக்குவரத்து</span><span class="den">Transport for that distribution</span></td>
+                <td class="n">31,100</td></tr>
+              <tr><td class="k">4</td>
+                <td><span class="dta">வெருகல் &mdash; உடனடி வாழ்வாதாரப் பொருட்கள்</span><span class="den">Relief project at Verugal, through the Ulagelam Sivamayam Aanmiga Peedam</span></td>
+                <td class="n">100,000</td></tr>
+              <tr><td class="k">5</td>
+                <td><span class="dta">வெருகல் பிரதேச செயலகத்துடன் இணைந்த பேரிடர் மேலாண்மைப் பணி</span><span class="den">Disaster management work jointly with the Verugal Divisional Secretariat's social welfare division</span></td>
+                <td class="na">not itemised</td></tr>
+              <tr><td class="k">6</td>
+                <td><span class="dta">மெய்கண்டார் பாடசாலைக் குடும்பங்களுக்கு நிதியுதவி</span><span class="den">Grant to affected families in the association's Meykandar school student groups</span></td>
+                <td class="n">15,000</td></tr>
+              <tr><td class="k">7</td>
+                <td><span class="dta">மலையக அறநெறி ஆசிரியர்களுக்கு நிதியுதவி</span><span class="den">Grant to affected Araneri teachers attending the hill-country Siddhanta class</span></td>
+                <td class="n">20,000</td></tr>
+              <tr><td class="k">8</td>
+                <td><span class="dta">யாழ். இலங்கைச் சைவசமயப் பேரவைக்கு நிதியுதவி</span><span class="den">Grant towards the disaster management work of the Saiva Samaya Peravai, Jaffna</span></td>
+                <td class="n">30,000</td></tr>
+              <tr><td class="k">9</td>
+                <td><span class="dta">பாய், தலையணை, படுக்கை விரிப்பு, பை &mdash; கம்பளை</span><span class="den">Mats, pillows, bedsheets and bags for Gampola, with transport from Colombo and to Soyasapura</span></td>
+                <td class="n">190,600</td></tr>
+              <tr><td class="k">10</td>
+                <td><span class="dta">தலையணைகள் &mdash; வெலிமடை</span><span class="den">Pillows, with goods lorry transport from Colombo to Welimada, Badulla</span></td>
+                <td class="n">68,900</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="dmsum">
+          <div class="dmsumbox"><span class="am">936,800</span>
+            <span class="lb"><span class="ta">மொத்தச் செலவு</span>Total expenditure</span></div>
+          <div class="dmsumbox"><span class="am">25,800</span>
+            <span class="lb"><span class="ta">மீதித் தொகை</span>Held back for future disaster work</span></div>
+          <div class="dmsumbox hero"><span class="am">962,600</span>
+            <span class="lb"><span class="ta">மொத்த நிதி</span>Total collected in donations</span></div>
+        </div>
+        <div class="smfoot">All figures in <b>Sri Lankan rupees</b>. Line 5 carries no figure in the
+          statement; the priced lines come to <b>Rs 891,800</b> against a stated total of
+          <b>Rs 936,800</b>. What was not spent has not been returned or redirected &mdash;
+          <b>it is held for the next disaster</b>.</div>`;
     }else if(type==="seminar" && frame && frame.sem==="illam"){
       ocard.innerHTML=`<div class="eyebrow">Ratmalana, Colombo District &middot; Building nearly finished</div>
         <h1 class="ta" style="font-size:clamp(1.5rem,2.6vw,2.05rem)">சிவபெருமான் இல்லம்</h1>
@@ -3010,14 +3237,43 @@ const PHOTOS = {"Batticaloa": [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA
             <span class="isan">05</span>
             <span class="isata">பேரிடர் மேலாண்மைக் குழு</span>
             <span class="isaen">Disaster Management Committee</span>
-            <span class="isarole">Organises the association's response when disaster strikes the
-              communities it serves.</span>
+            <span class="isarole">Organises the association's response when disaster strikes &mdash;
+              a Rs 962,600 relief fund after Cyclone Ditwah in 2025.</span>
           </div>
         </div>
         <div class="stats stats3">
           <div class="stat"><span class="n">5</span><span class="l">Committees</span></div>
           <div class="stat"><span class="n">${T.total}</span><span class="l">Schools in the education programme</span></div>
           <div class="stat"><span class="n">${withSchools.length}</span><span class="l">Districts reached</span></div>
+        </div>`;
+    }else if(type==="disaster"){
+      ocard.innerHTML=`<div class="eyebrow">Ilankai Saivism Association</div>
+        <div class="tamil ta" style="font-size:1.3rem;margin-top:10px">பேரிடர் மேலாண்மைக் குழு</div>
+        <h1 class="ta artitle">பேரிடர் மேலாண்மை நடவடிக்கைகள்</h1>
+        <p class="arlead">The association's <b>Disaster Management Committee</b> is the fifth of its five
+           committees, and the one that only works when it must. When <b>Cyclone Ditwah</b> crossed
+           Sri Lanka in <b>late November 2025</b> &mdash; the worst flooding the island had seen in
+           decades &mdash; the committee opened a relief fund, carried supplies into the estate
+           settlements of <b>Badulla and Nuwara Eliya</b>, and reached <b>Verugal in the East</b>
+           through the bodies already working there. <b>The two slides that follow set out what was
+           done and where every rupee went.</b></p>
+        <div class="curhead">How the committee works</div>
+        <div class="curgrid">
+          <div class="cur"><span class="ta">நிதி திரட்டலும் கணக்குக் காட்டலும்</span>
+            <em>A fund opened, and every rupee of it accounted for line by line</em></div>
+          <div class="cur"><span class="ta">உடனடி வாழ்வாதாரப் பொருட்கள்</span>
+            <em>Immediate relief supplies &mdash; rice, dhal, soya and flour, packed and carried in</em></div>
+          <div class="cur"><span class="ta">படுக்கைப் பொருட்கள்</span>
+            <em>Bedding &mdash; mats, pillows and sheets, taken to where families were sheltering</em></div>
+          <div class="cur"><span class="ta">கூட்டாகச் செய்யும் பணி</span>
+            <em>Worked with divisional secretariats, spiritual bodies and other Saiva associations</em></div>
+          <div class="cur"><span class="ta">கழகக் குடும்பங்களுக்கு நேரடி உதவி</span>
+            <em>Direct grants to affected families and teachers within the association's own school groups</em></div>
+        </div>
+        <div class="stats stats3">
+          <div class="stat"><span class="n" style="font-size:1.7rem">962,600</span><span class="l">Rupees raised in donations</span></div>
+          <div class="stat"><span class="n">310</span><span class="l">Relief packs handed out</span></div>
+          <div class="stat"><span class="n">6</span><span class="l">Estate areas reached with packs</span></div>
         </div>`;
     }else if(type==="thirupani"){
       ocard.innerHTML=`<div class="eyebrow">Ilankai Saivism Association</div>
